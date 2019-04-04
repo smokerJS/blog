@@ -1,0 +1,15 @@
+.nav-menu {
+  float: left;
+  & > ul {
+    & li {
+      list-style: none;
+      padding: 20px 0;
+      & > a {
+        color: $nav-mnue;
+        text-decoration: none;
+        font-size: 30px;
+        text-shadow: 4px 3px 20px $nav-shadow;
+      }
+    }
+  }
+}
