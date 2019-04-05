@@ -37,6 +37,7 @@ module.exports = {
           "@layouts": "src/layouts",
           "@pages": "src/pages",
           "@scss": "src/assets/styles",
+          "@images": "src/assets/images",
           "@templates": "src/templates",
           "@posts": "content/posts",
         },

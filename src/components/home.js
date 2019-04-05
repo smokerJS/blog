@@ -8,7 +8,7 @@ const Header = () => (
       <Link
         to="/"
       >
-        후론투엔두
+        푸론투엔두
       </Link>
     </h1>
   </header>

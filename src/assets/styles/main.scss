@@ -1,3 +1,25 @@
+@charset "UTF-8";
+* {
+  margin: 0 auto;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
+@font-face{
+font-family:'kukdetopokki';
+src:url('../fonts/SDKukdetopokki-aLt.eot');
+src:local(※),
+	url('../fonts/SDKukdetopokki-aLt.woff') format('woff');
+}
+@font-face{
+font-family:'kukdetopokkibold';
+src:url('../fonts/SDKukdetopokki-bBd.eot');
+src:local(※),
+	url('../fonts/SDKukdetopokki-bBd.woff') format('woff');
+}
+
 @import "@scss/variables.scss";
 @import "@scss/header.scss";
 @import "@scss/navigation.scss";
