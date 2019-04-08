@@ -40,12 +40,23 @@ module.exports = {
           "@images": "src/assets/images",
           "@templates": "src/templates",
           "@posts": "content/posts",
+          "@markdwon": "src/markdwon",
+          "@image": "src/static/image"
         },
         extensions: ["js"]
       }
-    }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `post`,
+        path: `${__dirname}/src/post`,
+      },
+    },
+    `gatsby-transformer-remark`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
 }
+
