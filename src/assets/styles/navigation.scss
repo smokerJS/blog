@@ -37,6 +37,7 @@
           font-size: 30px;
           text-shadow: 4px 3px 20px $nav-shadow;
           border-radius: 0 0 16px 16px;
+          transition: .5s;
 
           & > img {
             position: absolute;
@@ -88,6 +89,16 @@
         animation: move-menu5 3s infinite;
         animation-direction: alternate;
       }
+    }
+
+    &:hover li > div a {
+      opacity: .5;
+    }
+
+    & li > div a:hover {
+      animation-play-state: paused;
+      opacity: 1;
+      cursor: pointer;
     }
   }
 }
