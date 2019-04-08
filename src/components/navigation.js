@@ -5,6 +5,9 @@ import React from "react";
 
 const Navigation = () => (
   <nav className="nav-menu">
+    <div id="beforeNavContents">
+
+    </div>
     <ul>
       <li>
         <div>

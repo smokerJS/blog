@@ -1,4 +1,15 @@
 .nav-menu {
+  position: relative;
+  padding-top: 154px;
+
+  & > #beforeNavContents {
+    width: 100%;
+    height: 140px;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    background: url("../images/navigation/img-background-before-contents.png") bottom center no-repeat;
+  }
   & > ul {
     font-family: 'kukdetopokki';
     padding-right: 20px;
@@ -7,7 +18,7 @@
       list-style: none;
       width: 46px;
       height: 180px;
-      padding: 20px 30px;
+      padding: 20px 60px;
       border-radius: 100px;
       display: inline-block;
       position: relative;
@@ -30,8 +41,8 @@
           & > img {
             position: absolute;
             width: 10px;
-            height: 60px;
-            top: -46px;
+            height: 64px;
+            top: -50px;
             left: 17px;
           }
           & strong {
@@ -44,8 +55,7 @@
       }
       &:nth-child(1) > div a {
         background: url("../images/navigation/img-background-menu1.png") bottom center no-repeat;
-        transform: skewY(-20deg);
-        animation: skew1 3s infinite;
+        animation: move-menu1 2s infinite;
         animation-direction: alternate;
       }
       &:nth-child(2) > div a {
@@ -54,16 +64,20 @@
         & > a > strong {
           top: 10px;
         }
-        transform: skewY(10deg);
-        animation: skew2 2s infinite;
+        animation: move-menu2 2s infinite;
         animation-direction: alternate;
       }
       &:nth-child(3) > div a {
         background: url("../images/navigation/img-background-menu3.png") bottom center no-repeat;
         letter-spacing: 14px;
+        animation: move-menu3 3s infinite;
+        animation-direction: alternate;
       }
       &:nth-child(4) > div a {
         background: url("../images/navigation/img-background-menu4.png") bottom center no-repeat;
+        animation: move-menu4 4s infinite;
+        animation-direction: alternate;
+
       }
       &:nth-child(5) > div a {
         background: url("../images/navigation/img-background-menu5.png") bottom center no-repeat;
@@ -71,33 +85,74 @@
         & > a > strong {
           top: 10px;
         }
+        animation: move-menu5 3s infinite;
+        animation-direction: alternate;
       }
     }
   }
 }
 
-@keyframes skew1 {
+@keyframes move-menu1 {
   0% {
-    transform: skewX(5deg);
+    transform: rotateZ(5deg) skewX(5deg);
+    box-shadow: 2px 2px 3px 1px #2E2E2E;
   }
   100% {
-    transform: skewX(0deg);
-    transform: skewY(-20deg);
+    transform: skewX(0deg) skewY(-20deg);
+    box-shadow: 0px 4px 3px 1px #2E2E2E;
   }
 }
-@keyframes skew2 {
+@keyframes move-menu2 {
   0% {
-    transform: rotateX(-30);
-    transform: skewX(5deg);
-    transform: skewY(3deg);
+    transform: skewX(2deg) skewY(1deg);
     top: 0px;
-    box-shadow: 1px 2px 3px 1px #aaaaaa;
+    box-shadow: 1px 2px 3px 2px #585858;
   }
   100% {
-    transform: skewX(-5deg);
-    transform: skewY(-3deg);
-    transform: rotateX(30deg);
-    top: -15px;
-    box-shadow: 6px 7px 3px 5px #E6E6E6;
+    transform: rotateX(20deg) rotateZ(-3deg) skewX(-2deg);
+    top: -5px;
+    box-shadow: -1px 4px 3px 1px #2E2E2E;
+  }
+}
+@keyframes move-menu3 {
+  0% {
+    transform: rotateY(-30deg);
+    top: 0px;
+    box-shadow: -4px 3px 3px 1px #2E2E2E;
+  }
+  50% {
+    box-shadow: 1px 1px 2px 1px #2E2E2E;
+  }
+  100% {
+    transform: rotateY(30deg);
+    box-shadow: 4px 2px 2px 1px #585858;
+  }
+}
+@keyframes move-menu4 {
+  0% {
+    transform: rotateX(-10deg) skewY(10deg);
+    top: -5px;
+    box-shadow: 3px -3px 3px 1px #2E2E2E;
+  }
+  50% {
+    top: 10px;
+    box-shadow: 0px 0px 3px 1px #2E2E2E;
+  }
+  100% {
+    transform: skewY(-30deg);
+    top: -5px;
+    box-shadow: -3px -5px 3px 2px #585858;
+  }
+}
+@keyframes move-menu5 {
+  0% {
+    transform: skewY(10deg) rotateY(-10deg);
+    top: 2px;
+    box-shadow: 3px 2px 3px 2px #585858;
+  }
+  100% {
+    transform: rotateY(20deg) rotateZ(-3deg) skewX(-4deg) skewY(-10deg);
+    top: -3px;
+    box-shadow: -3px 2px 3px 1px #2E2E2E;
   }
 }
