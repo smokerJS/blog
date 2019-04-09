@@ -1,4 +1,4 @@
-.nav-menu {
+.nav-top-menu {
   position: relative;
   padding-top: 154px;
 
@@ -76,6 +76,7 @@
       }
       &:nth-child(4) > div a {
         background: url("../images/navigation/img-background-menu4.png") bottom center no-repeat;
+        letter-spacing: 14px;
         animation: move-menu4 4s infinite;
         animation-direction: alternate;
 

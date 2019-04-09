@@ -4,10 +4,8 @@ import React from "react";
 
 
 const Navigation = () => (
-  <nav className="nav-menu">
-    <div id="beforeNavContents">
-
-    </div>
+  <nav className="nav-top-menu">
+    <div id="beforeNavContents"></div>
     <ul>
       <li>
         <div>
@@ -35,10 +33,10 @@ const Navigation = () => (
       </li>
       <li>
         <div>
-          <Link to="/">
+          <a href="https://github.com/smokerJS" target="_blank">
             <img src={require("@images/navigation/img-rope-menu2.png")}/>
-            <strong>포투포리오</strong>
-          </Link>
+            <strong>깃허부</strong>
+          </a>
         </div>
       </li>
       <li>
