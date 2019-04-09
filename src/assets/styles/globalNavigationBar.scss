@@ -2,6 +2,7 @@
   width: 300px;
   height: 100%;
   position: fixed;
+  z-index: 20;
   background: url("../images/navigation/img-background-global-navigation-bar.png") bottom right repeat-y;
   font-family: 'kukdetopokki';
   & * {

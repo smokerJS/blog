@@ -1,0 +1,16 @@
+.footer-global {
+  position: fixed;
+  width: 100%;
+  text-align: right;
+  z-index: 15;
+  bottom: 0;
+  transition: 1.5s;
+  transition-timing-function: linear;
+  padding-bottom: 350px;
+  &.background1 {
+    background: url("../images/footer/img-background-footer-grass1.png") bottom right repeat-x;
+  }
+  &.background2 {
+    background: url("../images/footer/img-background-footer-grass2.png") bottom right repeat-x;
+  }
+}

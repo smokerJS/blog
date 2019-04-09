@@ -12,6 +12,7 @@ import { StaticQuery, graphql } from "gatsby";
 import Header from "@components/header";
 import Navigation from "@components/navigation";
 import GlobalNavigationBar from "@components/globalNavigationBar";
+import Footer from "@components/footer";
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -32,10 +33,7 @@ const Layout = ({ children }) => (
           <Navigation/>
           <main>{children}</main>
         </section>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-        </footer>
+        <Footer/>
       </section>
     )}
   />
