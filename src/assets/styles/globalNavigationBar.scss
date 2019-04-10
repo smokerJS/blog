@@ -114,6 +114,20 @@
           height: 20vw;
         }
       }
+      @media (max-height: 930px) and (min-width: 1024px) {
+        right: auto;
+        & > img {
+          margin-right: 80px;
+          float: right;
+        }
+      }
+      @media (max-height: 800px) {
+        right: auto;
+        & > img {
+          margin-right: 80px;
+          float: right;
+        }
+      }
       @media (max-height: 450px) {
         display: none;
       }
