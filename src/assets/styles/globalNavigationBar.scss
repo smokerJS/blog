@@ -17,18 +17,53 @@
     margin-left: 10px;
     color: #fff;
     transition: .5s;
+    z-index: 20;
   }
 
   & > nav {
     background: url( "../images/navigation/img-background-global-navigation-bar.png") bottom right repeat-y;
     width: 300px;
     height: 100%;
+    position: relative;
     & * {
       margin-left: 15px;
     }
+    & > ul {
+      text-align: left;
+      font-size: 34px;
+      position: absolute;
+      top: 110px;
+      & > li {
+        list-style: none;
+        width: 100%;
+        margin-bottom: 35px;
+        display: block;
+        & > a {
+          & > strong {
+            color: #fff;
+          }
+        }
+        &:nth-child(1) {
+        }
+        &:nth-child(2) {
+        }
+        &:nth-child(3) {
+        }
+        &:nth-child(4) {
+        }
+        &:nth-child(5) {
+        }
+      }
+      @media (max-width: 1024px) {
+        position: relative;
+        padding-top: 2vw;
+      }
+    }
     & > .profile-group {
       color: #fff;
-      padding-top: 60px;
+      position: absolute;
+      bottom: 70px;
+      width: 100%;
       & > img {
         width: 200px;
         height: 200px;
@@ -36,28 +71,40 @@
         display: block;
         border: 2px dotted #fff;
       }
-    }
-    & dl {
-      font-weight: bold;
-      padding: 30px 0;
-      & dt {
-        float: left;
-        margin-right: 6px;
-        font-size: 17px;
-        &::after {
-          margin-left: 4px;
-          content: ":";
+      & dl {
+        font-weight: bold;
+        padding: 30px 0;
+        & dt {
+          float: left;
+          margin-right: 6px;
+          font-size: 17px;
+          &::after {
+            margin-left: 4px;
+            content: ":";
+          }
+        }
+        & dd {
+          font-size: 30px;
+          margin-bottom: 17px;
+          &::after {
+            clear: both;
+          }
+        }
+        @media (max-height: 930px) {
+          display: none;
         }
       }
-      & dd {
-        font-size: 30px;
-        margin-bottom: 17px;
-        &::after {
-          clear: both;
+      @media (max-width: 1024px) {
+        & > img {
+          float: left;
+          width: 20vw;
+          height: 20vw;
         }
       }
     }
   }
+
+
 
   @media (max-width: 1323px) {
     &.open {

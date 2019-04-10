@@ -21,6 +21,33 @@ class GlobalNavigationBar extends React.Component{
           메뉴판
         </div>
         <nav>
+          <ul>
+            <li>
+              <Link to="/">
+                <strong>디베로먼투</strong>
+              </Link>
+            </li>
+            <li>
+              <Link to="/">
+                <strong>타로</strong>
+              </Link>
+            </li>
+            <li>
+              <Link to="/">
+                <strong>라이푸</strong>
+              </Link>
+            </li>
+            <li>
+              <a href="https://github.com/smokerJS" target="_blank">
+                <strong>깃허부</strong>
+              </a>
+            </li>
+            <li>
+              <Link to="/">
+                <strong>문의</strong>
+              </Link>
+            </li>
+          </ul>
           <div className="profile-group">
             <img src={require("@image/common/smokerjs-profile.jpeg")}/>
             <dl>
@@ -33,9 +60,7 @@ class GlobalNavigationBar extends React.Component{
             </dl>
           </div>
 
-          <ul>
 
-          </ul>
         </nav>
       </section>
     )
