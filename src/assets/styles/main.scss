@@ -17,6 +17,11 @@ section#mainScreen {
     width: 100%;
   }
 }
+@media (max-width: 1024px) {
+  html {
+    font-size: 1vw;
+  }
+}
 @font-face{
 font-family:'kukdetopokki';
 src:url('../fonts/SDKukdetopokki-aLt.eot');

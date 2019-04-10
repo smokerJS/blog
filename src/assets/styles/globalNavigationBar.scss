@@ -92,13 +92,44 @@
       & > div#menuOpenBtn {
         color: #fff;
         font-weight: 100;
+        width: auto;
+        font-size: 4rem;
+        top: 4.5rem;
+        margin-left: 5rem;
       }
       & > nav {
         width: 100%;
-
         opacity: 1;
         visibility: visible;
       }
+    }
+  }
+  @media (max-width: 800px) {
+    & > div#menuOpenBtn {
+      font-size: 4rem;
+      top: 4rem;
+      margin-left: 4rem;
+    }
+  }
+  @media (max-width: 600px) {
+    & > div#menuOpenBtn {
+      font-size: 4.5rem;
+      top: 3.5rem;
+      margin-left: 2rem;
+    }
+  }
+  @media (max-width: 450px) {
+    & > div#menuOpenBtn {
+      font-size: 4.5rem;
+      top: 3rem;
+      margin-left: 1.5rem;
+    }
+  }
+  @media (max-width: 380px) {
+    & > div#menuOpenBtn {
+      font-size: 5rem;
+      top: 2.5rem;
+      margin-left: 1rem;
     }
   }
 }

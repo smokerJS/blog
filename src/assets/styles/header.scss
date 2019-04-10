@@ -10,7 +10,7 @@
     width: 550px;
     height: 100px;
     top: 50px;
-    background: url("../images/header/img-background-header.png") bottom center no-repeat;
+    background: url("../images/header/img-background-header.png") top center no-repeat;
     z-index: 12;
     left: 50%;
     transform: translateX(-50%);
@@ -24,6 +24,38 @@
       left: 0;
       transition: 1s;
       text-shadow: 4px 3px 20px #fff;
+    }
+  }
+  @media (max-width: 1024px) {
+    padding: 0;
+    & .main-title {
+      z-index: 40;
+      width: 60vw;
+      font-size: 7rem;
+      letter-spacing: 2rem;
+      background-size: contain;
+      top: 10px;
+      & > a {
+        top: 1rem;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    & .main-title {
+      width: 62vw;
+      letter-spacing: 1.5rem;
+      & > a {
+        top: 0.8rem;
+      }
+    }
+  }
+  @media (max-width: 380px) {
+    & .main-title {
+      width: 64vw;
+      letter-spacing: 1.3rem;
+      & > a {
+        top: 0.7rem;
+      }
     }
   }
 }
