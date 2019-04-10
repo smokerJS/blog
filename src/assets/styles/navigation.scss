@@ -102,6 +102,11 @@
       cursor: pointer;
     }
   }
+  @media (max-width: 1024px) {
+    & {
+      display: none;
+    }
+  }
 }
 
 @keyframes move-menu1 {

@@ -9,6 +9,13 @@ a {
 section#mainScreen {
   width: 1024px;
   padding-left: 300px;
+  transition: .5s;
+  @media (max-width: 1323px) {
+    padding-left: 0;
+  }
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 }
 @font-face{
 font-family:'kukdetopokki';

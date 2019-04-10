@@ -13,4 +13,9 @@
   &.background2 {
     background: url("../images/footer/img-background-footer-grass2.png") top right repeat-x;
   }
+  @media (max-width: 1024px) {
+    & {
+      display: none;
+    }
+  }
 }
