@@ -58,6 +58,14 @@
         position: relative;
         padding-top: 2vw;
       }
+      @media (max-height: 450px) {
+        position: relative;
+        padding-top: 1vw;
+        & > li {
+          float: left;
+          width: 230px;
+        }
+      }
     }
     & > .profile-group {
       color: #fff;
@@ -100,6 +108,9 @@
           width: 20vw;
           height: 20vw;
         }
+      }
+      @media (max-height: 450px) {
+        display: none;
       }
     }
   }
