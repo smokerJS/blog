@@ -78,6 +78,7 @@
         border-radius: 100%;
         display: block;
         border: 2px dotted #fff;
+        animation: profile-ani 4s infinite;
       }
       & dl {
         font-weight: bold;
@@ -98,11 +99,15 @@
             clear: both;
           }
         }
-        @media (max-height: 930px) {
+        @media (max-height: 930px) and (min-width: 1024px) {
+          display: none;
+        }
+        @media (max-height: 800px) {
           display: none;
         }
       }
       @media (max-width: 1024px) {
+        right: 1vw;
         & > img {
           float: left;
           width: 20vw;
@@ -192,3 +197,13 @@
   }
 }
 
+
+
+@keyframes profile-ani {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

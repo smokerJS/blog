@@ -22,6 +22,15 @@ section#mainScreen {
     font-size: 1vw;
   }
 }
+.index-contents {
+  font-family: 'kukdetopokkibold';
+  text-align: center;
+  font-size: 40px;
+  padding-top: 40px;
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
 @font-face{
 font-family:'kukdetopokki';
 src:url('../fonts/SDKukdetopokki-aLt.eot');
