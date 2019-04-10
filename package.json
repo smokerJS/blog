@@ -17,6 +17,7 @@
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-manifest": "^2.0.26",
     "gatsby-plugin-offline": "^2.0.25",
+    "gatsby-plugin-postcss-sass": "^1.0.22",
     "gatsby-plugin-react-helmet": "^3.0.11",
     "gatsby-plugin-react-svg": "^2.1.1",
     "gatsby-plugin-sass": "^2.0.11",
@@ -33,11 +34,6 @@
   "devDependencies": {
     "prettier": "^1.16.4"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "IE 10"
-  ],
   "keywords": [
     "gatsby",
     "blog"

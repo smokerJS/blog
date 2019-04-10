@@ -29,16 +29,12 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    'gatsby-plugin-sass',
     {
-      resolve: 'gatsby-plugin-sass',
+      resolve: `gatsby-plugin-postcss-sass`,
       options: {
-        postCssPlugins: [
-          autoprefixer({
-            grid: true,
-            browsers: [{ browsers: browserslist() }],
-          }),
-        ],
-      },
+        postCssPlugins: [require('autoprefixer')()]
+      }
     },
     {
       resolve: `gatsby-plugin-alias-imports`,

@@ -9,7 +9,7 @@ import "@scss/main.scss";
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="후론투엔두" keywords={[`gatsby`, `application`, `react`]} />
     <IndexContents/>
   </Layout>
 )
