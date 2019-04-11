@@ -43,7 +43,7 @@ class GlobalNavigationBar extends React.Component{
               </a>
             </li>
             <li>
-              <Link to="/">
+              <Link to="/question">
                 <strong>문의</strong>
               </Link>
             </li>

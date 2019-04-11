@@ -2,9 +2,9 @@ const autoprefixer = require('autoprefixer');
 const browserslist = require('browserslist');
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `후론투엔두 블로그`,
+    description: `이런 귀한 곳에 누추하신 분이 어떻게 오셨습니까?`,
+    author: `@smokerjs`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

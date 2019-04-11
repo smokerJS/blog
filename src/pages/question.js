@@ -4,14 +4,14 @@ import { Link } from "gatsby";
 import Layout from "@components/layout";
 import Image from "@components/image";
 import SEO from "@components/seo";
-import IndexContents from "@components/indexContents";
+
 import "@scss/main.scss";
 
-const IndexPage = () => (
+const QuestionPage = () => (
   <Layout menu={true}>
-    <SEO title="후론투엔두" keywords={[`gatsby`, `application`, `react`]} />
-    <IndexContents/>
+    <SEO title="문의메일" keywords={[`gatsby`, `application`, `react`]} />
+    문의메일보내라
   </Layout>
 )
 
-export default IndexPage;
+export default QuestionPage;
