@@ -8,7 +8,7 @@ import SEO from "@components/seo";
 import "@scss/main.scss";
 
 const QuestionPage = () => (
-  <Layout menu={true}>
+  <Layout menu={false}>
     <SEO title="문의메일" keywords={[`gatsby`, `application`, `react`]} />
     문의메일보내라
   </Layout>

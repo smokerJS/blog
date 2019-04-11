@@ -7,7 +7,7 @@ export default function Template({ data }) {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout>
+    <Layout menu={false}>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <div className="container">
         <h1>{post.frontmatter.title}</h1>
