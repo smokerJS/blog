@@ -169,8 +169,20 @@
 
   @media (max-width: 1024px) {
     & {
-      width: 100%;
+      width: 0%;
       height: 100%;
+      &.open, &.home {
+        width: 100%;
+        & > nav {
+          width: 100%;
+          opacity: 1;
+          display: block;
+          visibility: visible;
+        }
+        & > div#menuOpenBtn {
+          color: #fff;
+        }
+      }
       & > div#menuOpenBtn {
         color: #fff;
         font-weight: 100;
@@ -179,10 +191,11 @@
         top: 4.5rem;
         margin-left: 5rem;
       }
+      & > div#menuOpenBtn {
+        color: #000;
+      }
       & > nav {
-        width: 100%;
-        opacity: 1;
-        visibility: visible;
+        display: none;
       }
     }
   }
