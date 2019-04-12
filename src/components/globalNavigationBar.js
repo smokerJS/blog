@@ -9,7 +9,6 @@ class GlobalNavigationBar extends React.Component{
   }
 
   openHandler = () => {
-    console.log(this.props.pathname.indexOf('question'))
     this.setState({
       open: !this.state.open
     })
