@@ -83,7 +83,7 @@ class MailForm extends React.Component {
           <h2>정성스레 적어도 어차피 안봄ㅋ</h2>
           <textarea name="content" defaultValue={this.state.content} onChange={(e)=>{this.setStateHandler(e,'content')}}></textarea>
           <button onClick={()=>{this.onSubmitHandler()}}>보내기</button>
-          <input id="honeypot" type="text" name="honeypot" defaultValue={this.state.honeypot} />
+          <input id="honeypot" type="text" name="honeypot" defaultValue={this.state.honeypot} onChange={(e)=>{this.setStateHandler(e,'content')}}/>
         </div>
       </article>
     )
