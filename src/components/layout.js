@@ -15,49 +15,44 @@ import GlobalNavigationBar from "@components/globalNavigationBar";
 import Footer from "@components/footer";
 import Transition from "@components/transition";
 
-class Layout extends React.Component {
-  componentDidMount=()=>{
-    console.log(this.props.location)
-  }
-  render(){
-    return (
-      <StaticQuery
-        query={graphql`
-          query SiteTitleQuery {
-            site {
-              siteMetadata {
-                title
-              }
-            }
+const Layout = ({children, location}) => (
+
+  <StaticQuery
+    query={graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
           }
-        `}
-        render={data => (
-          <>
-          <GlobalNavigationBar pathname={this.props.location.pathname}/>
-          <section id="screen">
-            <section id="mainScreen">
-              <Header siteTitle={data.site.siteMetadata.title} />
-              <Navigation pathname={this.props.location.pathname}/>
-              <Transition location={this.props.location}>
-                  <main>{this.props.children}</main>
-              </Transition>
-            </section>
-            <Footer pathname={this.props.location.pathname}/>
-          </section>
-          </>
-        )}
-      />
-    )
-  }
-}
+        }
+      }
+    `}
+    render={data => (
+      <>
+      <GlobalNavigationBar pathname={location.pathname}/>
+      <section id="screen">
+        <section id="mainScreen">
+          <Header siteTitle={data.site.siteMetadata.title} />
+          <Navigation pathname={location.pathname}/>
+          <Transition location={location}>
+              <main>{children}</main>
+          </Transition>
+        </section>
+        <Footer pathname={location.pathname}/>
+      </section>
+      </>
+    )}
+  />
+)
+
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   location: PropTypes.object
 }
-Layout.defaultProps = {
-  location: window.location
-}
+// Layout.defaultProps = {
+//   location: window.location
+// }
 
 
 export default Layout
