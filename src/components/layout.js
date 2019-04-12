@@ -53,6 +53,11 @@ class Layout extends React.Component {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  location: PropTypes.object
 }
+Layout.defaultProps = {
+  location: window.location
+}
+
 
 export default Layout
