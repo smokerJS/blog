@@ -13,31 +13,43 @@ import Header from "@components/header";
 import Navigation from "@components/navigation";
 import GlobalNavigationBar from "@components/globalNavigationBar";
 import Footer from "@components/footer";
+import Transition from "@components/transition";
 
-const Layout = ({ children, menu, focusTab }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
+class Layout extends React.Component {
+  componentDidMount=()=>{
+    console.log(this.props.location)
+  }
+  render(){
+    return (
+      <StaticQuery
+        query={graphql`
+          query SiteTitleQuery {
+            site {
+              siteMetadata {
+                title
+              }
+            }
           }
-        }
-      }
-    `}
-    render={data => (
-      <section id="screen">
-        <GlobalNavigationBar focusTab={focusTab}/>
-        <section id="mainScreen">
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <Navigation menu={menu}/>
-          <main>{children}</main>
-        </section>
-        <Footer/>
-      </section>
-    )}
-  />
-)
+        `}
+        render={data => (
+          <>
+          <GlobalNavigationBar pathname={this.props.location.pathname}/>
+          <section id="screen">
+            <section id="mainScreen">
+              <Header siteTitle={data.site.siteMetadata.title} />
+              <Navigation pathname={this.props.location.pathname}/>
+              <Transition location={this.props.location}>
+                  <main>{this.props.children}</main>
+              </Transition>
+            </section>
+            <Footer pathname={this.props.location.pathname}/>
+          </section>
+          </>
+        )}
+      />
+    )
+  }
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

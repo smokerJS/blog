@@ -1,14 +1,12 @@
 import React from "react";
-
-import Layout from "@components/layout";
 import SEO from "@components/seo";
 import MailForm from "@components/mailForm";
 
 const QuestionPage = () => (
-  <Layout menu={false} focusTab="qusetion">
+  <React.Fragment>
     <SEO title="문의메일" keywords={[`gatsby`, `application`, `react`]} />
     <MailForm/>
-  </Layout>
+  </React.Fragment>
 )
 
 export default QuestionPage;

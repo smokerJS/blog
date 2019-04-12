@@ -41,10 +41,10 @@
         & > a {
           & > strong {
             color: #fff;
-            transition: .5s;
+            transition: 1s;
             &.focus {
               color: rgb(4, 180, 255);
-              text-shadow: 2px 1px 20px #fff;
+              text-shadow: 2px 1px 20px #A4A4A4;
             }
           }
         }

@@ -61,6 +61,12 @@ module.exports = {
         path: `${__dirname}/src/post`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-layout',
+      options: {
+        component: require.resolve(`./src/components/layout.js`)
+      },
+    },
     `gatsby-transformer-remark`,
     {
       resolve: "gatsby-plugin-react-svg",

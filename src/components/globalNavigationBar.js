@@ -9,7 +9,7 @@ class GlobalNavigationBar extends React.Component{
   }
 
   openHandler = () => {
-    console.log(this.props.focusTab)
+    console.log(this.props.pathname.indexOf('question'))
     this.setState({
       open: !this.state.open
     })
@@ -18,7 +18,7 @@ class GlobalNavigationBar extends React.Component{
   render() {
     return (
       <section className={`nav-global-side-menu ${this.state.open ? 'open' : ''}`}>
-        <div id="menuOpenBtn" onClick={this.openHandler}>
+        <div id="menuOpenBtn" onClick={()=>{this.openHandler()}}>
           메뉴판
         </div>
         <nav>
@@ -45,7 +45,7 @@ class GlobalNavigationBar extends React.Component{
             </li>
             <li>
               <Link to="/question">
-                <strong className={this.props.focusTab === 'question' ? "focus" : 'tab'}>문의</strong>
+                <strong className={this.props.pathname.indexOf('question') !== -1 ? "focus" : 'tab'}>문의</strong>
               </Link>
             </li>
           </ul>

@@ -12,8 +12,20 @@
   }
   & > ul {
     font-family: 'kukdetopokki';
-    padding-right: 20px;
+    width: 100%;
+    position: absolute;
+    top: auto;
     text-align: center;
+    &.home {
+      transition: 2s;
+      opacity: 1;
+      left: 0px;
+    }
+    &.hide {
+      transition: 3s;
+      opacity: 0;
+      left: -9999px;
+    }
     & > li {
       list-style: none;
       width: 46px;

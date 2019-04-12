@@ -6,7 +6,12 @@
   bottom: 0;
   transition: 1.5s;
   transition-timing-function: linear;
-  padding-bottom: 26vh;
+  &.home {
+    padding-bottom: 26vh;
+  }
+  &.hide {
+    padding-bottom: 20vh;
+  }
   &.background1 {
     background: url("../images/footer/img-background-footer-grass1.png") top right repeat-x;
   }
