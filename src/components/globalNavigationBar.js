@@ -16,7 +16,7 @@ class GlobalNavigationBar extends React.Component{
 
   render() {
     return (
-      <section className={`nav-global-side-menu ${this.state.open ? 'open' : ''} ${this.props.pathname === '/' ? 'home' : 'hide'}`}>
+      <section className={`nav-global-side-menu ${this.state.open ? 'open' : ''} ${this.props.location.pathname === '/' ? 'home' : 'hide'}`}>
         <div id="menuOpenBtn" onClick={()=>{this.openHandler()}}>
           메뉴판
         </div>
@@ -44,7 +44,7 @@ class GlobalNavigationBar extends React.Component{
             </li>
             <li>
               <Link to="/question">
-                <strong className={this.props.pathname.indexOf('question') !== -1 ? "focus" : 'tab'}>문의</strong>
+                <strong className={this.props.location.pathname.indexOf('question') !== -1 ? "focus" : 'tab'}>문의</strong>
               </Link>
             </li>
           </ul>
@@ -70,7 +70,7 @@ class GlobalNavigationBar extends React.Component{
 }
 
 GlobalNavigationBar.propTypes = {
-  pathname: PropTypes.string
+  location: PropTypes.object
 }
 
 // GlobalNavigationBar.defaultProps = {
