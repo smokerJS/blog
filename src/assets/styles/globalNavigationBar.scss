@@ -41,6 +41,11 @@
         & > a {
           & > strong {
             color: #fff;
+            transition: .5s;
+            &.focus {
+              color: rgb(4, 180, 255);
+              text-shadow: 2px 1px 20px #fff;
+            }
           }
         }
         &:nth-child(1) {

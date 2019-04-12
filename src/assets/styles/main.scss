@@ -1,11 +1,7 @@
 @charset "UTF-8";
-* {
-  margin: 0 auto;
-  padding: 0;
-}
-a {
-  text-decoration: none;
-}
+* { margin: 0 auto; padding: 0; }
+a { text-decoration: none; }
+*:focus { outline: none; }
 section#mainScreen {
   width: 1024px;
   padding-left: 300px;
@@ -49,3 +45,4 @@ src:local(※),
 @import "@scss/header.scss";
 @import "@scss/footer.scss";
 @import "@scss/navigation.scss";
+@import "@scss/mailForm.scss";

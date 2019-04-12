@@ -8,7 +8,7 @@ import IndexContents from "@components/indexContents";
 import "@scss/main.scss";
 
 const IndexPage = () => (
-  <Layout menu={true}>
+  <Layout menu={true} focusTab="home">
     <SEO title="후론투엔두" keywords={[`gatsby`, `application`, `react`]} />
     <IndexContents/>
   </Layout>

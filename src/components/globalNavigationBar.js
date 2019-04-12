@@ -1,5 +1,5 @@
 import { Link } from "gatsby";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import React from "react";
 
 class GlobalNavigationBar extends React.Component{
@@ -9,6 +9,7 @@ class GlobalNavigationBar extends React.Component{
   }
 
   openHandler = () => {
+    console.log(this.props.focusTab)
     this.setState({
       open: !this.state.open
     })
@@ -44,7 +45,7 @@ class GlobalNavigationBar extends React.Component{
             </li>
             <li>
               <Link to="/question">
-                <strong>문의</strong>
+                <strong className={this.props.focusTab === 'question' ? "focus" : 'tab'}>문의</strong>
               </Link>
             </li>
           </ul>
@@ -69,9 +70,9 @@ class GlobalNavigationBar extends React.Component{
 
 }
 
-// GlobalNavigationBar.propTypes = {
-
-// }
+GlobalNavigationBar.propTypes = {
+  focusTab: PropTypes.string
+}
 
 // GlobalNavigationBar.defaultProps = {
 

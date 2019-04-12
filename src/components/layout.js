@@ -14,7 +14,7 @@ import Navigation from "@components/navigation";
 import GlobalNavigationBar from "@components/globalNavigationBar";
 import Footer from "@components/footer";
 
-const Layout = ({ children, menu }) => (
+const Layout = ({ children, menu, focusTab }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -27,7 +27,7 @@ const Layout = ({ children, menu }) => (
     `}
     render={data => (
       <section id="screen">
-        <GlobalNavigationBar/>
+        <GlobalNavigationBar focusTab={focusTab}/>
         <section id="mainScreen">
           <Header siteTitle={data.site.siteMetadata.title} />
           <Navigation menu={menu}/>
