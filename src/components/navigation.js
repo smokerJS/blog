@@ -1,5 +1,5 @@
 import { Link } from "gatsby";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import React from "react";
 
 
@@ -51,9 +51,9 @@ const Navigation = ({pathname}) => (
   </nav>
 )
 
-// Navigation.propTypes = {
-
-// }
+Navigation.propTypes = {
+  pathname: PropTypes.string
+}
 
 // Navigation.defaultProps = {
 

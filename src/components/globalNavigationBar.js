@@ -70,7 +70,7 @@ class GlobalNavigationBar extends React.Component{
 }
 
 GlobalNavigationBar.propTypes = {
-  focusTab: PropTypes.string
+  pathname: PropTypes.string
 }
 
 // GlobalNavigationBar.defaultProps = {
