@@ -20,7 +20,7 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <footer className={`footer-global ${this.state.className} ${this.props.location.pathname === '/' ? 'home' : 'hide'}`}></footer>
+      <footer className={`footer-global ${this.state.className} ${window.location.pathname === '/' ? 'home' : 'hide'}`}></footer>
     )
   }
 }

@@ -29,16 +29,16 @@ const Layout = ({children, location}) => (
     `}
     render={data => (
       <>
-      <GlobalNavigationBar location={location}/>
+      <GlobalNavigationBar/>
       <section id="screen">
         <section id="mainScreen">
           <Header siteTitle={data.site.siteMetadata.title} />
-          <Navigation location={location}/>
+          <Navigation/>
           <Transition location={location}>
               <main>{children}</main>
           </Transition>
         </section>
-        <Footer location={location}/>
+        <Footer/>
       </section>
       </>
     )}

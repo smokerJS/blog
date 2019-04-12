@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import React from "react";
 
 
-const Navigation = ({location}) => (
+const Navigation = () => (
   <nav className="nav-top-menu">
     <div id="beforeNavContents"></div>
-      <ul className={location.pathname === '/' ? 'home' : 'hide'}>
+      <ul className={window.location.pathname === '/' ? 'home' : 'hide'}>
         <li>
           <div>
             <Link to="/">
@@ -51,9 +51,9 @@ const Navigation = ({location}) => (
   </nav>
 )
 
-Navigation.propTypes = {
-  location: PropTypes.object
-}
+// Navigation.propTypes = {
+//   location: PropTypes.object
+// }
 
 // Navigation.defaultProps = {
 
