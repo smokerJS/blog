@@ -63,6 +63,7 @@ class MailForm extends React.Component {
 
   render() {
     return (
+      <section className="section-mail-form">
       <article className="article-mail-form">
         <div className="requset-info">
           <h2>너는 누구냐</h2>
@@ -86,6 +87,7 @@ class MailForm extends React.Component {
           <input id="honeypot" type="text" name="honeypot" defaultValue={this.state.honeypot} onChange={(e)=>{this.setStateHandler(e,'content')}}/>
         </div>
       </article>
+      </section>
     )
   }
 }
