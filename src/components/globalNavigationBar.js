@@ -5,7 +5,8 @@ import React from "react";
 class GlobalNavigationBar extends React.Component{
 
   state = {
-    open: false
+    open: false,
+    currPath: window.location.pathname
   }
 
   openHandler = () => {
@@ -16,7 +17,7 @@ class GlobalNavigationBar extends React.Component{
 
   render() {
     return (
-      <section className={`nav-global-side-menu ${this.state.open ? 'open' : ''} ${window.location.pathname === '/' ? 'home' : 'hide'}`}>
+      <section className={`nav-global-side-menu ${this.state.open ? 'open' : ''} ${this.state.currPath === '/' ? 'home' : 'hide'}`}>
         <div id="menuOpenBtn" onClick={()=>{this.openHandler()}}>
           메뉴판
         </div>
@@ -44,7 +45,7 @@ class GlobalNavigationBar extends React.Component{
             </li>
             <li>
               <Link to="/question">
-                <strong className={window.location.pathname.indexOf('question') !== -1 ? "focus" : 'tab'}>문의</strong>
+                <strong className={this.state.currPath.indexOf('question') !== -1 ? "focus" : 'tab'}>문의</strong>
               </Link>
             </li>
           </ul>
