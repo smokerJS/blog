@@ -6,7 +6,7 @@ import React from "react";
 class Navigation extends React.Component {
 
   state = {
-    currPath: window.location.pathname
+    currPath: window ? window.location.pathname : '/'
   }
 
   render() {

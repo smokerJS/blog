@@ -6,7 +6,7 @@ import React from "react";
 class Footer extends React.Component {
   state = {
     className : 'background1',
-    currPath: window.location.pathname
+    currPath: window ? window.location.pathname : '/'
   }
 
   componentDidMount = () => {

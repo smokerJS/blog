@@ -6,7 +6,7 @@ class GlobalNavigationBar extends React.Component{
 
   state = {
     open: false,
-    currPath: window.location.pathname
+    currPath: window ? window.location.pathname : '/'
   }
 
   openHandler = () => {
