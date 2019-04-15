@@ -36,7 +36,7 @@ class Transition extends React.PureComponent {
             <TransitionGroup>
                 <ReactTransition
                 //the key is necessary here because our ReactTransition needs to know when pages are entering/exiting the DOM
-                    key={location.pathname}
+                    key={location ? location.pathname : ''}
                     //duration of transition
                     timeout={{
                         enter: timeout,

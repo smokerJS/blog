@@ -15,35 +15,48 @@ import GlobalNavigationBar from "@components/globalNavigationBar";
 import Footer from "@components/footer";
 import Transition from "@components/transition";
 
-const Layout = ({children, location}) => (
+class Layout extends React.Component {
+  state = {
+    location : this.props.location
+  }
 
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
+  componentDidMount() {
+    this.setState({
+      location: window.location
+    })
+  }
+  render() {
+    return (
+      <StaticQuery
+        query={graphql`
+          query SiteTitleQuery {
+            site {
+              siteMetadata {
+                title
+              }
+            }
           }
-        }
-      }
-    `}
-    render={data => (
-      <>
-      <GlobalNavigationBar/>
-      <section id="screen">
-        <section id="mainScreen">
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <Navigation/>
-          <Transition location={location}>
-              <main>{children}</main>
-          </Transition>
-        </section>
-        <Footer/>
-      </section>
-      </>
-    )}
-  />
-)
+        `}
+        render={data => (
+          <>
+          <GlobalNavigationBar location={this.state.location}/>
+          <section id="screen">
+            <section id="mainScreen">
+              <Header siteTitle={data.site.siteMetadata.title} />
+              <Navigation location={this.state.location}/>
+              <Transition location={this.state.location}>
+                  <main>{this.props.children}</main>
+              </Transition>
+            </section>
+            <Footer location={this.state.location}/>
+          </section>
+          </>
+        )}
+      />
+    )
+  }
+
+}
 
 
 Layout.propTypes = {

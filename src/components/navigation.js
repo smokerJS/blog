@@ -5,15 +5,12 @@ import React from "react";
 
 class Navigation extends React.Component {
 
-  state = {
-    currPath: window ? window.location.pathname : '/'
-  }
-
   render() {
+    const { location } = this.props
     return (
       <nav className="nav-top-menu">
         <div id="beforeNavContents"></div>
-          <ul className={this.state.currPath === '/' ? 'home' : 'hide'}>
+          <ul className={location ? location.pathname === '/' ? 'home' : 'hide' : ''}>
             <li>
               <div>
                 <Link to="/">

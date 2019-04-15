@@ -6,7 +6,6 @@ import React from "react";
 class Footer extends React.Component {
   state = {
     className : 'background1',
-    currPath: window ? window.location.pathname : '/'
   }
 
   componentDidMount = () => {
@@ -20,8 +19,9 @@ class Footer extends React.Component {
   }
 
   render() {
+    const { location } = this.props
     return (
-      <footer className={`footer-global ${this.state.className} ${this.state.currPath === '/' ? 'home' : 'hide'}`}></footer>
+      <footer className={`footer-global ${this.state.className} ${location ? location.pathname === '/' ? 'home' : 'hide' : ''}`}></footer>
     )
   }
 }
