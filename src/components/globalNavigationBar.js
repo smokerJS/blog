@@ -14,6 +14,12 @@ class GlobalNavigationBar extends React.Component{
     })
   }
 
+  menuClickHandler = () => {
+    this.setState({
+      open: false
+    })
+  }
+
   render() {
     const { location } = this.props
     return (
@@ -44,7 +50,7 @@ class GlobalNavigationBar extends React.Component{
               </a>
             </li>
             <li>
-              <Link to="/question">
+              <Link to="/question" onClick={()=>{this.menuClickHandler()}}>
                 <strong className={location.pathname.indexOf('question') !== -1 ? "focus" : 'tab'}>문의</strong>
               </Link>
             </li>
