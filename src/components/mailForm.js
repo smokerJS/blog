@@ -64,29 +64,29 @@ class MailForm extends React.Component {
   render() {
     return (
       <section className="section-mail-form">
-      <article className="article-mail-form">
-        <div className="requset-info">
-          <h2>너는 누구냐</h2>
-          <label htmlFor="name">
-            <strong>이름</strong>
-            <input type="text" defaultValue={this.state.name} onChange={(e)=>{this.setStateHandler(e,'name')}} name="name"/>
-          </label>
-          <label htmlFor="phone">
-            <strong>핸드폰</strong>
-            <input type="text" defaultValue={this.state.phone} onChange={(e)=>{this.setStateHandler(e,'phone')}} name="phone"/>
-          </label>
-          <label htmlFor="email">
-            <strong>이메일</strong>
-            <input type="text" defaultValue={this.state.email} onChange={(e)=>{this.setStateHandler(e,'email')}} name="email"/>
-          </label>
-        </div>
-        <div className="requset-content">
-          <h2>정성스레 적어도 어차피 안봄ㅋ</h2>
-          <textarea name="content" defaultValue={this.state.content} onChange={(e)=>{this.setStateHandler(e,'content')}}></textarea>
-          <button onClick={()=>{this.onSubmitHandler()}}>보내기</button>
-          <input id="honeypot" type="text" name="honeypot" defaultValue={this.state.honeypot} onChange={(e)=>{this.setStateHandler(e,'content')}}/>
-        </div>
-      </article>
+        <article className="article-mail-form">
+          <div className="requset-info">
+            <h2>너는 누구냐</h2>
+            <label htmlFor="name">
+              <strong>이름</strong>
+              <input type="text" defaultValue={this.state.name} onChange={(e)=>{this.setStateHandler(e,'name')}} name="name"/>
+            </label>
+            <label htmlFor="phone">
+              <strong>핸드폰</strong>
+              <input type="text" defaultValue={this.state.phone} onChange={(e)=>{this.setStateHandler(e,'phone')}} name="phone"/>
+            </label>
+            <label htmlFor="email">
+              <strong>이메일</strong>
+              <input type="text" defaultValue={this.state.email} onChange={(e)=>{this.setStateHandler(e,'email')}} name="email"/>
+            </label>
+          </div>
+          <div className="requset-content">
+            <h2>정성스레 적어도 어차피 안봄ㅋ</h2>
+            <textarea name="content" defaultValue={this.state.content} onChange={(e)=>{this.setStateHandler(e,'content')}}></textarea>
+            <button onClick={()=>{this.onSubmitHandler()}}>보내기</button>
+            <input id="honeypot" type="text" name="honeypot" defaultValue={this.state.honeypot} onChange={(e)=>{this.setStateHandler(e,'content')}}/>
+          </div>
+        </article>
       </section>
     )
   }
