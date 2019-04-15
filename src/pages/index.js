@@ -1,7 +1,6 @@
 import React from "react";
 import SEO from "@components/seo";
 import IndexContents from "@components/indexContents";
-import "@scss/main.scss";
 
 const IndexPage = () => (
   <React.Fragment>

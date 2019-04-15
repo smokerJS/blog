@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
-
+import "@scss/main.scss";
 import Header from "@components/header";
 import Navigation from "@components/navigation";
 import GlobalNavigationBar from "@components/globalNavigationBar";
