@@ -10,7 +10,7 @@ class Navigation extends React.Component {
     return (
       <nav className="nav-top-menu">
         <div id="beforeNavContents"></div>
-          <ul className={location ? location.pathname === '/' ? 'home' : 'hide' : ''}>
+          <ul className={location.pathname === '/' ? 'home' : 'hide'}>
             <li>
               <div>
                 <Link to="/">

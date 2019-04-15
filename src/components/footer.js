@@ -21,7 +21,7 @@ class Footer extends React.Component {
   render() {
     const { location } = this.props
     return (
-      <footer className={`footer-global ${this.state.className} ${location ? location.pathname === '/' ? 'home' : 'hide' : ''}`}></footer>
+      <footer className={`footer-global ${this.state.className} ${location.pathname === '/' ? 'home' : 'hide'}`}></footer>
     )
   }
 }

@@ -17,7 +17,7 @@ class GlobalNavigationBar extends React.Component{
   render() {
     const { location } = this.props
     return (
-      <section className={`nav-global-side-menu ${this.state.open ? 'open' : ''} ${location ? location.pathname === '/' ? 'home' : 'hide' : ''}`}>
+      <section className={`nav-global-side-menu ${this.state.open ? 'open' : ''} ${location.pathname === '/' ? 'home' : 'hide'}`}>
         <div id="menuOpenBtn" onClick={()=>{this.openHandler()}}>
           메뉴판
         </div>
@@ -45,7 +45,7 @@ class GlobalNavigationBar extends React.Component{
             </li>
             <li>
               <Link to="/question">
-                <strong className={location ? location.pathname.indexOf('question') !== -1 ? "focus" : 'tab' : ''}>문의</strong>
+                <strong className={location.pathname.indexOf('question') !== -1 ? "focus" : 'tab'}>문의</strong>
               </Link>
             </li>
           </ul>

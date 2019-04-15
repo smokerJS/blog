@@ -17,7 +17,7 @@ import Transition from "@components/transition";
 
 class Layout extends React.Component {
   state = {
-    location : this.props.location
+    location : {pathname : '/'}
   }
 
   componentDidMount() {
