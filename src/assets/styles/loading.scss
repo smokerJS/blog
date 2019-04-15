@@ -8,12 +8,12 @@ section.loading-background {
   left: 0;
   z-index: 100;
   & > div {
-    width: 302px;
+    text-align: center;
+    width: 280px;
     padding: 10px;
     position:absolute;
-    left:50%;
-    top:50%;
-    transform: translate(-50%, -50%);
+    left: calc(50% - (300px / 2));
+    top: calc(50% - (40px / 2));;
     animation: loading-ani 2s infinite;
     & > strong {
       font-size: 30px;
