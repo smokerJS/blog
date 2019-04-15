@@ -1,0 +1,39 @@
+section.loading-background {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  top: 0;
+  left: 0;
+  z-index: 100;
+  & > div {
+    width: 302px;
+    padding: 10px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    animation: loading-ani 2s infinite;
+    & > strong {
+      font-size: 30px;
+      font-family: 'kukdetopokki';
+      color: #fff;
+    }
+  }
+  &.view {
+    display: block;
+  }
+}
+
+@keyframes loading-ani {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(720deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
