@@ -1,7 +1,6 @@
 // import PropTypes from "prop-types";
 import React from "react";
 import Loading from "@components/loading";
-import JSAlert from "@components/jsAlert";
 class MailForm extends React.Component {
 
   state = {
@@ -77,17 +76,13 @@ class MailForm extends React.Component {
     xhr.send(formData);
   }
 
-  alertClick = () => {
-    this.setState({'alert':true});
-  }
-
   render() {
     return (
       <React.Fragment>
       <section className="section-mail-form">
         <article className="article-mail-form">
           <div className="requset-info">
-            <h2>너는 누구냐</h2><button onClick={()=>{this.alertClick()}}>버튼테스트</button>
+            <h2>너는 누구냐</h2>
             <label htmlFor="name">
               <strong>이름</strong>
               <input type="text" defaultValue={this.state.name} value={this.state.name} onChange={(e)=>{this.setStateHandler(e,'name')}} name="name"/>
@@ -110,7 +105,6 @@ class MailForm extends React.Component {
         </article>
       </section>
       <Loading view={this.state.loading}/>
-      <JSAlert view={this.state.alert} text="테스트"/>
       </React.Fragment>
     )
   }
