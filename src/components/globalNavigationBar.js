@@ -66,8 +66,6 @@ class GlobalNavigationBar extends React.Component{
               <dd>지구대폭발</dd>
             </dl>
           </div>
-
-
         </nav>
       </section>
     )
