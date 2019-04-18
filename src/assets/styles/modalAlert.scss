@@ -37,7 +37,9 @@ article.modal-alert {
         padding: 5px 10px;
         cursor: pointer;
         transition: .7s;
+        animation: modal-button 200ms infinite linear;
         &:hover {
+          animation: none;
           border: 1px solid rgb(4, 180, 255);
           box-shadow: 0 0 5px 0 rgba(4, 180, 255, 0.5);
         }
@@ -63,5 +65,17 @@ article.modal-alert {
   100% {
     opacity: 1;
     left: 50%;
+  }
+}
+
+@keyframes modal-button {
+  0% {
+    box-shadow: 0 10px 20px rgba( 0,0,0, 0.2 );
+    transform: rotateX( 0 ) rotateY( -360deg );
+  }
+
+  100% {
+    box-shadow: 0 10px 20px rgba( 0,0,0, 0.2 );
+    transform: rotateX( 360deg ) rotateY( -360deg );
   }
 }
