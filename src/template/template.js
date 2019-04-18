@@ -18,7 +18,7 @@ export default function Template({ data }) {
         <h1 className="post-title">{post.frontmatter.title}</h1>
         <hr class="post-hr"/>
         <b className="post-date">{post.frontmatter.date}</b>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
         <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
       </section>
     </React.Fragment>

@@ -16,7 +16,7 @@ section.post-detail-area {
   border-radius: 5px;
   margin-bottom: 50px;
   & > .post-title {
-    font-size: 22px;
+    font-size: 30px;
   }
   & > .post-hr {
     width: 99%;
@@ -29,6 +29,10 @@ section.post-detail-area {
     width: 100%;
     display: block;
     margin-bottom: 10px;
+    font-size: 22px;
+  }
+  & > .post-content {
+    font-size: 16px;
   }
   @media (max-width: 1024px) {
     padding-top: 18%;
