@@ -36,7 +36,7 @@
       background-size: contain;
       top: 10px;
       & > a {
-        top: 1rem;
+        top: 1.1rem;
       }
     }
   }
@@ -44,9 +44,6 @@
     & .main-title {
       width: 62vw;
       letter-spacing: 1.5rem;
-      & > a {
-        top: 0.9rem;
-      }
     }
   }
   @media (max-width: 380px) {
