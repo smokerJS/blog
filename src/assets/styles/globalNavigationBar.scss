@@ -184,15 +184,17 @@
         }
       }
       & > div#menuOpenBtn {
-        color: #fff;
         font-weight: 100;
         width: auto;
         font-size: 4rem;
         top: 4.5rem;
         margin-left: 5rem;
-      }
-      & > div#menuOpenBtn {
-        color: #000;
+        padding: 4px;
+        &.open {
+          opacity: .7;
+          animation: menu-button-ani 1s infinite;
+          white-space: nowrap;
+        }
       }
       & > nav {
         display: none;
@@ -237,5 +239,23 @@
   }
   100% {
     transform: rotateZ(360deg);
+  }
+}
+
+@keyframes menu-button-ani {
+  0% {
+    background-color: #c1f1fd;
+  }
+  25% {
+    background-color: #efa6ba;
+  }
+  50% {
+    background-color: #c8a7f8;
+  }
+  75% {
+    background-color: #fbeb89;
+  }
+  100% {
+    background-color: #c1f1fd;
   }
 }

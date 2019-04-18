@@ -24,7 +24,7 @@ class GlobalNavigationBar extends React.Component{
     const { location } = this.props
     return (
       <section className={`nav-global-side-menu ${this.state.open ? 'open' : ''} ${location.pathname === '/' ? 'home' : 'hide'}`}>
-        <div id="menuOpenBtn" onClick={()=>{this.openHandler()}}>
+        <div id="menuOpenBtn" className={`${this.state.open ? '' : 'open'}`}onClick={()=>{this.openHandler()}}>
           메뉴판
         </div>
         <nav>
