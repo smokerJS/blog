@@ -1,4 +1,3 @@
-import { Link } from "gatsby";
 // import PropTypes from "prop-types";
 import React from "react";
 
@@ -15,13 +14,16 @@ class Footer extends React.Component {
   changeClassNameHander = () => {
     this.setState({
       className : this.state.className === 'background1' ? 'background2' : 'background1'
-    })
+    });
   }
 
   render() {
     const { location } = this.props
     return (
-      <footer className={`footer-global ${this.state.className} ${location.pathname === '/' ? 'home' : 'hide'}`}></footer>
+      <footer
+        className={`footer-global ${this.state.className}
+        ${location.pathname === '/' ? 'home' :
+        location.pathname.indexOf('question') !== -1 ? 'hide' : 'none'}`}></footer>
     )
   }
 }
@@ -36,4 +38,4 @@ class Footer extends React.Component {
 
 // }
 
-export default Footer
+export default Footer;

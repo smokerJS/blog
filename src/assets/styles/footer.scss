@@ -12,6 +12,9 @@
   &.hide {
     padding-bottom: 20vh;
   }
+  &.none {
+    display: none;
+  }
   &.background1 {
     background: url("../images/footer/img-background-footer-grass1.png") top right repeat-x;
   }

@@ -31,7 +31,7 @@ class GlobalNavigationBar extends React.Component{
           <ul>
             <li>
               <Link to="/">
-                <strong>디베로먼투</strong>
+                <strong className={location.pathname.indexOf('develop') !== -1 ? "focus" : 'tab'}>디베로먼투</strong>
               </Link>
             </li>
             <li>

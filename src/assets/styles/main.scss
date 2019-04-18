@@ -3,6 +3,10 @@
 a { text-decoration: none; }
 *:focus { outline: none; }
 
+main {
+  position: relative;
+}
+
 body {
   animation: background-ani .3s infinite;
 }
@@ -44,7 +48,9 @@ section#mainScreen {
   font-family: 'kukdetopokkibold';
   text-align: center;
   font-size: 40px;
-  padding-top: 265px;
+  top: 265px;
+  position: absolute;
+  width: 100%;
   @media (max-width: 1024px) {
     display: none;
   }
@@ -70,3 +76,4 @@ src:local(※),
 @import "@scss/mailForm.scss";
 @import "@scss/loading.scss";
 @import "@scss/modalAlert.scss";
+@import "@scss/template.scss";

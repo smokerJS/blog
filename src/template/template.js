@@ -1,17 +1,26 @@
 import React from "react";
 import { graphql } from "gatsby";
 import SEO from "@components/seo";
+import { DiscussionEmbed } from "disqus-react";
 
 export default function Template({ data }) {
   const { markdownRemark: post } = data;
+  const disqusShortname = "smokerjs";
+  const disqusConfig = {
+    identifier: `smokerjs.com/${post.frontmatter.path}`,
+    title: post.frontmatter.title,
+  };
   return (
     <React.Fragment>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <div className="container">
-        <h1>{post.frontmatter.title}</h1>
+      <div className="background-black"></div>
+      <section className="post-detail-area">
+        <h1 className="post-title">{post.frontmatter.title}</h1>
+        <hr class="post-hr"/>
+        <b className="post-date">{post.frontmatter.date}</b>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <span className="has-text-grey-light is-size-6">{post.frontmatter.date}</span>
-      </div>
+        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+      </section>
     </React.Fragment>
   );
 }
@@ -24,6 +33,7 @@ export const pageQuery = graphql`
         date
         path
         title
+        path
       }
     }
   }
