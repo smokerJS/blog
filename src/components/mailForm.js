@@ -1,6 +1,7 @@
 // import PropTypes from "prop-types";
 import React from "react";
 import Loading from "@components/loading";
+import ModalAlert from "@components/modalAlert";
 class MailForm extends React.Component {
 
   state = {
@@ -10,11 +11,15 @@ class MailForm extends React.Component {
     content: '',
     honeypot: '',
     loading: false,
-    alert: false
+    alert: {
+      show: false,
+      text: '',
+      toggleFunction: this.modalToggleHandler
+    }
   }
 
 	setStateHandler = (e,name) => {
-		this.setState({[name]: e.target.value});
+    this.setState({[name]: e.target.value});
   }
 
   onSubmitHandler = () => {
@@ -41,7 +46,7 @@ class MailForm extends React.Component {
       (msg = '더러운 로봇아 죽어라!!') &&
       (err = true);
 
-		err && alert(msg);
+		err && this.modalToggleHandler(msg);
 		!err && this.submitEmail();
   }
 
@@ -58,7 +63,7 @@ class MailForm extends React.Component {
     const $this = this;
     xhr.onload = function() {
       if (xhr.status === 200 || xhr.status === 201) {
-        alert('보내져따 헤헤헤헿');
+        $this.modalToggleHandler('보내져따 헤헤헤헿');
         $this.setState({
           name: '',
           phone: '',
@@ -69,11 +74,21 @@ class MailForm extends React.Component {
         })
       } else {
         //console.error(xhr.responseText);
-        alert('에러야 에러!! \nsmokerjs.dev@gmail.com 여기로 직접 보내줭!');
+        $this.modalToggleHandler('에러야 에러!! \nsmokerjs.dev@gmail.com 여기로 직접 보내줭!');
       }
     };
     xhr.open('POST', 'https://script.google.com/macros/s/AKfycbwy5GQZ4OXPQ75fe7hd-rUDZAOv_RPcwcxQpAAKn-PGj9TtDJU/exec');
     xhr.send(formData);
+  }
+
+  modalToggleHandler = (text = '') => {
+    this.setState({
+      alert: {
+        show: !this.state.alert.show,
+        text: text,
+        toggleFunction: this.modalToggleHandler
+      }
+    })
   }
 
   render() {
@@ -105,6 +120,7 @@ class MailForm extends React.Component {
         </article>
       </section>
       <Loading view={this.state.loading}/>
+      <ModalAlert text={this.state.alert.text} show={this.state.alert.show} toggleFunction={this.state.alert.toggleFunction}/>
       </React.Fragment>
     )
   }
