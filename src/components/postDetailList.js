@@ -8,6 +8,20 @@ class PostDetailList extends React.Component {
     list : this.props.list.filter(obj => obj.node.frontmatter.category === this.props.category)
   }
 
+  page = () => {
+    let propsList = this.props.list.filter(obj => obj.node.frontmatter.category === this.props.category);
+    let tempList = [];
+    let index = 0;
+    let currPage = 0;
+    const list = [];
+    while(propsList.length) {
+      if(index % 5 === 0) {
+        list.push(tempList);
+        tempList = [];
+      }
+      tempList.push(propsList.shift());
+    }
+  }
 
   getCategoryName = () => {
     let result = ''
@@ -23,7 +37,7 @@ class PostDetailList extends React.Component {
   render(){
     return (
       <article>
-        <h3>{this.getCategoryName()} 카테고리의 다른 글</h3>
+        <h3>{this.getCategoryName()} 모음집의 다른 글귀</h3>
         <ul>
         {
           this.state.list.map((obj,key)=>{
