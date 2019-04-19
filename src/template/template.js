@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import SEO from "@components/seo";
+import PostDetailList from "@components/postDetailList";
 import { DiscussionEmbed } from "disqus-react";
 
 export default function Template({ data }) {
@@ -12,14 +13,15 @@ export default function Template({ data }) {
   };
   return (
     <React.Fragment>
-      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <SEO title={post.frontmatter.title} keywords={[`gatsby`, `application`, `react`]} />
       <div className="background-black"></div>
       <section className="post-detail-area">
         <h1 className="post-title">{post.frontmatter.title}</h1>
-        <hr class="post-hr"/>
+        <hr className="post-hr"/>
         <b className="post-date">{post.frontmatter.date}</b>
         <div className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
         <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+        <PostDetailList category={post.frontmatter.category} list={data.allMarkdownRemark.edges}/>
       </section>
     </React.Fragment>
   );
@@ -27,13 +29,27 @@ export default function Template({ data }) {
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
+    allMarkdownRemark(limit: 1000, sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          excerpt(pruneLength: 250)
+          id
+          frontmatter {
+            title
+            category
+            date
+            path
+          }
+        }
+      }
+    }
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
         date
         path
         title
-        path
+        category
       }
     }
   }
