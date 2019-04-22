@@ -13,7 +13,7 @@ class Navigation extends React.Component {
           <ul className={location.pathname === '/' ? 'home' : 'hide'}>
             <li>
               <div>
-                <Link to="/">
+                <Link to="/develop">
                   <img src={require("@images/navigation/img-rope-menu5.png")}/>
                   <strong>디베로먼투</strong>
                 </Link>

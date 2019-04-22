@@ -15,7 +15,7 @@ export default function Template({ data }) {
     <React.Fragment>
       <SEO title={post.frontmatter.title} keywords={[`gatsby`, `application`, `react`]} />
       <div className="background-black"></div>
-      <section className="post-detail-area">
+      <section className="post-area">
         <h1 className="post-title">{post.frontmatter.title}</h1>
         <hr className="post-hr"/>
         <b className="post-date">{post.frontmatter.date}</b>
