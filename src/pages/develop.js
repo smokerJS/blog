@@ -37,6 +37,7 @@ export default DevelopPage;
 export const pageQuery = graphql`
 query DevelopPageQuery {
   allMarkdownRemark(limit: 1000, filter:{frontmatter:{category:{eq: "develop"}}}, sort: { order: DESC, fields: [frontmatter___date] }) {
+    totalCount
     edges {
       node {
         excerpt(pruneLength: 250)
