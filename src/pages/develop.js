@@ -6,6 +6,10 @@ const DevelopPage = ({data}) => (
   <React.Fragment>
     <SEO title="후론투엔두" keywords={[`gatsby`, `application`, `react`]} />
     <section className="post-area develop-main">
+      <div className="header-group">
+        <h1>디베로먼투 모음집</h1>
+        <span>모두 다 하여<strong>{data.allMarkdownRemark.totalCount}</strong>글귀</span>
+      </div>
       <ul className="post-list">
         {data.allMarkdownRemark.edges.map((obj,key)=>{
           const item = obj.node.frontmatter;

@@ -1,6 +1,24 @@
 .develop-main {
   width: 100%;
   font-family:'kukdetopokki';
+  & > div.header-group {
+    margin-bottom: 30px;
+    @media (max-width: 600px) {
+      margin-bottom: 20px;
+    }
+    & > h1 {
+      font-size: 30px;
+    }
+    & > span {
+      display: block;
+      text-align: right;
+      font-size: 18px;
+      & > strong {
+        font-size: 20px;
+        margin: 0 5px;
+      }
+    }
+  }
   & ul.post-list {
     width: 100%;
     & > li {
@@ -9,7 +27,6 @@
       border-radius: 5px;
       margin-bottom: 30px;
       & > div {
-
         padding: 10px;
         & a.post-title {
           font-size: 20px;
