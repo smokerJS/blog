@@ -67,9 +67,9 @@ class PostDetailList extends React.Component {
 
   render(){
     return (
-      <article class="post-detail-list">
+      <article className="post-detail-list">
         <h3><Link to={`/${this.props.category}`}>{this.getCategoryName()}</Link> 모음집의 다른 글귀</h3>
-        <hr class="post-hr"/>
+        <hr className="post-hr"/>
         <ul>
         {
           this.state.currList.map((obj,key)=>{
