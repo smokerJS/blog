@@ -10,6 +10,17 @@ main {
 body {
   animation: background-ani .3s infinite;
 }
+
+hr.post-hr {
+  width: 99.8%;
+  margin: 5px 0;
+  text-align: center;
+  border-style: groove;
+}
+div.btn-group {
+  text-align: center;
+  padding: 10px 0;
+}
 @keyframes background-ani {
   0% {
     background-color: #c1f1fd;
@@ -77,3 +88,4 @@ src:local(※),
 @import "@scss/loading.scss";
 @import "@scss/modalAlert.scss";
 @import "@scss/template.scss";
+@import "@scss/postDetailList.scss";

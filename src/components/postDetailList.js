@@ -21,7 +21,10 @@ class PostDetailList extends React.Component {
     let pathname = window.location.pathname
     pathname[pathname.length - 1] === '/' && (pathname = pathname.slice(0,pathname.length - 1));
     while(propsList.length) {
-      propsList[0].node.frontmatter.path === pathname && (currPage = index);
+      if(propsList[0].node.frontmatter.path === pathname) {
+        currPage = index;
+        propsList[0].node.frontmatter.currPage = true;
+      }
       if(index && index % 5 === 0) {
         list.push(tempList);
         tempList = [];
@@ -64,14 +67,15 @@ class PostDetailList extends React.Component {
 
   render(){
     return (
-      <article>
-        <h3>{this.getCategoryName()} 모음집의 다른 글귀</h3>
+      <article class="post-detail-list">
+        <h3><Link to={`/${this.props.category}`}>{this.getCategoryName()}</Link> 모음집의 다른 글귀</h3>
+        <hr class="post-hr"/>
         <ul>
         {
           this.state.currList.map((obj,key)=>{
             const item = obj.node.frontmatter;
             return (
-              <li key={key}>
+              <li key={key} className={item.currPage && "curr-page"}>
                 <Link to={item.path}>
                   <strong>{item.title}</strong>
                   <span>{item.date}</span>
@@ -81,8 +85,10 @@ class PostDetailList extends React.Component {
           })
         }
         </ul>
-        <button disabled={this.state.prevPage} onClick={()=>{this.onPagemoveHandler(-1)}}>왼쪽</button>
-        <button disabled={this.state.nextPage} onClick={()=>{this.onPagemoveHandler(1)}}>오른쪽</button>
+        <div className="btn-group">
+          <button className="btn-prev" disabled={this.state.prevPage} onClick={()=>{this.onPagemoveHandler(-1)}}>왼쪽</button>
+          <button className="btn-next" disabled={this.state.nextPage} onClick={()=>{this.onPagemoveHandler(1)}}>오른쪽</button>
+        </div>
       </article>
     )
   }
