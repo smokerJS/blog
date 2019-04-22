@@ -1,5 +1,6 @@
 .develop-main {
   width: 100%;
+
   & ul.post-list {
     width: 100%;
     & > li {
@@ -7,31 +8,34 @@
       border: 1px solid #000;
       border-radius: 5px;
       margin-bottom: 30px;
-      padding: 10px;
-      & a.post-title {
-        font-size: 20px;
-        color: #000;
-        transition: 1s;
-        &:hover {
-          color: #04b4ff;
-        }
-      }
-      & > div.post-info-group {
-        text-align: right;
-        & > strong.date-info {
-          font-size: 16px;
-          margin-left: 20px;
-          color: #585858;
-        }
-        & > span.hashtag {
-          font-size: 14px;
-          color: #7d6b6b;
-          margin-right: 7px;
-          &::before {
-            content: "#";
+      & > div {
+
+        padding: 10px;
+        & a.post-title {
+          font-size: 20px;
+          color: #000;
+          transition: 1s;
+          &:hover {
+            color: #04b4ff;
           }
         }
+        & > div.post-info-group {
+          text-align: right;
+          & > strong.date-info {
+            font-size: 16px;
+            margin-left: 20px;
+            color: #585858;
+          }
+          & > span.hashtag {
+            font-size: 14px;
+            color: #7d6b6b;
+            margin-right: 7px;
+            &::before {
+              content: "#";
+            }
+          }
 
+        }
       }
     }
   }

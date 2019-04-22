@@ -1,13 +1,13 @@
 //Import necessary dependencies
 
-import React from "react"
+import React from "react";
 import {
     TransitionGroup,
     Transition as ReactTransition,
-} from "react-transition-group"
+} from "react-transition-group";
 
 //This variable will be responsible for our animation duration
-const timeout = 500
+const timeout = 500;
 
 //This object contains basic styles for animation, but you can extend them to whatever you like. Be creative!
 const getTransitionStyles = {
@@ -23,12 +23,12 @@ const getTransitionStyles = {
         transition: `all ${timeout}ms ease-in-out`,
         opacity: 0
     },
-}
+};
 
 class Transition extends React.PureComponent {
     render() {
         //Destructuring props to avoid garbage this.props... in return statement
-        const { children, location } = this.props
+        const { children, location } = this.props;
 
         return (
             //Using TransitionGroup and ReactTransition which are both
@@ -60,4 +60,4 @@ class Transition extends React.PureComponent {
     }
 }
 
-export default Transition
+export default Transition;

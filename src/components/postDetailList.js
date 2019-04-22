@@ -1,4 +1,3 @@
-// import PropTypes from "prop-types";
 import React from "react";
 import { graphql, Link } from "gatsby";
 
@@ -40,7 +39,7 @@ class PostDetailList extends React.Component {
       currPage : currPage,
       prevPage : !currPage,
       nextPage : !list[currPage + 1]
-    })
+    });
   }
 
 
