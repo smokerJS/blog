@@ -26,15 +26,25 @@
       border: 1px solid #000;
       border-radius: 5px;
       margin-bottom: 30px;
-      & > div {
+      transition: .7s;
+      &:hover {
+        border: 1px solid #04b4ff;
+        box-shadow: 1px 2px 3px 2px rgb(162, 162, 162);
+      }
+      &:hover div.post-prev-content > strong {
+        background: linear-gradient(transparent 50%, rgb(187, 239, 255) 50%);
+      }
+      & > a > div {
         padding: 10px;
-        & a.post-title {
+        &:hover > b.post-title {
+          animation: post-title 200ms 3 linear;
+          color: #04b4ff;
+        }
+        & b.post-title {
+          display: block;
           font-size: 22px;
           color: #000;
           transition: 1s;
-          &:hover {
-            color: #04b4ff;
-          }
         }
         & > div.post-info-group {
           text-align: right;
@@ -48,6 +58,7 @@
             text-align: left;
             font-size: 15px;
             margin-bottom: 5px;
+            color: #333333;
           }
           & > strong.date-info {
             font-size: 16px;
@@ -67,5 +78,14 @@
         }
       }
     }
+  }
+}
+
+@keyframes post-title {
+  0% {
+    transform: rotateX( 0 ) rotateY( -360deg );
+  }
+  100% {
+    transform: rotateX( 360deg ) rotateY( -360deg );
   }
 }

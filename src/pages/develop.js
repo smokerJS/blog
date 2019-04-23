@@ -7,7 +7,7 @@ class DevelopPage extends React.Component {
   prevContentParser = (html) => {
     let content = html.replace(/(<([^>]+)>)/ig,"");
     content.length > 300 && ( content = content.slice(0,300)+"..." );
-    return content;
+    return `<strong>${content}</strong>`;
   }
 
   render(){
@@ -25,22 +25,20 @@ class DevelopPage extends React.Component {
               const item = obj.node.frontmatter;
               return (
                 <li key={`post_${item.path}_${key}`}>
-                  <div>
-                    <b>
-                      <Link className="post-title" to={item.path}>
-                        {item.title}
-                      </Link>
-                    </b>
-                    <div className="post-info-group">
-                    <div className="post-prev-content" dangerouslySetInnerHTML={{ __html: this.prevContentParser(obj.node.html) }}></div>
-                      {[...item.tags].map((obj,key)=>{
-                        return (
-                          obj && <span className="hashtag" key={`tag_${item.path}_${key}`}>{obj}</span>
-                          )
-                        })}
-                      <strong className="date-info">{item.date}</strong>
+                  <Link  to={item.path}>
+                    <div>
+                      <b className="post-title">{item.title}</b>
+                      <div className="post-info-group">
+                      <div className="post-prev-content" dangerouslySetInnerHTML={{ __html: this.prevContentParser(obj.node.html) }}></div>
+                        {[...item.tags].map((obj,key)=>{
+                          return (
+                            obj && <span className="hashtag" key={`tag_${item.path}_${key}`}>{obj}</span>
+                            )
+                          })}
+                        <strong className="date-info">{item.date}</strong>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </li>
               )
             })}
