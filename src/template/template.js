@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import SEO from "@components/seo";
 import PostDetailList from "@components/postDetailList";
 import { DiscussionEmbed } from "disqus-react";
+import "@scss/github-markdown.css"
 
 export default function Template({ data }) {
   const { markdownRemark: post } = data;
@@ -19,7 +20,7 @@ export default function Template({ data }) {
         <h1 className="post-title">{post.frontmatter.title}</h1>
         <hr className="post-hr"/>
         <b className="post-date">{post.frontmatter.date}</b>
-        <div className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div className="post-content markdown-body" dangerouslySetInnerHTML={{ __html: post.html }} />
         <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
         <PostDetailList category={post.frontmatter.category} list={data.allMarkdownRemark.edges}/>
       </section>
