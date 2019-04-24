@@ -33,12 +33,12 @@ class MailForm extends React.Component {
 
     !err &&
       !(this.state.phone || this.state.email) &&
-      (msg = '어디로 답장할지는 알려줘야지!!!') &&
+      (msg = '어디로 답장보내까!?') &&
       (err = true);
 
     !err &&
       !this.state.content &&
-      (msg = '아무거나 일단 끄적여봐 내용이 없어 내용이 에휴') &&
+      (msg = '내용이 없어짜나아!!!') &&
       (err = true);
 
     !err &&
@@ -63,7 +63,7 @@ class MailForm extends React.Component {
     const $this = this;
     xhr.onload = function() {
       if (xhr.status === 200 || xhr.status === 201) {
-        $this.modalToggleHandler('보내져따 헤헤헤헿');
+        $this.modalToggleHandler('보내져따 헤헤흐헤');
         $this.setState({
           name: '',
           phone: '',
