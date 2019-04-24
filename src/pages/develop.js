@@ -7,7 +7,9 @@ class DevelopPage extends React.Component {
   state = {
     query: '',
     searchQuery: '',
-    list: this.props.data.allMarkdownRemark.edges
+    list: this.props.data.allMarkdownRemark.edges,
+    totalCount: this.props.data.allMarkdownRemark.totalCount,
+    searchResultText: '',
   }
   getSearchResults = () => {
     const query = this.state.query;
@@ -26,11 +28,20 @@ class DevelopPage extends React.Component {
   search = () => {
     if(!this.state.query){
       this.setState({
-        list : this.props.data.allMarkdownRemark.edges
+        list : this.props.data.allMarkdownRemark.edges,
+        totalCount : this.props.data.allMarkdownRemark.totalCount,
+        searchResultText: '',
+        searchQuery: ''
       });
       return;
     }
-    this.setState({ list : this.getSearchResults(), searchQuery: this.state.query })
+    const list = this.getSearchResults();
+    this.setState({
+      list : list,
+      searchQuery: this.state.query,
+      totalCount: list.length,
+      searchResultText: '검색 결과 '
+    })
   }
 
   onChangeQueryHandler = (e) => {
@@ -48,7 +59,7 @@ class DevelopPage extends React.Component {
           <div className="header-group">
           <input type="text" value={this.state.query} onChange={(e)=>{this.onChangeQueryHandler(e)}} placeholder={'Search'} />
             <h1>디베로먼투 모음집<i onClick={()=>{this.search()}}>검색</i></h1>
-            <span>모두 다 하여<strong>{data.allMarkdownRemark.totalCount}</strong>글귀</span>
+            <span>{this.state.searchResultText} 모두 다 하여<strong>{this.state.totalCount}</strong>글귀</span>
           </div>
           <ul className="post-list">
             <DevelopPostList list={this.state.list} searchQuery={this.state.searchQuery}/>
