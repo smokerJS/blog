@@ -21,6 +21,12 @@ div.btn-group {
   text-align: center;
   padding: 10px 0;
 }
+i.search-text {
+  font-style: normal;
+  background: linear-gradient(transparent 50%, #fbeb89 50%);
+  color: #ff2929;
+  font-weight: bold;
+}
 @keyframes background-ani {
   0% {
     background-color: #c1f1fd;
