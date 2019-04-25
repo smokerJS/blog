@@ -56,6 +56,12 @@ class DevelopPage extends React.Component {
       <React.Fragment>
         <SEO title="후론투엔두" keywords={[`gatsby`, `application`, `react`]} />
         <section className="post-area develop-main">
+          <div className="search-group">
+            <div className="search-btn-group">
+              <img src={require("@images/common/icon-search.png")}/>
+              <span>검색</span>
+            </div>
+          </div>
           <div className="header-group">
           <input type="text" value={this.state.query} onChange={(e)=>{this.onChangeQueryHandler(e)}} placeholder={'Search'} />
             <h1>디베로먼투 모음집<i onClick={()=>{this.search()}}>검색</i></h1>
