@@ -1,18 +1,20 @@
 import React from "react";
 import SEO from "@components/seo";
+import ModalSearch from "@components/modalSearch";
 import DevelopPostList from "@components/developPostList";
 import { graphql, Link } from "gatsby";
 
 class DevelopPage extends React.Component {
   state = {
-    query: '',
     searchQuery: '',
     list: this.props.data.allMarkdownRemark.edges,
     totalCount: this.props.data.allMarkdownRemark.totalCount,
     searchResultText: '',
+    alert: {
+      show: false
+    }
   }
-  getSearchResults = () => {
-    const query = this.state.query;
+  getSearchResults = (query) => {
     function search(obj,word) {
       if(obj.indexOf(word) !== -1) return true;
       return false;
@@ -25,8 +27,8 @@ class DevelopPage extends React.Component {
     })
   }
 
-  search = () => {
-    if(!this.state.query){
+  search = (query) => {
+    if(!query){
       this.setState({
         list : this.props.data.allMarkdownRemark.edges,
         totalCount : this.props.data.allMarkdownRemark.totalCount,
@@ -35,18 +37,20 @@ class DevelopPage extends React.Component {
       });
       return;
     }
-    const list = this.getSearchResults();
+    const list = this.getSearchResults(query);
     this.setState({
       list : list,
-      searchQuery: this.state.query,
+      searchQuery: query,
       totalCount: list.length,
       searchResultText: '검색 결과 '
     })
   }
 
-  onChangeQueryHandler = (e) => {
+  modalToggleHandler = () => {
     this.setState({
-      query : e.target.value
+      alert: {
+        show: !this.state.alert.show
+      }
     })
   }
 
@@ -57,20 +61,20 @@ class DevelopPage extends React.Component {
         <SEO title="후론투엔두" keywords={[`gatsby`, `application`, `react`]} />
         <section className="post-area develop-main">
           <div className="search-group">
-            <div className="search-btn-group">
+            <div className="search-btn-group" onClick={()=>{this.modalToggleHandler()}}>
               <img src={require("@images/common/icon-search.png")}/>
               <span>검색</span>
             </div>
           </div>
           <div className="header-group">
-          <input type="text" value={this.state.query} onChange={(e)=>{this.onChangeQueryHandler(e)}} placeholder={'Search'} />
-            <h1>디베로먼투 모음집<i onClick={()=>{this.search()}}>검색</i></h1>
+            <h1>디베로먼투 모음집</h1>
             <span>{this.state.searchResultText} 모두 다 하여<strong>{this.state.totalCount}</strong>글귀</span>
           </div>
           <ul className="post-list">
             <DevelopPostList list={this.state.list} searchQuery={this.state.searchQuery}/>
           </ul>
         </section>
+        <ModalSearch toggleFunction={this.modalToggleHandler} search={this.search} show={this.state.alert.show}/>
       </React.Fragment>
     )
   }

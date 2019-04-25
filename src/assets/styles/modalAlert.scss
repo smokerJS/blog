@@ -1,4 +1,4 @@
-article.modal-alert {
+article.modal-area {
   position: fixed;
   top: 0;
   left: 0;
@@ -25,6 +25,19 @@ article.modal-alert {
       font-family: 'kukdetopokkibold';
       font-size: 30px;
       white-space: nowrap;
+    }
+    & > input[type="text"] {
+      width: 240px;
+      padding: 10px 8px 2px;
+      font-size: 25px;
+      font-family: 'kukdetopokki';
+      transition: 1s;
+      border: none;
+      border-bottom: 2px solid #333333;
+      text-align: center;
+      &:focus {
+        border-bottom: 2px solid rgb(4, 180, 255);
+      }
     }
     & > div {
       margin-top: 15px;
