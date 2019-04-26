@@ -27,7 +27,7 @@ article.modal-area {
       white-space: nowrap;
     }
     & > input[type="text"] {
-      width: 240px;
+      width: 260px;
       padding: 10px 8px 2px;
       font-size: 25px;
       font-family: 'kukdetopokki';
@@ -35,6 +35,10 @@ article.modal-area {
       border: none;
       border-bottom: 2px solid #333333;
       text-align: center;
+      @media (max-width: 600px) {
+        width: 240px;
+        font-size: 24px;
+      }
       &:focus {
         border-bottom: 2px solid rgb(4, 180, 255);
       }
