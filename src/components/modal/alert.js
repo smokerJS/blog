@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "@base/modal";
 
-const Alert = ({text,show,toggleFunction,send = '알아쒀!',close}) => (
+const Alert = ({text,show,toggleFunction,send = '알아쒀!'}) => (
     show &&
     (
       <Modal toggleFunction={toggleFunction}>
