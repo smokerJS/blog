@@ -1,7 +1,7 @@
 // import PropTypes from "prop-types";
 import React from "react";
 import Loading from "@components/loading";
-import ModalAlert from "@components/modalAlert";
+import Alert from "@components/modal/alert";
 class MailForm extends React.Component {
 
   state = {
@@ -120,7 +120,7 @@ class MailForm extends React.Component {
         </article>
       </section>
       <Loading view={this.state.loading}/>
-      <ModalAlert text={this.state.alert.text} show={this.state.alert.show} toggleFunction={this.state.alert.toggleFunction}/>
+      <Alert text={this.state.alert.text} show={this.state.alert.show} toggleFunction={this.state.alert.toggleFunction}/>
       </React.Fragment>
     )
   }

@@ -49,7 +49,8 @@ module.exports = {
           "@templates": "src/templates",
           "@posts": "content/posts",
           "@markdwon": "src/markdwon",
-          "@image": "src/images"
+          "@image": "src/images",
+          "@base": "src/base",
         },
         extensions: ["js"]
       }

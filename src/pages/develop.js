@@ -1,6 +1,6 @@
 import React from "react";
 import SEO from "@components/seo";
-import ModalSearch from "@components/modalSearch";
+import Search from "@components/modal/search";
 import DevelopPostList from "@components/developPostList";
 import { graphql, Link } from "gatsby";
 
@@ -74,7 +74,7 @@ class DevelopPage extends React.Component {
             <DevelopPostList list={this.state.list} searchQuery={this.state.searchQuery}/>
           </ul>
         </section>
-        <ModalSearch toggleFunction={this.modalToggleHandler} search={this.search} show={this.state.alert.show}/>
+        <Search toggleFunction={this.modalToggleHandler} search={this.search} show={this.state.alert.show}/>
       </React.Fragment>
     )
   }
