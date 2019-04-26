@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 import "@scss/main.scss";
-import Header from "@components/header";
-import Navigation from "@components/navigation";
-import GlobalNavigationBar from "@components/globalNavigationBar";
-import Footer from "@components/footer";
-import Transition from "@components/transition";
+import Header from "./header";
+import Navigation from "./navigation";
+import GlobalNavigationBar from "./globalNavigationBar";
+import Footer from "./footer";
+import Transition from "./transition";
 
 class Layout extends React.Component {
   state = {

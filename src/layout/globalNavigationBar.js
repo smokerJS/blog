@@ -11,13 +11,13 @@ class GlobalNavigationBar extends React.Component{
   openHandler = () => {
     this.setState({
       open: !this.state.open
-    })
+    });
   }
 
   menuClickHandler = () => {
     this.setState({
       open: false
-    })
+    });
   }
 
   render() {
@@ -70,8 +70,6 @@ class GlobalNavigationBar extends React.Component{
       </section>
     )
   }
-
-
 }
 
 // GlobalNavigationBar.propTypes = {
@@ -82,4 +80,4 @@ class GlobalNavigationBar extends React.Component{
 
 // }
 
-export default GlobalNavigationBar
+export default GlobalNavigationBar;

@@ -65,7 +65,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-layout',
       options: {
-        component: require.resolve(`./src/base/layout.js`)
+        component: require.resolve(`./src/layout`)
       },
     },
     `gatsby-transformer-remark`,
