@@ -26,7 +26,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/icon-smoker.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/common/icon-smoker.png`, // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-sass',
@@ -49,7 +49,6 @@ module.exports = {
           "@templates": "src/templates",
           "@posts": "content/posts",
           "@markdwon": "src/markdwon",
-          "@image": "src/images",
           "@base": "src/base",
         },
         extensions: ["js"]

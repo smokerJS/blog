@@ -56,7 +56,7 @@ class GlobalNavigationBar extends React.Component{
             </li>
           </ul>
           <div className="profile-group">
-            <img src={require("@image/common/smokerjs-profile.jpeg")}/>
+            <img src={require("@images/common/img-profile.jpeg")}/>
             <dl>
               <dt>직업</dt>
               <dd>개발조무사</dd>
