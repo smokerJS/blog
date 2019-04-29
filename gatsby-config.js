@@ -50,6 +50,7 @@ module.exports = {
           "@posts": "content/posts",
           "@markdwon": "src/markdwon",
           "@base": "src/base",
+          "@state": "src/state"
         },
         extensions: ["js"]
       }

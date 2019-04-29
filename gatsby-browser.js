@@ -7,7 +7,7 @@
 // You can delete this file if you're not using it
 const transitionDelay = 500
 
-exports.shouldUpdateScroll = ({
+export const shouldUpdateScroll = ({
     routerProps: { location },
     getSavedScrollPosition,
 }) => {
@@ -22,3 +22,5 @@ exports.shouldUpdateScroll = ({
     }
     return false
     }
+
+export { default as wrapRootElement } from './src/state/ReduxWrapper';
