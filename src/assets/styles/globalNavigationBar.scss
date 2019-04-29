@@ -3,11 +3,11 @@
   height: 100%;
   position: fixed;
   z-index: 20;
-  font-family: 'kukdetopokki';
-  transition: .5s;
+  font-family: "kukdetopokki";
+  transition: 0.5s;
 
   & > div#menuOpenBtn {
-    font-family: 'kukdetopokkibold';
+    font-family: "kukdetopokkibold";
     font-size: 30px;
     width: 90px;
     text-align: center;
@@ -16,12 +16,13 @@
     top: 20px;
     margin-left: 10px;
     color: #fff;
-    transition: .5s;
+    transition: 0.5s;
     z-index: 20;
   }
 
   & > nav {
-    background: url( "../images/navigation/img-background-global-navigation-bar.jpeg") bottom right repeat-y;
+    background: url("../images/navigation/img-background-global-navigation-bar.jpeg")
+      bottom right repeat-y;
     width: 300px;
     height: 100%;
     position: relative;
@@ -44,7 +45,7 @@
             transition: 1s;
             &.focus {
               color: rgb(4, 180, 255);
-              text-shadow: 2px 1px 20px #A4A4A4;
+              text-shadow: 2px 1px 20px #a4a4a4;
             }
           }
         }
@@ -139,8 +140,6 @@
     }
   }
 
-
-
   @media (max-width: 1323px) {
     &.open {
       & > div#menuOpenBtn {
@@ -157,16 +156,15 @@
       font-weight: bold;
       cursor: pointer;
       &.open {
-        opacity: .7;
+        opacity: 0.7;
         animation: menu-button-ani 1s infinite;
       }
     }
 
     & > nav {
-      transition: .5s;
+      transition: 0.5s;
       opacity: 0;
       visibility: hidden;
-
     }
   }
 
@@ -174,7 +172,8 @@
     & {
       width: 0%;
       height: 100%;
-      &.open, &.home {
+      &.open,
+      &.home {
         width: 100%;
         & > nav {
           width: 100%;
@@ -225,8 +224,6 @@
     }
   }
 }
-
-
 
 @keyframes profile-ani {
   0% {

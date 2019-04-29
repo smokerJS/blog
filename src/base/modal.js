@@ -1,12 +1,20 @@
-import React from "react";
-import { connect } from "react-redux";
-import { toggleModalView } from "@state/app";
+import React from 'react';
+import { connect } from 'react-redux';
+import { toggleModalView } from '@state/app';
 
-const Modal = ({children, isModalView, dispatch}) => (
+const Modal = ({ children, isModalView, dispatch }) => (
   <article className="modal-area">
-    <div className="modal-background" onClick={()=>{dispatch(toggleModalView(!isModalView))}}></div>
+    <div
+      className="modal-background"
+      onClick={() => {
+        dispatch(toggleModalView(!isModalView));
+      }}
+    />
     <section>{children}</section>
   </article>
 );
 
-export default connect(state => ({isModalView: state.app.isModalView}),null)(Modal);
+export default connect(
+  state => ({ isModalView: state.app.isModalView }),
+  null,
+)(Modal);

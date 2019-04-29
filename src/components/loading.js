@@ -1,11 +1,11 @@
-import React from "react"
+import React from 'react';
 
-const Loading = ({view}) => (
+const Loading = ({ view }) => (
   <section className={`loading-background ${view ? 'view' : ''}`}>
     <div>
       <strong>조금만 기다려 헤헤흐헤</strong>
     </div>
   </section>
-)
+);
 
-export default Loading
+export default Loading;

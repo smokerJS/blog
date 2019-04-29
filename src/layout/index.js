@@ -1,23 +1,24 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { StaticQuery, graphql } from "gatsby";
-import "@scss/main.scss";
-import Header from "./header";
-import Navigation from "./navigation";
-import GlobalNavigationBar from "./globalNavigationBar";
-import Footer from "./footer";
-import Transition from "./transition";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
+import '@scss/main.scss';
+import Header from './header';
+import Navigation from './navigation';
+import GlobalNavigationBar from './globalNavigationBar';
+import Footer from './footer';
+import Transition from './transition';
 
 class Layout extends React.Component {
   state = {
-    location : {pathname : '/'}
+    location: { pathname: '/' },
   }
 
   componentDidMount() {
     this.setState({
-      location: window.location
-    })
+      location: window.location,
+    });
   }
+
   render() {
     return (
       <StaticQuery
@@ -32,30 +33,27 @@ class Layout extends React.Component {
         `}
         render={data => (
           <>
-          <GlobalNavigationBar location={this.state.location}/>
-          <section id="screen">
-            <section id="mainScreen">
-              <Header siteTitle={data.site.siteMetadata.title} />
-              <Navigation location={this.state.location}/>
-              <Transition location={this.state.location}>
+            <GlobalNavigationBar location={this.state.location} />
+            <section id="screen">
+              <section id="mainScreen">
+                <Header siteTitle={data.site.siteMetadata.title} />
+                <Navigation location={this.state.location} />
+                <Transition location={this.state.location}>
                   <main>{this.props.children}</main>
-              </Transition>
+                </Transition>
+              </section>
+              <Footer location={this.state.location} />
             </section>
-            <Footer location={this.state.location}/>
-          </section>
           </>
         )}
       />
-    )
+    );
   }
-
 }
-
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  location: PropTypes.object
-}
-
+  location: PropTypes.object,
+};
 
 export default Layout;

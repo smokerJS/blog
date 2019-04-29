@@ -1,6 +1,6 @@
 .post-detail-list {
   padding: 20px 0;
-  font-family: 'kukdetopokki';
+  font-family: "kukdetopokki";
   width: 100%;
   & > h3 {
     font-size: 20px;
@@ -14,19 +14,19 @@
   & > ul {
     width: 100%;
     &:hover li.curr-page {
-      animation: hover-ani-state .6s infinite;
+      animation: hover-ani-state 0.6s infinite;
     }
     & li {
       width: 100%;
       font-size: 15px;
       padding: 10px 0 5px;
       border-bottom: 1px solid #585858;
-      transition: .3s;
+      transition: 0.3s;
       &.curr-page {
-        animation: hover-ani .3s infinite;
+        animation: hover-ani 0.3s infinite;
       }
       &:hover {
-        animation: hover-ani .3s infinite;
+        animation: hover-ani 0.3s infinite;
       }
       & > a {
         width: 100%;
@@ -56,13 +56,13 @@
     }
   }
   & > .btn-group > button {
-    font-family: 'kukdetopokki';
+    font-family: "kukdetopokki";
     cursor: pointer;
     padding: 10px;
     border: none;
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
     font-size: 15px;
-    transition: .5s;
+    transition: 0.5s;
     &:disabled {
       cursor: auto;
     }

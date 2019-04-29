@@ -8,10 +8,11 @@
     z-index: 10;
     position: absolute;
     top: 0;
-    background: url("../images/navigation/img-background-before-contents.png") bottom center no-repeat;
+    background: url("../images/navigation/img-background-before-contents.png")
+      bottom center no-repeat;
   }
   & > ul {
-    font-family: 'kukdetopokki';
+    font-family: "kukdetopokki";
     width: 100%;
     position: absolute;
     top: auto;
@@ -35,7 +36,7 @@
       display: inline-block;
       position: relative;
       writing-mode: tb-rl;
-      & > div{
+      & > div {
         height: 180px;
         width: 46px;
         position: absolute;
@@ -49,7 +50,7 @@
           font-size: 30px;
           text-shadow: 4px 3px 20px $nav-shadow;
           border-radius: 0 0 16px 16px;
-          transition: .5s;
+          transition: 0.5s;
 
           & > img {
             position: absolute;
@@ -67,12 +68,14 @@
         }
       }
       &:nth-child(1) > div a {
-        background: url("../images/navigation/img-background-menu1.png") bottom center no-repeat;
+        background: url("../images/navigation/img-background-menu1.png") bottom
+          center no-repeat;
         animation: move-menu1 2s infinite;
         animation-direction: alternate;
       }
       &:nth-child(2) > div a {
-        background: url("../images/navigation/img-background-menu2.png") bottom center no-repeat;
+        background: url("../images/navigation/img-background-menu2.png") bottom
+          center no-repeat;
         letter-spacing: 50px;
         & > a > strong {
           top: 10px;
@@ -81,20 +84,22 @@
         animation-direction: alternate;
       }
       &:nth-child(3) > div a {
-        background: url("../images/navigation/img-background-menu3.png") bottom center no-repeat;
+        background: url("../images/navigation/img-background-menu3.png") bottom
+          center no-repeat;
         letter-spacing: 14px;
         animation: move-menu3 3s infinite;
         animation-direction: alternate;
       }
       &:nth-child(4) > div a {
-        background: url("../images/navigation/img-background-menu4.png") bottom center no-repeat;
+        background: url("../images/navigation/img-background-menu4.png") bottom
+          center no-repeat;
         letter-spacing: 14px;
         animation: move-menu4 4s infinite;
         animation-direction: alternate;
-
       }
       &:nth-child(5) > div a {
-        background: url("../images/navigation/img-background-menu5.png") bottom center no-repeat;
+        background: url("../images/navigation/img-background-menu5.png") bottom
+          center no-repeat;
         letter-spacing: 50px;
         & > a > strong {
           top: 10px;
@@ -105,7 +110,7 @@
     }
 
     &:hover li > div a {
-      opacity: .5;
+      opacity: 0.5;
     }
 
     & li > div a:hover {
@@ -124,11 +129,11 @@
 @keyframes move-menu1 {
   0% {
     transform: rotateZ(5deg) skewX(5deg);
-    box-shadow: 2px 2px 3px 1px #2E2E2E;
+    box-shadow: 2px 2px 3px 1px #2e2e2e;
   }
   100% {
     transform: skewX(0deg) skewY(-20deg);
-    box-shadow: 0px 4px 3px 1px #2E2E2E;
+    box-shadow: 0px 4px 3px 1px #2e2e2e;
   }
 }
 @keyframes move-menu2 {
@@ -140,17 +145,17 @@
   100% {
     transform: rotateX(20deg) rotateZ(-3deg) skewX(-2deg);
     top: -5px;
-    box-shadow: -1px 4px 3px 1px #2E2E2E;
+    box-shadow: -1px 4px 3px 1px #2e2e2e;
   }
 }
 @keyframes move-menu3 {
   0% {
     transform: rotateY(-30deg);
     top: 0px;
-    box-shadow: -4px 3px 3px 1px #2E2E2E;
+    box-shadow: -4px 3px 3px 1px #2e2e2e;
   }
   50% {
-    box-shadow: 1px 1px 2px 1px #2E2E2E;
+    box-shadow: 1px 1px 2px 1px #2e2e2e;
   }
   100% {
     transform: rotateY(30deg);
@@ -161,11 +166,11 @@
   0% {
     transform: rotateX(-10deg) skewY(10deg);
     top: -5px;
-    box-shadow: 3px -3px 3px 1px #2E2E2E;
+    box-shadow: 3px -3px 3px 1px #2e2e2e;
   }
   50% {
     top: 8px;
-    box-shadow: 0px 0px 3px 1px #2E2E2E;
+    box-shadow: 0px 0px 3px 1px #2e2e2e;
   }
   100% {
     transform: skewY(-30deg);
@@ -182,6 +187,6 @@
   100% {
     transform: rotateY(20deg) rotateZ(-3deg) skewX(-4deg) skewY(-10deg);
     top: -3px;
-    box-shadow: -3px 2px 3px 1px #2E2E2E;
+    box-shadow: -3px 2px 3px 1px #2e2e2e;
   }
 }

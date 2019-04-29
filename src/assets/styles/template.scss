@@ -4,7 +4,7 @@ div.background-black {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 2;
 }
 section.post-area {
@@ -12,7 +12,7 @@ section.post-area {
   position: absolute;
   width: 92%;
   padding: 4%;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   border-radius: 5px;
   margin-bottom: 50px;
   & > .post-title {
@@ -34,4 +34,3 @@ section.post-area {
     border-radius: 0px;
   }
 }
-

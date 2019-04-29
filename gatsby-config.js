@@ -9,6 +9,18 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: 'gatsby-plugin-eslint',
+      options: {
+        test: /\.js$|\.jsx$\.css$|\.scss$|/,
+        exclude: /(node_modules|.cache|public)/,
+        stages: ['develop','master'],
+        options: {
+          emitWarning: true,
+          failOnError: false
+        }
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

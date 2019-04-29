@@ -1,14 +1,22 @@
 @charset "UTF-8";
-* { margin: 0 auto; padding: 0; list-style: none;}
-a { text-decoration: none; }
-*:focus { outline: none; }
+* {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+*:focus {
+  outline: none;
+}
 
 main {
   position: relative;
 }
 
 body {
-  animation: background-ani .3s infinite;
+  animation: background-ani 0.3s infinite;
 }
 
 hr.post-hr {
@@ -48,7 +56,7 @@ i.search-text {
 section#mainScreen {
   width: 1024px;
   padding-left: 300px;
-  transition: .5s;
+  transition: 0.5s;
   @media (max-width: 1323px) {
     padding-left: 0;
   }
@@ -62,7 +70,7 @@ section#mainScreen {
   }
 }
 .index-contents {
-  font-family: 'kukdetopokkibold';
+  font-family: "kukdetopokkibold";
   text-align: center;
   font-size: 40px;
   top: 265px;
@@ -72,17 +80,15 @@ section#mainScreen {
     display: none;
   }
 }
-@font-face{
-font-family:'kukdetopokki';
-src:url('../fonts/SDKukdetopokki-aLt.eot');
-src:local(※),
-	url('../fonts/SDKukdetopokki-aLt.woff') format('woff');
+@font-face {
+  font-family: "kukdetopokki";
+  src: url("../fonts/SDKukdetopokki-aLt.eot");
+  src: local(※), url("../fonts/SDKukdetopokki-aLt.woff") format("woff");
 }
-@font-face{
-font-family:'kukdetopokkibold';
-src:url('../fonts/SDKukdetopokki-bBd.eot');
-src:local(※),
-	url('../fonts/SDKukdetopokki-bBd.woff') format('woff');
+@font-face {
+  font-family: "kukdetopokkibold";
+  src: url("../fonts/SDKukdetopokki-bBd.eot");
+  src: local(※), url("../fonts/SDKukdetopokki-bBd.woff") format("woff");
 }
 
 @import "@scss/variables.scss";
