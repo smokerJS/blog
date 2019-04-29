@@ -3,17 +3,21 @@ import SEO from "@components/seo";
 import Search from "@components/modal/search";
 import DevelopPostList from "@components/developPostList";
 import { graphql, Link } from "gatsby";
-
+import { connect } from "react-redux";
+import { toggleModalView } from "@state/app";
 class DevelopPage extends React.Component {
-  state = {
-    searchQuery: '',
-    list: this.props.data.allMarkdownRemark.edges,
-    totalCount: this.props.data.allMarkdownRemark.totalCount,
-    searchResultText: '',
-    alert: {
-      show: false
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchQuery: '',
+      list: this.props.data.allMarkdownRemark.edges,
+      totalCount: this.props.data.allMarkdownRemark.totalCount,
+      searchResultText: ''
     }
+    this.props.dispatch(toggleModalView(false));
   }
+
   getSearchResults = (query) => {
     function search(obj,word) {
       if(obj.indexOf(word) !== -1) return true;
@@ -47,11 +51,7 @@ class DevelopPage extends React.Component {
   }
 
   modalToggleHandler = () => {
-    this.setState({
-      alert: {
-        show: !this.state.alert.show
-      }
-    })
+    this.props.dispatch(toggleModalView(!this.props.isModalView));
   }
 
   render(){
@@ -74,12 +74,12 @@ class DevelopPage extends React.Component {
             <DevelopPostList list={this.state.list} searchQuery={this.state.searchQuery}/>
           </ul>
         </section>
-        <Search toggleFunction={this.modalToggleHandler} search={this.search} show={this.state.alert.show}/>
+        <Search search={this.search}/>
       </React.Fragment>
     )
   }
 }
-export default DevelopPage;
+export default connect()(DevelopPage);
 export const pageQuery = graphql`
 query DevelopPageQuery {
   allMarkdownRemark(limit: 1000, filter:{frontmatter:{category:{eq: "develop"}}}, sort: { order: DESC, fields: [frontmatter___date] }) {

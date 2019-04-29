@@ -2,21 +2,25 @@
 import React from "react";
 import Loading from "@components/loading";
 import Alert from "@components/modal/alert";
+import { connect } from "react-redux";
+import { toggleModalView } from "@state/app";
 class MailForm extends React.Component {
-
-  state = {
-    name: '',
-    phone: '',
-    email: '',
-    content: '',
-    honeypot: '',
-    loading: false,
-    alert: {
-      show: false,
-      text: '',
-      toggleFunction: this.modalToggleHandler
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      phone: '',
+      email: '',
+      content: '',
+      honeypot: '',
+      loading: false,
+      alert: {
+        text: ''
+      }
     }
+    this.props.dispatch(toggleModalView(false));
   }
+
 
 	setStateHandler = (e,name) => {
     this.setState({[name]: e.target.value});
@@ -82,13 +86,8 @@ class MailForm extends React.Component {
   }
 
   modalToggleHandler = (text = '') => {
-    this.setState({
-      alert: {
-        show: !this.state.alert.show,
-        text: text,
-        toggleFunction: this.modalToggleHandler
-      }
-    })
+    this.setState({alert: { text: text } });
+    this.props.dispatch(toggleModalView(!this.props.isModalView));
   }
 
   render() {
@@ -100,27 +99,27 @@ class MailForm extends React.Component {
             <h2>너는 누구냐</h2>
             <label htmlFor="name">
               <strong>이름</strong>
-              <input type="text" defaultValue={this.state.name} onChange={(e)=>{this.setStateHandler(e,'name')}} name="name"/>
+              <input type="text" value={this.state.name} onChange={(e)=>{this.setStateHandler(e,'name')}} name="name"/>
             </label>
             <label htmlFor="phone">
               <strong>핸드폰</strong>
-              <input type="text" defaultValue={this.state.phone} onChange={(e)=>{this.setStateHandler(e,'phone')}} name="phone"/>
+              <input type="text" value={this.state.phone} onChange={(e)=>{this.setStateHandler(e,'phone')}} name="phone"/>
             </label>
             <label htmlFor="email">
               <strong>이메일</strong>
-              <input type="text" defaultValue={this.state.email} onChange={(e)=>{this.setStateHandler(e,'email')}} name="email"/>
+              <input type="text" value={this.state.email} onChange={(e)=>{this.setStateHandler(e,'email')}} name="email"/>
             </label>
           </div>
           <div className="requset-content">
             <h2>정성스레 적어도 어차피 안봄ㅋ</h2>
-            <textarea name="content" defaultValue={this.state.content} onChange={(e)=>{this.setStateHandler(e,'content')}}></textarea>
+            <textarea name="content" value={this.state.content} onChange={(e)=>{this.setStateHandler(e,'content')}}></textarea>
             <button onClick={()=>{this.onSubmitHandler()}}>보내기</button>
-            <input id="honeypot" type="text" name="honeypot" defaultValue={this.state.honeypot} onChange={(e)=>{this.setStateHandler(e,'content')}}/>
+            <input id="honeypot" type="text" name="honeypot" value={this.state.honeypot} onChange={(e)=>{this.setStateHandler(e,'content')}}/>
           </div>
         </article>
       </section>
       <Loading view={this.state.loading}/>
-      <Alert text={this.state.alert.text} show={this.state.alert.show} toggleFunction={this.state.alert.toggleFunction}/>
+      <Alert text={this.state.alert.text}/>
       </React.Fragment>
     )
   }
@@ -134,4 +133,4 @@ class MailForm extends React.Component {
 
 // }
 
-export default MailForm;
+export default connect(state => ({isModalView: state.app.isModalView}),null)(MailForm);
