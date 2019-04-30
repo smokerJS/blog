@@ -12,7 +12,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
-        test: /\.js$|\.jsx$\.css$|\.scss$|/,
+        test: /\.js$|\.jsx$/,
         exclude: /(node_modules|.cache|public)/,
         stages: ['develop', 'master'],
         options: {
