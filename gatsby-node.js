@@ -5,12 +5,12 @@
  */
 
 // You can delete this file if you're not using it
-const path = require("path")
+const path = require('path');
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
-  const blogPostTemplate = path.resolve(`src/template/template.js`);
+  const blogPostTemplate = path.resolve('src/template/template.js');
 
   return graphql(`
     {
@@ -29,7 +29,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     if (result.errors) {
       console.error(result.errors);
       return Promise.reject(result.errors);
@@ -41,7 +41,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       createPage({
         path: node.frontmatter.path,
         component: blogPostTemplate,
-        context: {}
+        context: {},
       });
     });
   });
