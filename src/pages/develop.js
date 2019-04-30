@@ -75,7 +75,7 @@ class DevelopPage extends React.Component {
             <span>
               {this.state.searchResultText}
               {' '}
-모두 다 하여
+              모두 다 하여
               <strong>{this.state.totalCount}</strong>
               글귀
             </span>

@@ -7,6 +7,9 @@
     "indent": ["error", 2],
     "quotes": ["error", "single", { "avoidEscape": true }],
     "linebreak-style": 0,
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "off",
+    "jsx-a11y/alt-text": 0,
+    "react/jsx-no-target-blank": 0,
+    "array-callback-return": 0
   }
 }
