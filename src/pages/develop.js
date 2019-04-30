@@ -2,7 +2,7 @@ import React from 'react';
 import SEO from '@components/seo';
 import Search from '@components/modal/search';
 import DevelopPostList from '@components/developPostList';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { connect } from 'react-redux';
 import { toggleModalView } from '@state/app';
 
@@ -55,7 +55,6 @@ class DevelopPage extends React.Component {
   }
 
   render() {
-    const { data } = this.props;
     return (
       <React.Fragment>
         <SEO title="후론투엔두" keywords={['gatsby', 'application', 'react']} />

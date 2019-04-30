@@ -1,5 +1,4 @@
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
 
 class GlobalNavigationBar extends React.Component {
@@ -106,13 +105,5 @@ class GlobalNavigationBar extends React.Component {
     );
   }
 }
-
-// GlobalNavigationBar.propTypes = {
-//   location: PropTypes.object
-// }
-
-// GlobalNavigationBar.defaultProps = {
-
-// }
 
 export default GlobalNavigationBar;

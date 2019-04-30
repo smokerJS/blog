@@ -1,5 +1,4 @@
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
 
 class DevelopPostList extends React.Component {
@@ -86,13 +85,5 @@ class DevelopPostList extends React.Component {
     );
   }
 }
-
-// GlobalNavigationBar.propTypes = {
-//   location: PropTypes.object
-// }
-
-// GlobalNavigationBar.defaultProps = {
-
-// }
 
 export default DevelopPostList;

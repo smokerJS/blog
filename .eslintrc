@@ -1,10 +1,12 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb",
-  "plugins": ["react", "jsx-a11y", "import"],
+  "extends": ["react-app"],
+  "plugins": ["react", "jsx-a11y", "import", "react-hooks"],
   "rules": {
     "react/jsx-filename-extension": 0,
     "indent": ["error", 2],
-    "quotes": ["error", "single", { "avoidEscape": true }]
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "linebreak-style": 0,
+    "import/no-unresolved": "off"
   }
 }

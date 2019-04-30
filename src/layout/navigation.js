@@ -1,5 +1,4 @@
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
 
 class Navigation extends React.Component {
@@ -54,13 +53,5 @@ class Navigation extends React.Component {
     );
   }
 }
-
-// Navigation.propTypes = {
-//   location: PropTypes.object
-// }
-
-// Navigation.defaultProps = {
-
-// }
 
 export default Navigation;
