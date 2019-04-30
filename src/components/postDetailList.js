@@ -34,7 +34,7 @@ class PostDetailList extends React.Component {
       index++;
     }
     tempList.length && list.push(tempList);
-    currPage = parseInt(currPage / 5);
+    currPage = parseInt(currPage / 5, 10);
     this.setState({
       list,
       currList: list[currPage],

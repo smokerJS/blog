@@ -64,12 +64,12 @@ class DevelopPostList extends React.Component {
                       }}
                     />
                     {[...item.tags].map(
-                      (obj, key) => obj && (
+                      (hashtag, hashtagKey) => obj && (
                         <span
                           className="hashtag"
-                          key={`tag_${item.path}_${key}`}
+                          key={`tag_${item.path}_${hashtagKey}`}
                           dangerouslySetInnerHTML={{
-                            __html: this.prevTextParser(obj),
+                            __html: this.prevTextParser(hashtag),
                           }}
                         />
                       ),

@@ -1,4 +1,3 @@
-// import PropTypes from "prop-types";
 import React from 'react';
 import Loading from '@components/loading';
 import Alert from '@components/modal/alert';
@@ -62,7 +61,7 @@ class MailForm extends React.Component {
       loading: true,
     });
     const $this = this;
-    xhr.onload = function () {
+    xhr.onload = () => {
       if (xhr.status === 200 || xhr.status === 201) {
         $this.modalToggleHandler('보내져따 헤헤흐헤');
         $this.setState({
@@ -167,14 +166,6 @@ class MailForm extends React.Component {
     );
   }
 }
-
-// MailForm.propTypes = {
-
-// }
-
-// MailForm.defaultProps = {
-
-// }
 
 export default connect(
   state => ({ isModalView: state.app.isModalView }),

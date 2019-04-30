@@ -23,7 +23,7 @@ class DevelopPage extends React.Component {
       if (obj.indexOf(word) !== -1) return true;
       return false;
     }
-    return this.props.data.allMarkdownRemark.edges.filter((obj, key) => {
+    return this.props.data.allMarkdownRemark.edges.filter((obj) => {
       const item = obj.node.frontmatter;
       if (search(item.title, query)) return true;
       if (search(`${item.tags}`, query)) return true;
