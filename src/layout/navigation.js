@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
+import { connect } from 'react-redux';
 
 const Navigation = ({ location }) => (
   <nav className="nav-top-menu">
@@ -49,4 +50,7 @@ const Navigation = ({ location }) => (
   </nav>
 );
 
-export default Navigation;
+export default connect(
+  state => ({ location: state.app.location }),
+  null,
+)(Navigation);

@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
+import { connect } from 'react-redux';
 
 const GlobalNavigationBar = ({ location }) => {
   const [open, setOpen] = React.useState(false);
@@ -94,4 +95,7 @@ const GlobalNavigationBar = ({ location }) => {
   );
 };
 
-export default GlobalNavigationBar;
+export default connect(
+  state => ({ location: state.app.location }),
+  null,
+)(GlobalNavigationBar);

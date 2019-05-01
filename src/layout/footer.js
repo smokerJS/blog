@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class Footer extends React.Component {
   state = {
@@ -35,4 +36,7 @@ class Footer extends React.Component {
   }
 }
 
-export default Footer;
+export default connect(
+  state => ({ location: state.app.location }),
+  null,
+)(Footer);

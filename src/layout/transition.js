@@ -5,6 +5,7 @@ import {
   TransitionGroup,
   Transition as ReactTransition,
 } from 'react-transition-group';
+import { connect } from 'react-redux';
 
 // This variable will be responsible for our animation duration
 const timeout = 500;
@@ -59,4 +60,7 @@ class Transition extends React.PureComponent {
   }
 }
 
-export default Transition;
+export default connect(
+  state => ({ location: state.app.location }),
+  null,
+)(Transition);
