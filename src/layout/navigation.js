@@ -40,7 +40,7 @@ const Navigation = ({ location }) => (
       </li>
       <li>
         <div>
-          <Link href="/question" to="/question">
+          <Link to="/question">
             <img src={require('@images/navigation/img-rope-menu1.png')} />
             <strong>문의</strong>
           </Link>
