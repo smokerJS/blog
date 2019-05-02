@@ -29,7 +29,10 @@ class MailForm extends React.Component {
     let msg = '';
     let err = false;
 
-    !err && !this.state.name && (msg = '키미노 나마에와!?') && (err = true);
+    !err
+      && !this.state.name
+      && (msg = '키미노 나마에와!?')
+      && (err = true);
 
     !err
       && !(this.state.phone || this.state.email)
