@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import SEO from '@components/seo';
-import PostDetailList from '@components/postDetailList';
+import CategoryLocallList from '@components/list/categoryLocallList';
 import { DiscussionEmbed } from 'disqus-react';
 import Prism from 'prismjs';
 import '@scss/github-markdown.css';
@@ -36,7 +36,7 @@ class Template extends React.Component {
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
           <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
-          <PostDetailList
+          <CategoryLocallList
             category={post.frontmatter.category}
             list={data.allMarkdownRemark.edges}
           />

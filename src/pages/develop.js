@@ -1,7 +1,7 @@
 import React from 'react';
 import SEO from '@components/seo';
 import Search from '@components/modal/search';
-import DevelopPostList from '@components/developPostList';
+import PostList from '@components/list/PostList';
 import { graphql } from 'gatsby';
 import { connect } from 'react-redux';
 import { toggleModalView } from '@state/app';
@@ -81,7 +81,7 @@ class DevelopPage extends React.Component {
             </span>
           </div>
           <ul className="post-list">
-            <DevelopPostList
+            <PostList
               list={this.state.list}
               searchQuery={this.state.searchQuery}
             />
