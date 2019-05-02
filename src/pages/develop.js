@@ -1,7 +1,7 @@
 import React from 'react';
 import SEO from '@components/seo';
 import Search from '@components/modal/search';
-import PostList from '@components/list/PostList';
+import PostList from '@components/list/postList';
 import { graphql } from 'gatsby';
 import { connect } from 'react-redux';
 import { toggleModalView } from '@state/app';
