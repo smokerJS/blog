@@ -8,7 +8,7 @@ const GlobalNavigationBar = ({ location }) => {
     setOpen(!open);
   };
   const menuClickHandler = () => {
-    setOpen(!false);
+    setOpen(false);
   };
   return (
     <section
