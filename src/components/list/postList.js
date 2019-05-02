@@ -59,15 +59,16 @@ const PostList = ({ list, searchQuery }) => {
                     }}
                   />
                   {[...item.tags].map(
-                    (hashtag, hashtagKey) => obj && (
-                      <span
-                        className="hashtag"
-                        key={`tag_${item.path}_${hashtagKey}`}
-                        dangerouslySetInnerHTML={{
-                          __html: prevTextParser(hashtag),
-                        }}
-                      />
-                    ),
+                    (hashtag, hashtagKey) => (
+                      hashtag
+                        && <span
+                          className="hashtag"
+                          key={`tag_${item.path}_${hashtagKey}`}
+                          dangerouslySetInnerHTML={{
+                            __html: prevTextParser(hashtag),
+                          }}
+                        />
+                    )
                   )}
                   <strong className="date-info">{item.date}</strong>
                 </div>
