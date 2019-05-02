@@ -68,7 +68,7 @@ const PostList = ({ list, searchQuery }) => {
                             __html: prevTextParser(hashtag),
                           }}
                         />
-                    )
+                    ),
                   )}
                   <strong className="date-info">{item.date}</strong>
                 </div>
@@ -79,6 +79,6 @@ const PostList = ({ list, searchQuery }) => {
       })}
     </React.Fragment>
   );
-}
+};
 
 export default PostList;
