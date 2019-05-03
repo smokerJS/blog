@@ -1,8 +1,6 @@
 const autoprefixer = require('autoprefixer');
 const browserslist = require('browserslist');
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV || process.env.NODE_ENV || "development"}`,
-})
+
 module.exports = {
   siteMetadata: {
     title: '후론투엔두 블로그',
