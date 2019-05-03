@@ -14,7 +14,7 @@ const TarotContents = () => {
     console.log(process.env.GOOGLE_YOUTUBE_API_KEY)
     const optionParams={
       part:"snippet",
-      key:process.env.GOOGLE_YOUTUBE_API_KEY,
+      key:process.env.REACT_APP_GOOGLE_YOUTUBE_API_KEY,
       channelId: "UCpO5KdEwqmS88dswUkYSgsw",
       order: order,
       maxResults: 4,
