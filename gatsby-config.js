@@ -1,7 +1,7 @@
 const autoprefixer = require('autoprefixer');
 const browserslist = require('browserslist');
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env.${process.env.NODE_ENV || process.env.NODE_ENV || "development"}`,
 })
 module.exports = {
   siteMetadata: {
