@@ -51,8 +51,21 @@ const GlobalNavigationBar = ({ location }) => {
             </Link>
           </li>
           <li>
-            <Link to="/">
-              <strong>라이푸</strong>
+            <Link
+              to="/life"
+              onClick={() => {
+                menuClickHandler();
+              }}
+            >
+              <strong
+                className={
+                  location.pathname.indexOf('develop') !== -1
+                    ? 'focus'
+                    : 'tab'
+                }
+              >
+                라이푸
+              </strong>
             </Link>
           </li>
           <li>
