@@ -35,7 +35,6 @@ const TarotContents = () => {
         setList(data.items);
         data.nextPageToken ? setNextPageToken(data.nextPageToken) : setNextPageToken('');
         data.prevPageToken ? setPrevPageToken(data.prevPageToken) : setPrevPageToken('');
-        console.log(data);
       } else {}
     };
     xhr.open('GET', url);
