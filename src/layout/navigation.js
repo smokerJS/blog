@@ -16,7 +16,7 @@ const Navigation = ({ location }) => (
       </li>
       <li>
         <div>
-          <Link to="/">
+          <Link to="/tarot">
             <img src={require('@images/navigation/img-rope-menu4.png')} />
             <strong>타로</strong>
           </Link>
