@@ -11,6 +11,7 @@ const TarotContents = () => {
   },[]);
 
   const getYoutubeData = (order = 'date', nextPageToken = '', prevPageToken = '') => {
+    console.log(process.env.GOOGLE_YOUTUBE_API_KEY)
     const optionParams={
       part:"snippet",
       key:process.env.GOOGLE_YOUTUBE_API_KEY,
