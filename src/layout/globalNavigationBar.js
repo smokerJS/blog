@@ -59,7 +59,7 @@ const GlobalNavigationBar = ({ location }) => {
             >
               <strong
                 className={
-                  location.pathname.indexOf('develop') !== -1
+                  location.pathname.indexOf('life') !== -1
                     ? 'focus'
                     : 'tab'
                 }
