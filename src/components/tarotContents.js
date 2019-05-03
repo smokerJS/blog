@@ -2,33 +2,32 @@ import React from 'react';
 import TarotList from '@components/list/tarotList';
 
 const TarotContents = () => {
-  const [list,setList] = React.useState([]);
-  const [nextPageToken,setNextPageToken] = React.useState('');
-  const [prevPageToken,setPrevPageToken] = React.useState('');
+  const [list, setList] = React.useState([]);
+  const [nextPageToken, setNextPageToken] = React.useState('');
+  const [prevPageToken, setPrevPageToken] = React.useState('');
 
-  React.useEffect(()=>{
+  React.useEffect(() => {
     getYoutubeData();
-  },[]);
+  }, []);
 
   const getYoutubeData = (order = 'date', nextPageToken = '', prevPageToken = '') => {
-    console.dir(process.env.GOOGLE_YOUTUBE_API_KEY)
-    console.dir(process.env.MY_API_KEY)
-    const optionParams={
-      part:"snippet",
-      key:process.env.GOOGLE_YOUTUBE_API_KEY,
-      channelId: "UCpO5KdEwqmS88dswUkYSgsw",
-      order: order,
+    console.dir(process.env.GOOGLE_YOUTUBE_API_KEY);
+    const optionParams = {
+      part: 'snippet',
+      key: process.env.GOOGLE_YOUTUBE_API_KEY,
+      channelId: 'UCpO5KdEwqmS88dswUkYSgsw',
+      order,
       maxResults: 4,
-      nextPageToken: nextPageToken,
-      prevPageToken: prevPageToken,
+      nextPageToken,
+      prevPageToken,
     };
 
-    let url="https://www.googleapis.com/youtube/v3/search?";
+    let url = 'https://www.googleapis.com/youtube/v3/search?';
 
-    for(let option in optionParams){
+    for (const option in optionParams) {
       url = `${url}${option}=${optionParams[option]}&`;
     }
-    url = url.substr(0, url.length-1);
+    url = url.substr(0, url.length - 1);
 
     const xhr = new XMLHttpRequest();
     xhr.onload = () => {
@@ -37,14 +36,12 @@ const TarotContents = () => {
         setList(data.items);
         data.nextPageToken ? setNextPageToken(data.nextPageToken) : setNextPageToken('');
         data.prevPageToken ? setPrevPageToken(data.prevPageToken) : setPrevPageToken('');
-        console.log(data)
-      }
-      else {}
+        console.log(data);
+      } else {}
     };
     xhr.open('GET', url);
     xhr.send();
-  }
-
+  };
 
 
   return (
@@ -60,7 +57,7 @@ const TarotContents = () => {
           <h1>타로 모음집</h1>
         </div>
         <ul className="post-list">
-          <TarotList list={list}/>
+          <TarotList list={list} />
         </ul>
       </section>
     </React.Fragment>
