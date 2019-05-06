@@ -1,0 +1,18 @@
+.btn-group > button {
+    font-family: "kukdetopokki";
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    background-color: #f2f2f2;
+    font-size: 15px;
+    transition: 0.5s;
+    &:disabled {
+      cursor: auto;
+    }
+    &.btn-prev {
+      margin-right: 30px;
+    }
+    &.btn-next {
+      margin-left: 30px;
+    }
+  }

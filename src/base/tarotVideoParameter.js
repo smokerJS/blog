@@ -4,6 +4,7 @@ const TarotVideoParameter = ({ videoId, view }) => {
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
+    if(!videoId) return;
     const url = `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${process.env.GATSBY_GOOGLE_YOUTUBE_API_KEY}&part=statistics,snippet`;
     const xhr = new XMLHttpRequest();
     xhr.onload = () => {
@@ -19,7 +20,7 @@ const TarotVideoParameter = ({ videoId, view }) => {
     };
     xhr.open('GET', url);
     xhr.send();
-  }, []);
+  }, [videoId]);
 
   const getFormatDate = (date) => {
     const year = date.getFullYear();

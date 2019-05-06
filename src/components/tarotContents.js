@@ -11,15 +11,14 @@ const TarotContents = () => {
     getYoutubeData();
   }, []);
 
-  const getYoutubeData = (order = 'date', nextPageToken = '', prevPageToken = '') => {
+  const getYoutubeData = (pageToken = '') => {
     const optionParams = {
       part: 'id',
       key: process.env.GATSBY_GOOGLE_YOUTUBE_API_KEY,
       channelId: 'UCpO5KdEwqmS88dswUkYSgsw',
-      order,
-      maxResults: 4,
-      nextPageToken,
-      prevPageToken,
+      order: 'date',
+      maxResults: 6,
+      pageToken: pageToken,
     };
 
     let url = 'https://www.googleapis.com/youtube/v3/search?';
@@ -63,6 +62,26 @@ const TarotContents = () => {
           <ul className="video-list">
             <TarotList list={list} />
           </ul>
+        </div>
+        <div className="btn-group">
+          <button
+            className="btn-prev"
+            disabled={!prevPageToken}
+            onClick={() => {
+              getYoutubeData(prevPageToken);
+            }}
+          >
+            왼쪽
+          </button>
+          <button
+            className="btn-next"
+            disabled={!nextPageToken}
+            onClick={() => {
+              getYoutubeData(nextPageToken);
+            }}
+          >
+            오른쪽
+          </button>
         </div>
       </section>
     </React.Fragment>
