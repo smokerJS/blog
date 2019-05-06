@@ -13,7 +13,7 @@ const TarotVideoParameter = ({ videoId, view }) => {
         data.items[0].statistics.publishedAt = getFormatDate(uploadDate);
         data.items[0].statistics.title = data.items[0].snippet.title;
         data.items[0].statistics.description = data.items[0].snippet.description;
-        data.items[0].statistics.thumbnails = data.items[0].snippet.thumbnails.default.url;
+        data.items[0].statistics.thumbnails = data.items[0].snippet.thumbnails.medium.url;
         setData(data.items[0].statistics);
       } else {}
     };
@@ -49,12 +49,30 @@ const TarotVideoParameter = ({ videoId, view }) => {
             <dl>
               <dt>조회수</dt>
               <dd className="view-count">{data.viewCount}</dd>
-              <dt>좋아요</dt>
-              <dd className="like-count">{data.likeCount}</dd>
-              <dt>덧글</dt>
-              <dd className="comment-count">{data.commentCount}</dd>
-              <dt>게시일</dt>
-              <dd className="published-at">{data.publishedAt}</dd>
+              {
+                view && (
+                  <React.Fragment>
+                    <dt>좋아요</dt>
+                    <dd className="like-count">{data.likeCount}</dd>
+                  </React.Fragment>
+                )
+              }
+              {
+                view && (
+                  <React.Fragment>
+                    <dt>덧글</dt>
+                    <dd className="comment-count">{data.commentCount}</dd>
+                  </React.Fragment>
+                )
+              }
+              {
+                view && (
+                  <React.Fragment>
+                    <dt>게시일</dt>
+                    <dd className="published-at">{data.publishedAt}</dd>
+                  </React.Fragment>
+                )
+              }
             </dl>
           </div>
         )

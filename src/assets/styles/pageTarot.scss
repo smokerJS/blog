@@ -23,12 +23,13 @@
     width: 100%;
     text-align: left;
     display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
     & > div.video-box {
       width: 60%;
-      float: left;
       @media (max-width: 800px) {
         width: 100%;
-        float: none;
       }
       & > div {
         width: 100%;
@@ -42,20 +43,18 @@
       }
     }
     & > div.content-box {
-      float: right;
       padding-left: 1%;
       width: 39%;
       @media (max-width: 800px) {
         width: 100%;
-        float: none;
         padding: 10px 0 0 0;
       }
       & > .video-parameter {
         display: inline-block;
+        width: 100%;
         & > h1 {
           font-size: 20px;
           margin-bottom: 15px;
-          height: 44px;
           max-height: 44px;
           overflow: hidden;
         }
@@ -66,10 +65,17 @@
           max-height: 232px;
           overflow-x: hidden;
           overflow-y: auto;
+          @media (max-width: 800px) {
+            height: auto;
+            max-height: 210px;
+          }
         }
         & dl {
           text-align: right;
           margin-top: 10px;
+          @media (max-width: 800px) {
+            margin-top: 5px;
+          }
           & dt {
             display: inline;
             font-size: 10px;
@@ -96,6 +102,86 @@
               background: linear-gradient(transparent 50%, rgb(247, 153, 255) 50%);
             }
           }
+        }
+      }
+    }
+  }
+  & > div.list-area {
+    margin-top: 20px;
+    & > ul.video-list {
+      display: flex;
+      flex-wrap: wrap;
+      & li {
+        position: relative;
+        width: 48%;
+        display: inline-block;
+        margin-bottom: 20px;
+        &:nth-child(even) {
+          margin-left: 4%;
+        }
+        @media (max-width: 800px) {
+          width: 100%;
+          &:nth-child(even) {
+            margin-left: 0;
+          }
+        }
+        & > div.video-parameter {
+          display: inline-block;
+          width: 100%;
+          & > img {
+            float: left;
+            max-width: 200px;
+            width: 30%;
+            margin-right: 15px;
+          }
+          & > h1 {
+            display: inline;
+            font-size: 16px;
+            @media (max-width: 800px) {
+              font-size: 15px;
+            }
+          }
+          & dl {
+            text-align: right;
+            margin-top: 10px;
+            display: inline;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            @media (max-width: 800px) {
+              margin-top: 5px;
+            }
+            & dt {
+              display: inline;
+              font-size: 10px;
+              margin-left: 10px;
+              background: linear-gradient(transparent 50%, rgb(200, 201, 206) 50%);
+              &:nth-child(1) {
+                margin-left: 0;
+              }
+            }
+          
+            & dd {
+              display: inline;
+              margin-left: 1px;
+              font-size: 13px;
+              &.view-count {
+                background: linear-gradient(transparent 50%, rgb(187, 255, 221) 50%);
+              }
+              &.like-count {
+                background: linear-gradient(transparent 50%, rgb(121, 175, 255) 50%);
+              }
+              &.comment-count {
+                background: linear-gradient(transparent 50%, rgb(255, 175, 121) 50%);
+              }
+              &.published-at {
+                background: linear-gradient(transparent 50%, rgb(247, 153, 255) 50%);
+              }
+            }
+          }
+        }
+        &::after{
+          clear: both;
         }
       }
     }

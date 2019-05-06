@@ -58,9 +58,12 @@ const TarotContents = () => {
             <TarotVideoParameter videoId={'rq6D0YtXHBQ'} view/>
           </div>
         </div>
-        <ul className="post-list">
-          <TarotList list={list} />
-        </ul>
+        <hr className="post-hr" />
+        <div className="list-area">
+          <ul className="video-list">
+            <TarotList list={list} />
+          </ul>
+        </div>
       </section>
     </React.Fragment>
   );
