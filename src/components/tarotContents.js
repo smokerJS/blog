@@ -55,7 +55,7 @@ const TarotContents = () => {
             </div>
           </div>
           <div className="content-box">
-            <TarotVideoParameter videoId={'rq6D0YtXHBQ'} view={true}/>
+            <TarotVideoParameter videoId={'rq6D0YtXHBQ'} view/>
           </div>
         </div>
         <ul className="post-list">
