@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TarotVideoParameter = ({videoId, view}) => {
+const TarotVideoParameter = ({ videoId, view }) => {
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
@@ -22,13 +22,13 @@ const TarotVideoParameter = ({videoId, view}) => {
   }, []);
 
   const getFormatDate = (date) => {
-	const year = date.getFullYear();
-	let month = (1 + date.getMonth());
-	month = month >= 10 ? month : `0${month}`;
-	let day = date.getDate();
-	day = day >= 10 ? day : `0${day}`;
-	return  `${year}/${month}/${day}`;
-  }
+    const year = date.getFullYear();
+    let month = (1 + date.getMonth());
+    month = month >= 10 ? month : `0${month}`;
+    let day = date.getDate();
+    day = day >= 10 ? day : `0${day}`;
+    return `${year}/${month}/${day}`;
+  };
 
   return (
     <React.Fragment>
@@ -37,7 +37,7 @@ const TarotVideoParameter = ({videoId, view}) => {
           <div className="video-parameter">
             {
               !view && (
-                  <img src={data.thumbnails}/>
+                <img src={data.thumbnails} />
               )
             }
             <h1>{data.title}</h1>

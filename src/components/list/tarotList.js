@@ -12,7 +12,7 @@ const TarotList = ({ list }) => {
     <React.Fragment>
       {localList.map((obj, key) => (
         <li key={`tarot_list_${key}`}>
-          <TarotVideoParameter videoId={obj.id.videoId}/>
+          <TarotVideoParameter videoId={obj.id.videoId} />
         </li>
       ))
       }
