@@ -7063,6 +7063,11 @@ lodash.clonedeep@^4.3.2, lodash.clonedeep@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
   integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
 
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+  integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
+
 lodash.escaperegexp@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.escaperegexp/-/lodash.escaperegexp-4.1.2.tgz#64762c48618082518ac3df4ccf5d5886dae20347"
@@ -9528,6 +9533,14 @@ react-side-effect@^1.1.0:
   dependencies:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
+
+react-text-ellipsis@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/react-text-ellipsis/-/react-text-ellipsis-1.6.0.tgz#a780726be5ca8b9588243cc889eb17d2ffb7dc82"
+  integrity sha512-ibsX0RAfn3YyquxN71sQz/Rrd2kpF2/qKF5qM2KGMxggkW4Wgtra5OquI+4eo7yosm7mwQgaGtzB+TQM9hPxEw==
+  dependencies:
+    lodash.debounce "^4.0.8"
+    prop-types "^15.6.1"
 
 react-transition-group@^2.9.0:
   version "2.9.0"

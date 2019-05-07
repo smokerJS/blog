@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
+import TextEllipsis from 'react-text-ellipsis';
 
 const PostList = ({ list, searchQuery }) => {
   const [localList, setLocalList] = React.useState(list);
@@ -12,16 +13,16 @@ const PostList = ({ list, searchQuery }) => {
   const prevContentParser = (excerpt) => {
     const queryIndex = excerpt.indexOf(searchQuery);
     if (searchQuery && queryIndex !== -1) {
-      excerpt = excerpt.slice(queryIndex, 250);
-      excerpt.length > 249 && (excerpt = `${excerpt.trim()} . . .`);
+      excerpt = excerpt.slice(queryIndex, 500);
+      excerpt.length > 499 && (excerpt = `${excerpt.trim()}`);
       excerpt = replaceAll(
         excerpt,
         searchQuery,
         `<i class="search-text">${searchQuery}</i>`,
       );
     } else {
-      excerpt.length > 250
-        && (excerpt = `${excerpt.slice(0, 250).trim()} . . .`);
+      excerpt.length > 500
+        && (excerpt = `${excerpt.slice(0, 500).trim()}`);
     }
     return `<strong>${excerpt}</strong>`;
   };
@@ -52,12 +53,17 @@ const PostList = ({ list, searchQuery }) => {
                   }}
                 />
                 <div className="post-info-group">
-                  <div
-                    className="post-prev-content"
-                    dangerouslySetInnerHTML={{
-                      __html: prevContentParser(obj.node.excerpt),
-                    }}
-                  />
+                  <TextEllipsis
+                    lines={3}
+                    ellipsisChars="..."
+                  >
+                    <div
+                      className="post-prev-content"
+                      dangerouslySetInnerHTML={{
+                        __html: prevContentParser(obj.node.excerpt),
+                      }}
+                    />
+                  </TextEllipsis>
                   {[...item.tags].map(
                     (hashtag, hashtagKey) => (
                       hashtag
