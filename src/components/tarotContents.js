@@ -1,6 +1,7 @@
 import React from 'react';
 import TarotList from '@components/list/tarotList';
 import TarotVideoParameter from '@base/tarotVideoParameter';
+import TarotLoading from '@components/tarotLoading';
 
 const TarotContents = () => {
   const [list, setList] = React.useState([[]]);
@@ -8,10 +9,15 @@ const TarotContents = () => {
   const [prevPage, setPrevPage] = React.useState(false);
   const [currVideoData, setCurrVideoData] = React.useState({});
   const [currPage, setCurrPage] = React.useState(0);
+  const [videoLoading, setVideoLoading] = React.useState(false);
   const VIEW_LENGTH = 6;
 
   const setCurrVideoDataHandler = (setVideoData = {}) => {
+    setVideoLoading(true);
     setCurrVideoData(setVideoData);
+    setTimeout(() => {
+      setVideoLoading(false);
+    }, 2000);
   }
 
   const setCurrPageHandler = (setPage = 0) => {
@@ -113,6 +119,7 @@ const TarotContents = () => {
               <div className="content-box">
                 <TarotVideoParameter videoData={currVideoData} view />
               </div>
+              <TarotLoading view={videoLoading}/>
             </div>
           )
         }
@@ -121,7 +128,7 @@ const TarotContents = () => {
         {
           list[currPage].length && (
             <ul className="video-list">
-              <TarotList list={list[currPage]} setCurrVideoDataHandler={setCurrVideoDataHandler}/>
+              <TarotList list={list[currPage]} setCurrVideoDataHandler={setCurrVideoDataHandler} currVideoData={currVideoData}/>
             </ul>
           )
         }
