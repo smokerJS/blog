@@ -119,6 +119,9 @@
         &:nth-child(even) {
           margin-left: 2%;
         }
+        &:nth-child(odd) {
+          margin: 0 0 15px 0;
+        }
         @media (max-width: 800px) {
           width: 100%;
           &:nth-child(even) {
