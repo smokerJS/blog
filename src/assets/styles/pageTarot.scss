@@ -45,11 +45,11 @@
         overflow: hidden;
         &.video-loading-odd {
           left: -1000px;
-          animation: video-loading-ani-odd 8s infinite;
+          animation: video-loading-ani-odd 10s infinite;
         }
         &.video-loading-even {
           right: -1000px;
-          animation: video-loading-ani-even 8s infinite;
+          animation: video-loading-ani-even 10s infinite;
         }
       }
     }
