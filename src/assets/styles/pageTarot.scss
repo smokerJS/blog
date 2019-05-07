@@ -55,7 +55,8 @@
         & > h1 {
           font-size: 20px;
           margin-bottom: 15px;
-          max-height: 44px;
+          max-height: 42px;
+          height: 42px;
           overflow: hidden;
         }
         & > p {
@@ -159,7 +160,7 @@
                 margin-left: 0;
               }
             }
-          
+
             & dd {
               display: inline;
               margin-left: 1px;

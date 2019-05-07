@@ -3,9 +3,61 @@ import TarotList from '@components/list/tarotList';
 import TarotVideoParameter from '@base/tarotVideoParameter';
 
 const TarotContents = () => {
-  const [list, setList] = React.useState([]);
-  const [nextPageToken, setNextPageToken] = React.useState('');
-  const [prevPageToken, setPrevPageToken] = React.useState('');
+  const [list, setList] = React.useState([[]]);
+  const [nextPage, setNextPage] = React.useState(false);
+  const [prevPage, setPrevPage] = React.useState(false);
+  const [currVideoData, setCurrVideoData] = React.useState({});
+  const [currPage, setCurrPage] = React.useState(0);
+  const VIEW_LENGTH = 6;
+
+  const setCurrVideoDataHandler = (setVideoData = {}) => {
+    setCurrVideoData(setVideoData);
+  }
+
+  const setCurrPageHandler = (setPage = 0) => {
+    list[setPage+1] ? setNextPage(false) : setNextPage(true);
+    setPage ? setPrevPage(false) : setPrevPage(true);
+    setCurrPage(setPage);
+  }
+
+  const getVideoData = (videoIdList) => {
+    if (!list[0]) return;
+    let videoIds = '';
+    for (const id of videoIdList) {
+      videoIds = videoIds ? `${videoIds},${id}` : id;
+    }
+
+    const url = `https://www.googleapis.com/youtube/v3/videos?id=${videoIds}&key=${process.env.GATSBY_GOOGLE_YOUTUBE_API_KEY}&part=statistics,snippet`;
+    const xhr = new XMLHttpRequest();
+    xhr.onload = () => {
+      if (xhr.status === 200 || xhr.status === 201) {
+        const data = JSON.parse(xhr.responseText);
+        const localList = [];
+        let tempList = [];
+        let index = 0;
+        for (const item of data.items) {
+          if (index && index % VIEW_LENGTH === 0) {
+            localList.push(tempList);
+            tempList = [];
+          }
+          item.statistics.publishedAt = new Date(item.snippet.publishedAt);
+          item.statistics.title = item.snippet.title;
+          item.statistics.description = item.snippet.description;
+          item.statistics.thumbnails = item.snippet.thumbnails.medium.url;
+          item.statistics.id = item.id;
+          tempList.push(item.statistics);
+          index++;
+        }
+        tempList.length && localList.push(tempList);
+        setCurrVideoData(localList[0][0]);
+        setList(localList);
+        localList[1].length ? setNextPage(false) : setNextPage(true);
+        setPrevPage(true);
+      }
+    };
+    xhr.open('GET', url);
+    xhr.send();
+  }
 
   const getYoutubeData = (pageToken = '') => {
     const optionParams = {
@@ -13,7 +65,7 @@ const TarotContents = () => {
       key: process.env.GATSBY_GOOGLE_YOUTUBE_API_KEY,
       channelId: 'UCpO5KdEwqmS88dswUkYSgsw',
       order: 'date',
-      maxResults: 6,
+      maxResults: 50,
     };
     pageToken && (optionParams.pageToken = pageToken);
 
@@ -27,10 +79,13 @@ const TarotContents = () => {
     const xhr = new XMLHttpRequest();
     xhr.onload = () => {
       if (xhr.status === 200 || xhr.status === 201) {
-        const data = JSON.parse(xhr.responseText);
-        setList(data.items);
-        data.nextPageToken ? setNextPageToken(data.nextPageToken) : setNextPageToken('');
-        data.prevPageToken ? setPrevPageToken(data.prevPageToken) : setPrevPageToken('');
+        const data = JSON.parse(xhr.responseText).items;
+        const videoIdList = [];
+        while (data.length) {
+          const videoId = data.shift().id.videoId;
+          videoId && videoIdList.push(videoId);
+        }
+        getVideoData(videoIdList);
       }
     };
     xhr.open('GET', url);
@@ -47,37 +102,45 @@ const TarotContents = () => {
         <div className="header-group">
           <h1>타로 모음집</h1>
         </div>
-        <div className="screen-area">
-          <div className="video-box">
-            <div>
-              <iframe src="https://www.youtube.com/embed/rq6D0YtXHBQ" title="video-screen" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+        {
+          currVideoData.id && (
+            <div className="screen-area">
+              <div className="video-box">
+                <div>
+                  <iframe src={`https://www.youtube.com/embed/${currVideoData.id}`} title="video-screen" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                </div>
+              </div>
+              <div className="content-box">
+                <TarotVideoParameter videoData={currVideoData} view />
+              </div>
             </div>
-          </div>
-          <div className="content-box">
-            <TarotVideoParameter videoId="rq6D0YtXHBQ" view />
-          </div>
-        </div>
+          )
+        }
         <hr className="post-hr" />
         <div className="list-area">
-          <ul className="video-list">
-            <TarotList list={list} />
-          </ul>
+        {
+          list[currPage].length && (
+            <ul className="video-list">
+              <TarotList list={list[currPage]} setCurrVideoDataHandler={setCurrVideoDataHandler}/>
+            </ul>
+          )
+        }
         </div>
         <div className="btn-group">
           <button
             className="btn-prev"
-            disabled={!prevPageToken}
+            disabled={prevPage}
             onClick={() => {
-              getYoutubeData(prevPageToken);
+              setCurrPageHandler(currPage - 1);
             }}
           >
             왼쪽
           </button>
           <button
             className="btn-next"
-            disabled={!nextPageToken}
+            disabled={nextPage}
             onClick={() => {
-              getYoutubeData(nextPageToken);
+              setCurrPageHandler(currPage + 1);
             }}
           >
             오른쪽
