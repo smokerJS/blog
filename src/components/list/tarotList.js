@@ -7,12 +7,12 @@ const TarotList = ({ list, setCurrVideoDataHandler, currVideoData }) => {
     setLocalList(list);
   }, [list]);
   const movePageTop = () => {
-    window.scrollTo(0,50);
-  }
+    window.scrollTo(0, 50);
+  };
   return (
     <React.Fragment>
       {localList.length && localList.map((obj, key) => (
-        <li className={currVideoData.id === obj.id && 'curr-video'} key={`tarot_list_${key}`} onClick={()=>{setCurrVideoDataHandler(obj); movePageTop();}}>
+        <li className={currVideoData.id === obj.id && 'curr-video'} key={`tarot_list_${key}`} onClick={() => { setCurrVideoDataHandler(obj); movePageTop(); }}>
           <TarotVideoParameter videoData={obj} />
         </li>
       ))

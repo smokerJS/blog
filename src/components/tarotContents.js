@@ -18,13 +18,13 @@ const TarotContents = () => {
     setTimeout(() => {
       setVideoLoading(false);
     }, 2000);
-  }
+  };
 
   const setCurrPageHandler = (setPage = 0) => {
-    list[setPage+1] ? setNextPage(false) : setNextPage(true);
+    list[setPage + 1] ? setNextPage(false) : setNextPage(true);
     setPage ? setPrevPage(false) : setPrevPage(true);
     setCurrPage(setPage);
-  }
+  };
 
   const getVideoData = (videoIdList) => {
     if (!list[0]) return;
@@ -63,7 +63,7 @@ const TarotContents = () => {
     };
     xhr.open('GET', url);
     xhr.send();
-  }
+  };
 
   const getYoutubeData = (pageToken = '') => {
     const optionParams = {
@@ -88,7 +88,7 @@ const TarotContents = () => {
         const data = JSON.parse(xhr.responseText).items;
         const videoIdList = [];
         while (data.length) {
-          const videoId = data.shift().id.videoId;
+          const { videoId } = data.shift().id;
           videoId && videoIdList.push(videoId);
         }
         getVideoData(videoIdList);
@@ -119,19 +119,19 @@ const TarotContents = () => {
               <div className="content-box">
                 <TarotVideoParameter videoData={currVideoData} view />
               </div>
-              <TarotLoading view={videoLoading}/>
+              <TarotLoading view={videoLoading} />
             </div>
           )
         }
         <hr className="post-hr" />
         <div className="list-area">
-        {
-          list[currPage].length && (
-            <ul className="video-list">
-              <TarotList list={list[currPage]} setCurrVideoDataHandler={setCurrVideoDataHandler} currVideoData={currVideoData}/>
-            </ul>
-          )
-        }
+          {
+            list[currPage].length && (
+              <ul className="video-list">
+                <TarotList list={list[currPage]} setCurrVideoDataHandler={setCurrVideoDataHandler} currVideoData={currVideoData} />
+              </ul>
+            )
+          }
         </div>
         <div className="btn-group">
           <button
