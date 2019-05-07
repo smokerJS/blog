@@ -216,6 +216,9 @@
           &:hover {
             animation: hover-ani 0.3s infinite;
           }
+          &:active {
+            animation: hover-ani-state 0.3s infinite;
+          }
         }
         &::after{
           clear: both;
