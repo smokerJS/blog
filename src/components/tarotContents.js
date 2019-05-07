@@ -14,8 +14,8 @@ const TarotContents = () => {
       channelId: 'UCpO5KdEwqmS88dswUkYSgsw',
       order: 'date',
       maxResults: 6,
-      pageToken,
     };
+    pageToken && (optionParams.pageToken = pageToken);
 
     let url = 'https://www.googleapis.com/youtube/v3/search?';
 
