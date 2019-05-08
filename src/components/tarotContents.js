@@ -2,7 +2,7 @@ import React from 'react';
 import TarotList from '@components/list/tarotList';
 import TarotVideoParameter from '@base/tarotVideoParameter';
 import TarotLoading from '@components/tarotLoading';
-
+let videoLoadingTimer = null;
 const TarotContents = () => {
   const [list, setList] = React.useState([[]]);
   const [nextPage, setNextPage] = React.useState(false);
@@ -12,10 +12,12 @@ const TarotContents = () => {
   const [videoLoading, setVideoLoading] = React.useState(false);
   const VIEW_LENGTH = 6;
 
+
   const setCurrVideoDataHandler = (setVideoData = {}) => {
     setVideoLoading(true);
     setCurrVideoData(setVideoData);
-    setTimeout(() => {
+    videoLoadingTimer && clearTimeout(videoLoadingTimer);
+    videoLoadingTimer = setTimeout(() => {
       setVideoLoading(false);
     }, 2000);
   };
