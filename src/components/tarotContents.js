@@ -14,16 +14,27 @@ const TarotContents = () => {
   const [currPage, setCurrPage] = React.useState(0);
   const [videoLoading, setVideoLoading] = React.useState(false);
   const [channelData, setChannelData] = React.useState({});
+  const [informationView, setInformationView] = React.useState(false);
   const VIEW_LENGTH = 6;
 
-
-  const setCurrVideoDataHandler = (setVideoData = {}) => {
+  const videoLoadingHandler = () => {
     setVideoLoading(true);
-    setCurrVideoData(setVideoData);
+    window.scrollTo(0, 50);
     videoLoadingTimer && clearTimeout(videoLoadingTimer);
     videoLoadingTimer = setTimeout(() => {
       setVideoLoading(false);
     }, 2000);
+  };
+
+  const setCurrVideoDataHandler = (setVideoData = {}) => {
+    videoLoadingHandler();
+    setInformationView(false);
+    setCurrVideoData(setVideoData);
+  };
+
+  const informationViewHendler = () => {
+    videoLoadingHandler();
+    setInformationView(!informationView);
   };
 
   const setCurrPageHandler = (setPage = 0) => {
@@ -115,7 +126,7 @@ const TarotContents = () => {
           title: data.snippet.title,
           thumbnails: data.snippet.thumbnails.medium.url,
           subscriberCount: data.statistics.subscriberCount,
-        })
+        });
       }
     };
     xhr.open('GET', url);
@@ -132,19 +143,26 @@ const TarotContents = () => {
       <section className="post-area taort-main">
         <div className="header-group">
           <h1>타로 모음집</h1>
-          <button></button>
+          <button onClick={() => { informationViewHendler(); }} />
         </div>
         {
           currVideoData.id && (
             <div className="screen-area">
-              <div className="video-box">
-                <div>
-                  <iframe src={`https://www.youtube.com/embed/${currVideoData.id}`} title="video-screen" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-                </div>
-              </div>
-              <div className="content-box">
-                <TarotVideoData videoData={currVideoData} view />
-              </div>
+              {
+                informationView ? <TarotInformation />
+                  : (
+                    <React.Fragment>
+                      <div className="video-box">
+                        <div>
+                          <iframe src={`https://www.youtube.com/embed/${currVideoData.id}`} title="video-screen" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                        </div>
+                      </div>
+                      <div className="content-box">
+                        <TarotVideoData videoData={currVideoData} view />
+                      </div>
+                    </React.Fragment>
+                  )
+              }
               <TarotVideoLoading view={videoLoading} />
             </div>
           )
