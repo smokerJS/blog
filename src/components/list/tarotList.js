@@ -12,7 +12,7 @@ const TarotList = ({ list, setCurrVideoDataHandler, currVideoData }) => {
   return (
     <React.Fragment>
       {localList.length && localList.map((obj, key) => (
-        <li className={currVideoData.id === obj.id && 'curr-video'} key={`tarot_list_${key}`} onClick={() => { currVideoData.id !== obj.id && (setCurrVideoDataHandler(obj), movePageTop()); }}>
+        <li className={currVideoData.id === obj.id ? 'curr-video' : null} key={`tarot_list_${key}`} onClick={() => { currVideoData.id !== obj.id && (setCurrVideoDataHandler(obj), movePageTop()); }}>
           <TarotVideoParameter videoData={obj} />
         </li>
       ))
