@@ -3,6 +3,29 @@
   font-family: "kukdetopokki";
   & > div.header-group {
     margin-bottom: 30px;
+    position: relative;
+    & > button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 20px;
+      font-family: "kukdetopokki";
+      cursor: pointer;
+      padding: 5px;
+      border: none;
+      background-color: #FF3C3C;
+      transition: 0.5s;
+      animation: information-btn-ani 0.6s infinite;
+      &::before {
+        content: "개인리딩문의";
+      }
+      &:hover {
+        animation: information-hover-btn-ani 0.1s infinite;
+        &::before {
+          content: "꾸에에에에엑";
+        }
+      }
+    }
     @media (max-width: 600px) {
       margin-bottom: 20px;
     }
@@ -338,5 +361,50 @@
   }
   to {
     right: 0px;
+  }
+}
+
+@keyframes information-btn-ani {
+  0% {
+    background-color: #FD8788;
+    transform: rotateZ(0deg);
+  }
+  25% {
+    background-color: #FF3C3C;
+    transform: rotateZ(7deg);
+  }
+  50% {
+    background-color: #BF1616;
+    transform: rotateZ(0deg);
+  }
+  75% {
+    background-color: #FF3C3C;
+    transform: rotateZ(-7deg);
+  }
+  100% {
+    background-color: #FD8788;
+    transform: rotateZ(0deg);
+  }
+}
+@keyframes information-hover-btn-ani {
+  0% {
+    background-color: #FF3C3C;
+    transform: rotateZ(0deg);
+  }
+  25% {
+    background-color: #FF3C3C;
+    transform: rotateZ(7deg);
+  }
+  50% {
+    background-color: #FF3C3C;
+    transform: rotateZ(0deg);
+  }
+  75% {
+    background-color: #FF3C3C;
+    transform: rotateZ(-7deg);
+  }
+  100% {
+    background-color: #FF3C3C;
+    transform: rotateZ(0deg);
   }
 }

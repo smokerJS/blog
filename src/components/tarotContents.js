@@ -3,6 +3,8 @@ import TarotList from '@components/list/tarotList';
 import TarotVideoData from '@base/tarotVideoData';
 import TarotVideoLoading from '@components/tarotVideoLoading';
 import TarotChannelBanner from '@components/tarotChannelBanner';
+import TarotInformation from '@components/tarotInformation';
+
 let videoLoadingTimer = null;
 const TarotContents = () => {
   const [list, setList] = React.useState([[]]);
@@ -130,6 +132,7 @@ const TarotContents = () => {
       <section className="post-area taort-main">
         <div className="header-group">
           <h1>타로 모음집</h1>
+          <button></button>
         </div>
         {
           currVideoData.id && (
