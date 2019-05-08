@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-class CategoryLocallList extends React.Component {
+class CategoryLocalList extends React.Component {
   state = {
     list: this.props.list,
     currList: this.props.list.filter(
@@ -119,4 +119,4 @@ class CategoryLocallList extends React.Component {
     );
   }
 }
-export default CategoryLocallList;
+export default CategoryLocalList;

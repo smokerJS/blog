@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TarotVideoParameter = ({ videoData, view }) => {
+const TarotVideoData = ({ videoData, view }) => {
   const getFormatDate = (date) => {
     const year = date.getFullYear();
     let month = (1 + date.getMonth());
@@ -60,4 +60,4 @@ const TarotVideoParameter = ({ videoData, view }) => {
     </React.Fragment>
   );
 };
-export default TarotVideoParameter;
+export default TarotVideoData;

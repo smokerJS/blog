@@ -1,7 +1,8 @@
 import React from 'react';
 import TarotList from '@components/list/tarotList';
-import TarotVideoParameter from '@base/tarotVideoParameter';
-import TarotLoading from '@components/tarotLoading';
+import TarotVideoData from '@base/tarotVideoData';
+import TarotVideoLoading from '@components/tarotVideoLoading';
+import TarotChannelBanner from '@components/tarotChannelBanner';
 let videoLoadingTimer = null;
 const TarotContents = () => {
   const [list, setList] = React.useState([[]]);
@@ -10,6 +11,7 @@ const TarotContents = () => {
   const [currVideoData, setCurrVideoData] = React.useState({});
   const [currPage, setCurrPage] = React.useState(0);
   const [videoLoading, setVideoLoading] = React.useState(false);
+  const [channelData, setChannelData] = React.useState({});
   const VIEW_LENGTH = 6;
 
 
@@ -67,7 +69,7 @@ const TarotContents = () => {
     xhr.send();
   };
 
-  const getYoutubeData = (pageToken = '') => {
+  const getVideoList = (pageToken = '') => {
     const optionParams = {
       part: 'id',
       key: process.env.GATSBY_GOOGLE_YOUTUBE_API_KEY,
@@ -100,8 +102,27 @@ const TarotContents = () => {
     xhr.send();
   };
 
+  const getChannelData = () => {
+    const url = `https://www.googleapis.com/youtube/v3/channels?id=UCpO5KdEwqmS88dswUkYSgsw&key=${process.env.GATSBY_GOOGLE_YOUTUBE_API_KEY}&part=statistics,snippet`;
+    const xhr = new XMLHttpRequest();
+    xhr.onload = () => {
+      if (xhr.status === 200 || xhr.status === 201) {
+        const data = JSON.parse(xhr.responseText).items[0];
+        setChannelData({
+          id: data.id,
+          title: data.snippet.title,
+          thumbnails: data.snippet.thumbnails.medium.url,
+          subscriberCount: data.statistics.subscriberCount,
+        })
+      }
+    };
+    xhr.open('GET', url);
+    xhr.send();
+  };
+
   React.useEffect(() => {
-    getYoutubeData();
+    getVideoList();
+    getChannelData();
   }, []);
 
   return (
@@ -119,13 +140,14 @@ const TarotContents = () => {
                 </div>
               </div>
               <div className="content-box">
-                <TarotVideoParameter videoData={currVideoData} view />
+                <TarotVideoData videoData={currVideoData} view />
               </div>
-              <TarotLoading view={videoLoading} />
+              <TarotVideoLoading view={videoLoading} />
             </div>
           )
         }
         <hr className="post-hr" />
+        <TarotChannelBanner channelData={channelData} />
         <div className="list-area">
           {
             list[currPage].length && (
@@ -135,6 +157,7 @@ const TarotContents = () => {
             )
           }
         </div>
+
         <div className="btn-group">
           <button
             className="btn-prev"

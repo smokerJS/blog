@@ -1,5 +1,5 @@
 import React from 'react';
-import TarotVideoParameter from '@base/tarotVideoParameter';
+import TarotVideoData from '@base/tarotVideoData';
 
 const TarotList = ({ list, setCurrVideoDataHandler, currVideoData }) => {
   const [localList, setLocalList] = React.useState([]);
@@ -13,7 +13,7 @@ const TarotList = ({ list, setCurrVideoDataHandler, currVideoData }) => {
     <React.Fragment>
       {localList.length && localList.map((obj, key) => (
         <li className={currVideoData.id === obj.id ? 'curr-video' : null} key={`tarot_list_${key}`} onClick={() => { currVideoData.id !== obj.id && (setCurrVideoDataHandler(obj), movePageTop()); }}>
-          <TarotVideoParameter videoData={obj} />
+          <TarotVideoData videoData={obj} />
         </li>
       ))
       }

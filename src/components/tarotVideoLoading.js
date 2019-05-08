@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TarotLading = ({ view }) => {
+const TarotVideoLading = ({ view }) => {
   const [loadingView, setLoadingView] = React.useState(false);
   React.useEffect(() => {
     setLoadingView(view);
@@ -107,4 +107,4 @@ const TarotLading = ({ view }) => {
   );
 };
 
-export default TarotLading;
+export default TarotVideoLading;

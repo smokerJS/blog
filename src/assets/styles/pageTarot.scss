@@ -226,6 +226,58 @@
       }
     }
   }
+  & .tarot-channel-banner {
+    width: 100%;
+    & > a {
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 5px;
+      color: #fff;
+      display: block;
+      width: 100%;
+      position: relative;
+      transition: .5s;
+      background: linear-gradient(#FD8788, #FF3C3C, #BF1616);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      margin: 10px 0 5px;
+      &:hover {
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+      }
+      @media (max-width: 800px) {
+        text-align: left;
+      }
+      & div {
+        & > img {
+          width: 14%;
+          max-width: 50px;
+          border-radius: 100%;
+          vertical-align: middle;
+          margin-right: 10px;
+        }
+        & > b {
+          font-size: 15px;
+        }
+        & > div {
+          position: absolute;
+          right: 10px;
+          bottom: 5px;
+          font-size: 12px;
+          text-align: right;
+        }
+        @media (max-width: 800px) {
+          & > img {
+            margin-left: 10px;
+          }
+          & > b {
+            font-size: 13px;
+          }
+          & > div {
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
   & .btn-group {
     padding: 20px 0 0 0;
     @media (max-width: 800px) {
