@@ -51,6 +51,60 @@
     margin-bottom: 15px;
     position: relative;
     overflow: hidden;
+
+    & section.tarot-information {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      & > div {
+        width: 50%;
+        @media (max-width: 800px) {
+          width: 100%;
+        }
+        text-align: center;
+        & > h2 {
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        & > ul {
+          width: 100%;
+          text-align: left;
+          & > li {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            & strong {
+              display: block;
+              font-weight: bold;
+              font-size: 16px;
+              margin-bottom: 5px;
+            }
+            & > dl {
+              padding-left: 10px;
+              & dt {
+                font-size: 11px;
+                float: left;
+                color: #04b4ff;
+                &.bad {
+                  color: #FF3C3C;
+                }
+              }
+              & dd {
+                font-size: 13px;
+                margin-bottom: 5px;
+                padding-left: 34px;
+              }
+            }
+            & > p {
+              padding-left: 10px;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+
     & > div.video-loading-screen {
       position: absolute;
       background-color: rgba(0, 0, 0, 0.8);
