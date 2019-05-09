@@ -58,14 +58,34 @@
       flex-wrap: wrap;
       & > div {
         width: 50%;
+        text-align: center;
+        &.notis {
+          width: 48%;
+          padding-left: 2%;
+          & ul {
+            & li {
+              font-size: 13px;
+              margin-bottom: 10px;
+              & i {
+                font-weight: bold;
+                text-decoration: none;
+                color: #FF3C3C;
+              }
+            }
+          }
+        }
         @media (max-width: 800px) {
           width: 100%;
-        }
-        text-align: center;
-        & > h2 {
-          font-size: 18px;
-          font-weight: bold;
           margin-bottom: 10px;
+          &.notis {
+            width: 100%;
+            padding-left: 0;
+          }
+        }
+        & > h2 {
+          font-size: 20px;
+          font-weight: bold;
+          margin-bottom: 15px;
         }
         & > ul {
           width: 100%;
@@ -94,6 +114,7 @@
                 font-size: 13px;
                 margin-bottom: 5px;
                 padding-left: 34px;
+                color: #585858;
               }
             }
             & > p {
