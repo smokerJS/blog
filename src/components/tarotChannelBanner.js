@@ -5,7 +5,7 @@ const TarotChannelBanner = ({ channelData }) => (
     {
       channelData.id && (
         <section className="tarot-channel-banner">
-          <a href={`https://www.youtube.com/channel/${channelData.id}`} target="_blank">
+          <a href={`https://www.youtube.com/channel/${channelData.id}?sub_confirmation=1`} target="_blank">
             <div>
               <img src={channelData.thumbnails} alt="남타 유튜브" />
               <b>{channelData.title}</b>
