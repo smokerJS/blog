@@ -24,7 +24,7 @@ class Template extends React.Component {
       <React.Fragment>
         <SEO
           title={post.frontmatter.title}
-          keywords={['gatsby', 'application', 'react']}
+          keywords={post.frontmatter.tags}
         />
         <div className="background-black" />
         <section className="post-area">
@@ -50,7 +50,7 @@ export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     allMarkdownRemark(
       limit: 1000
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { order: DESC, fields: [frontmatter___no] }
     ) {
       edges {
         node {

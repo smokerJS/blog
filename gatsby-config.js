@@ -81,13 +81,25 @@ module.exports = {
         component: require.resolve('./src/layout'),
       },
     },
-    'gatsby-transformer-remark',
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: `gatsby-transformer-remark`,
       options: {
-        rule: {
-          include: /\.inline\.svg$/, // See below to configure properly
-        },
+        // In your gatsby-transformer-remark plugin array
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 400,
+              sizeByPixelDensity : true,
+            },
+          },
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+                rel: "noopener noreferrer"
+            }
+          }
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
