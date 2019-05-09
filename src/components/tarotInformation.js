@@ -12,7 +12,8 @@ const TarotInformation = () => (
         <li>
           <strong>2. 상담 시간 예약하기</strong>
           <p>평일 오후 9시(21시)부터 상담 예약 가능<br />
-          주말 및 공휴일 풀타임</p>
+          주말 및 공휴일 풀타임
+          </p>
         </li>
         <li>
           <strong>3. 질문 정리하기</strong>
