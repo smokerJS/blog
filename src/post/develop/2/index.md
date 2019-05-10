@@ -163,7 +163,7 @@ console.log(isNaN(32)); // false
 **study\_07.js** 를 만들고 밑의 코드를 작성해보자!
 ~~~javascript
 console.log('2'+'13'); // 213
-console.log('10'*2+'5'); // 20
+console.log('10'*2+'5'); // 205
 console.log('62개'-27); // NaN
 ~~~
 **study\_07.js** 를 실행시켰을 때 밑의 결과가 나오도록 여러분이 직접 코드를 수정해보자!
