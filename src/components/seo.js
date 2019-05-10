@@ -70,12 +70,12 @@ function SEO({
           content: metaDescription,
         },
         {
-          name="naver-site-verification",
-          content="3c96bea960b162e6a7493387aa7d3332339cf2d0",
+          name: 'naver-site-verification',
+          content: '3c96bea960b162e6a7493387aa7d3332339cf2d0',
         },
         {
-          name="google-site-verification",
-          content="5vTFFtifaPXUDBu_8bKERSpfSq6pECJ_zENaaV3A6lw",
+          name: 'google-site-verification',
+          content: '5vTFFtifaPXUDBu_8bKERSpfSq6pECJ_zENaaV3A6lw',
         },
       ]
         .concat(
