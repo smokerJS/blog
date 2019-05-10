@@ -6,14 +6,22 @@ module.exports = {
     title: '후론투엔두 블로그',
     description: '이런 귀한 곳에 누추하신 분이 어떻게 오셨습니까?',
     author: '@smokerjs',
+    siteUrl: 'https://www.smoker.ga'
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
         trackingId: "UA-139922434-1",
       },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.smoker.ga',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
     },
     'gatsby-plugin-react-helmet',
     {
