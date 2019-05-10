@@ -69,6 +69,10 @@ function SEO({
           name: 'twitter:description',
           content: metaDescription,
         },
+        {
+          name="naver-site-verification",
+          content="3c96bea960b162e6a7493387aa7d3332339cf2d0",
+        },
       ]
         .concat(
           keywords.length > 0
