@@ -50,13 +50,14 @@ export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     allMarkdownRemark(
       limit: 1000
-      sort: { order: DESC, fields: [frontmatter___no] }
+      sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {
         node {
           excerpt(pruneLength: 250)
           id
           frontmatter {
+            no
             title
             category
             date
