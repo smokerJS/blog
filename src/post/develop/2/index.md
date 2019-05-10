@@ -1,7 +1,7 @@
 ---
 no: 2
 path: "/develop/2"
-date: "2019/05/09"
+date: "2019/05/10"
 title: "자바스크립트로 개발 시작하기 with ES6, Node - 02. 숫자와 문자 연산하기"
 category: "develop"
 tags: ["자바스크립트로 개발 시작하기","javascript","ES6","숫자","문자","연산자"]
