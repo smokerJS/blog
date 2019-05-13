@@ -10,6 +10,14 @@ class Footer extends React.Component {
     setInterval(() => {
       this.changeClassNameHander();
     }, 2000);
+    const script = document.createElement("script");
+    script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+    script.async = true;
+    document.body.appendChild(script);
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-9281405567346041",
+      enable_page_level_ads: true
+    });
   }
 
   changeClassNameHander = () => {
