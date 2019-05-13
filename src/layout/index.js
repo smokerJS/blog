@@ -29,7 +29,16 @@ const Layout = ({ dispatch, children }) => {
       `}
       render={data => (
         <>
-          <Helmet>
+          <Helmet
+           meta={[
+            {
+              name: 'naver-site-verification',
+              content: '3c96bea960b162e6a7493387aa7d3332339cf2d0',
+            },
+            {
+              name: 'google-site-verification',
+              content: '5vTFFtifaPXUDBu_8bKERSpfSq6pECJ_zENaaV3A6lw',
+            }]}>
             <script>
               {`
                 (adsbygoogle = window.adsbygoogle || []).push({
