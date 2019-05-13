@@ -4,7 +4,7 @@ import TarotContents from '@components/tarotContents';
 
 const TaortPage = () => (
   <React.Fragment>
-    <SEO title="후론투엔두" keywords={['gatsby', 'application', 'react']} />
+    <SEO title="타로" keywords={['남타', '남자가 말해주는 타로', '남타유튜브']} />
     <TarotContents />
   </React.Fragment>
 );
