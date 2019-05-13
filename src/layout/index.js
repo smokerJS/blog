@@ -33,7 +33,7 @@ const Layout = ({ dispatch, children }) => {
             <script>
               {`
                 (adsbygoogle = window.adsbygoogle || []).push({
-                  google_ad_client: "ca-pub-1540853335472527",
+                  google_ad_client: "ca-pub-9281405567346041",
                   enable_page_level_ads: true
                 });
               `}

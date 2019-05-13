@@ -16,12 +16,6 @@ module.exports = {
         trackingId: "UA-139922434-1",
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-google-adsense`,
-    //   options: {
-    //     publisherId: `ca-pub-9281405567346041`
-    //   },
-    // },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
