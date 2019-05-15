@@ -4,7 +4,7 @@ import SEO from '@components/seo';
 import CategoryLocalList from '@components/list/categoryLocalList';
 import { DiscussionEmbed } from 'disqus-react';
 import Prism from 'prismjs';
-import AdSense from 'react-adsense';
+// import AdSense from 'react-adsense';
 import '@scss/github-markdown.css';
 import '@scss/prism.css';
 class Template extends React.Component {
@@ -31,24 +31,24 @@ class Template extends React.Component {
           <h1 className="post-title">{post.frontmatter.title}</h1>
           <hr className="post-hr" />
           <b className="post-date">{post.frontmatter.date}</b>
-          <AdSense.Google
+          {/* <AdSense.Google
             client="ca-pub-9281405567346041"
             slot="3834617972"
             style={{ display: 'block' }}
             format="auto"
             responsive="true"
-          />
+          /> */}
           <div
             className="post-content markdown-body"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
-          <AdSense.Google
+          {/* <AdSense.Google
             client="ca-pub-9281405567346041"
             slot="5647706172"
             style={{ display: 'block' }}
             format="auto"
             responsive="true"
-          />
+          /> */}
           <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
           <CategoryLocalList
             category={post.frontmatter.category}
