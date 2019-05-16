@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 
 const DevelopPage = ({ data }) => (
   <React.Fragment>
-    <SEO title="디베로먼투" keywords={['develop', '디베로먼투', 'javascript', 'react', '개발블로그', '개발']} />
+    <SEO title="디베로먼투" keywords={['develop', '디베로먼투', 'javascript', 'react', 'es6', '개발블로그', '개발']} />
     <List data={data} category="develop" />
   </React.Fragment>
 );
