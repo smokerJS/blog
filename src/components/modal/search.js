@@ -10,6 +10,15 @@ function Search({ isModalView, dispatch, search }) {
     setQuery(e.target.value);
   };
 
+  const onSubmitHandler = () => {
+    dispatch(toggleModalView(!isModalView));
+    search(query);
+  };
+
+  const onEnterHandler = (e) => {
+    e.keyCode === 13 && onSubmitHandler();
+  };
+
   return (
     <React.Fragment>
       {isModalView && (
@@ -20,13 +29,15 @@ function Search({ isModalView, dispatch, search }) {
             onChange={(e) => {
               onChangeQueryHandler(e);
             }}
+            onKeyDown={(e) => {
+              onEnterHandler(e);
+            }}
             placeholder="어차피 찾는거 안나옴ㅋ"
           />
           <div>
             <button
               onClick={() => {
-                dispatch(toggleModalView(!isModalView));
-                search(query);
+                onSubmitHandler();
               }}
             >
               검색
