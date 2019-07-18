@@ -34,20 +34,8 @@ const TarotVideoData = ({ videoData, view }) => {
                   <React.Fragment>
                     <dt>좋아요</dt>
                     <dd className="like-count">{videoData.likeCount}</dd>
-                  </React.Fragment>
-                )
-              }
-              {
-                view && (
-                  <React.Fragment>
                     <dt>덧글</dt>
                     <dd className="comment-count">{videoData.commentCount}</dd>
-                  </React.Fragment>
-                )
-              }
-              {
-                view && (
-                  <React.Fragment>
                     <dt>게시일</dt>
                     <dd className="published-at">{getFormatDate(videoData.publishedAt)}</dd>
                   </React.Fragment>

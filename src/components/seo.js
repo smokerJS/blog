@@ -68,7 +68,7 @@ function SEO({
         {
           name: 'twitter:description',
           content: metaDescription,
-        }
+        },
       ]
         .concat(
           keywords.length > 0

@@ -13,8 +13,7 @@ const PostList = ({ list, searchQuery }) => {
   const prevContentParser = (excerpt) => {
     const queryIndex = excerpt.indexOf(searchQuery);
     if (searchQuery && queryIndex !== -1) {
-      excerpt = excerpt.slice(queryIndex, 500);
-      excerpt.length > 499 && (excerpt = `${excerpt.trim()}`);
+      excerpt = excerpt.substr(queryIndex, 500).trim();
       excerpt = replaceAll(
         excerpt,
         searchQuery,
@@ -22,7 +21,7 @@ const PostList = ({ list, searchQuery }) => {
       );
     } else {
       excerpt.length > 500
-        && (excerpt = `${excerpt.slice(0, 500).trim()}`);
+        && (excerpt = `${excerpt.substr(0, 500).trim()}`);
     }
     return `<strong>${excerpt}</strong>`;
   };

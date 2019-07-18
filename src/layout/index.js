@@ -30,15 +30,17 @@ const Layout = ({ dispatch, children }) => {
       render={data => (
         <>
           <Helmet
-           meta={[
-            {
-              name: 'naver-site-verification',
-              content: '3c96bea960b162e6a7493387aa7d3332339cf2d0',
-            },
-            {
-              name: 'google-site-verification',
-              content: '5vTFFtifaPXUDBu_8bKERSpfSq6pECJ_zENaaV3A6lw',
-            }]}>
+            meta={[
+              {
+                name: 'naver-site-verification',
+                content: '3c96bea960b162e6a7493387aa7d3332339cf2d0',
+              },
+              {
+                name: 'google-site-verification',
+                content: '5vTFFtifaPXUDBu_8bKERSpfSq6pECJ_zENaaV3A6lw',
+              }]}
+          >
+            {/*
             <script>
               {`
                 (adsbygoogle = window.adsbygoogle || []).push({
@@ -47,7 +49,9 @@ const Layout = ({ dispatch, children }) => {
                 });
               `}
             </script>
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
+            에드센스 미승인으로 주석처리 20190515
+            */}
           </Helmet>
           <GlobalNavigationBar />
           <section id="screen">
