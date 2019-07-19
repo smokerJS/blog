@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 
 const LifePage = ({ data }) => (
   <React.Fragment>
-    <SEO title="라이푸" keywords={['life', '라이푸', 'smokerJS', '일기', '일상생활', '정보']} />
+    <SEO title="라이푸" keywords={['life', '라이푸', 'smokerJS', '일기', '일상생활', '정보', '일상']} />
     <List data={data} category="life" />
   </React.Fragment>
 );
