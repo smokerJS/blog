@@ -6,7 +6,7 @@ const NotFoundPage = () => (
     <SEO title="404: Not found" />
     <h1>NOT FOUND</h1>
     <p>404 404 404 404</p>
-    <h1>여기는 없는 페이지야 이 사람아!!!</h1>
+    <h1>여기는 없는 페이지야 이 사람아!!! 돌아가!</h1>
   </React.Fragment>
 );
 
