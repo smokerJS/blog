@@ -78,7 +78,7 @@ class MailForm extends React.Component {
       } else {
         // console.error(xhr.responseText);
         $this.modalToggleHandler(
-          '에러야 에러!! \nsmokerjs.dev@gmail.com 여기로 직접 보내줭!',
+          '에러야 에러!! \nsmokerjs.dev@gmail.com 여기로 직접 보내줘!',
         );
       }
     };
