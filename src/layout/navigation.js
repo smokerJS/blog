@@ -24,10 +24,10 @@ const Navigation = ({ location }) => (
       </li>
       <li>
         <div>
-          <Link to="/life">
+          <a href="https://www.smokerjs.dev" target="_blank">
             <img src={require('@images/navigation/img-rope-menu3.png')} />
-            <strong>라이푸</strong>
-          </Link>
+            <strong>후로필</strong>
+          </a>
         </div>
       </li>
       <li>
