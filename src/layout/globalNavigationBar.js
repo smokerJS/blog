@@ -64,22 +64,9 @@ const GlobalNavigationBar = ({ location }) => {
             </Link>
           </li>
           <li>
-            <Link
-              to="/life"
-              onClick={() => {
-                menuClickHandler();
-              }}
-            >
-              <strong
-                className={
-                  location.pathname.indexOf('life') !== -1
-                    ? 'focus'
-                    : 'tab'
-                }
-              >
-                라이푸
-              </strong>
-            </Link>
+            <a href="https://www.smokerjs.dev" target="_blank">
+              <strong>후로필</strong>
+            </a>
           </li>
           <li>
             <a href="https://github.com/smokerJS" target="_blank">
