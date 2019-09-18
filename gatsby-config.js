@@ -6,7 +6,7 @@ module.exports = {
     title: '후론투엔두 블로그',
     description: '이런 귀한 곳에 누추하신 분이 어떻게 오셨습니까?',
     author: '@smokerjs',
-    siteUrl: 'https://www.smoker.ga'
+    siteUrl: 'https://blog.smokerjs.dev'
   },
   plugins: [
     `gatsby-plugin-sitemap`,
@@ -19,7 +19,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://www.smoker.ga',
+        host: 'https://blog.smokerjs.dev',
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
