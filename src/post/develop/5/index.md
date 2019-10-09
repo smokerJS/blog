@@ -40,4 +40,4 @@ console.log(eatFood);
 ![내프로필](./img-profile.jpeg "myProfile")
 
 정답은 ***아무에게도 말하지 마세요.*** \
-세상은 뭔가 잘못되어있다.. ~~시붱~~
+세상은 뭔가 잘못되어있다..

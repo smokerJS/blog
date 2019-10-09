@@ -1,2 +1,2 @@
 # 후론투엔두
-### https://www.smoker.ga
+### https://blog.smokerjs.dev
