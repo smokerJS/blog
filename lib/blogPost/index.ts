@@ -32,10 +32,10 @@ export default class BlogPost {
         return allPostsData.sort((a, b) => a.date < b.date ? 1 : -1);
     }
 
-    getAllPostIds(): {id: string}[] {
+    getAllPostIds(): {params: {id: string}}[] {
         const postNames: Array<string> = fs.readdirSync(this.POST_DIRECTORY);
         return postNames.map(postName => {
-          return {id: postName.replace(/\.md$/, '')}
+          return {params: {id: postName}};
         });
     }
 
