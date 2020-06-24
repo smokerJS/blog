@@ -1,2 +1,1 @@
-# 후론투엔두
-### https://blog.smokerjs.dev
+This is a starter template for [Learn Next.js](https://nextjs.org/learn).
