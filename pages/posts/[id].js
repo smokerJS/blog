@@ -1,6 +1,6 @@
 import Layout from '../../components/layout'
 // import { getAllPostIds, getPostData } from '../../lib/posts'
-import BlogPost from '../../lib/blogPost';
+import PostUtil from '../../lib/postUtil';
 import Head from 'next/head'
 import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
@@ -23,9 +23,7 @@ export default function Post({ postData }) {
 }
 
 export async function getStaticPaths() {
-  const blogPost = new BlogPost('posts');
-  const paths = blogPost.getAllPostIds();
-  console.log(paths)
+  const paths = PostUtil.getAllPostIds();
   return {
     paths,
     fallback: false
@@ -33,8 +31,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const blogPost = new BlogPost('posts');
-  const postData = blogPost.getPostDataById(params.id)
+  const postData = PostUtil.getPostDataById(params.id)
   return {
     props: {
       postData

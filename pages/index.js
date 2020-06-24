@@ -1,10 +1,9 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
+import Layout, { siteTitle } from '@/layout'
 import utilStyles from '../styles/utils.module.css'
-// import { getSortedPostsData } from '../lib/posts'
-import BlogPost from '../lib/blogPost';
+import PostUtil from '../lib/postUtil';
 import Link from 'next/link'
-import Date from '../components/date'
+import Date from '@/date';
 
 export default function Home({ allPostsData }) {
   return (
@@ -40,11 +39,9 @@ export default function Home({ allPostsData }) {
 }
 
 export async function getStaticProps() {
-  // const allPostsData = getSortedPostsData()
-  const blogPost = new BlogPost('posts');
   return {
     props: {
-      allPostsData: blogPost.getSortedPostsData()
+      allPostsData: PostUtil.getSortedPostsData()
     }
   }
 }

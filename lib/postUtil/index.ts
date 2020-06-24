@@ -10,18 +10,15 @@ type postData = {
     contentHtml?: string
 }
 
-export default class BlogPost {
-    private readonly POST_DIRECTORY: string;
-    constructor(postRootDirectory: string) {
-        this.POST_DIRECTORY = path.join(process.cwd(), postRootDirectory);
-    }
+export default class PostUtil {
+    static readonly POST_DIRECTORY: string = path.join(process.cwd(), 'posts');
 
-    getSortedPostsData(): postData[] {
+    static getSortedPostsData(): postData[] {
         const postNames: Array<string> = fs.readdirSync(this.POST_DIRECTORY);
         const allPostsData: postData[] = postNames.map(postName => {
-            const id: string = postName.replace(/\.md$/, '');
-            const fullPath: string = path.join(this.POST_DIRECTORY, `${id}/index.md`);
-            const fileContents: string = fs.readFileSync(fullPath, 'utf8');
+            const id = postName.replace(/\.md$/, '');
+            const fullPath = path.join(this.POST_DIRECTORY, `${id}/index.md`);
+            const fileContents = fs.readFileSync(fullPath, 'utf8');
             const data = matter(fileContents).data;
             return {
                 id,
@@ -32,14 +29,14 @@ export default class BlogPost {
         return allPostsData.sort((a, b) => a.date < b.date ? 1 : -1);
     }
 
-    getAllPostIds(): {params: {id: string}}[] {
+    static getAllPostIds(): {params: {id: string}}[] {
         const postNames: Array<string> = fs.readdirSync(this.POST_DIRECTORY);
         return postNames.map(postName => {
           return {params: {id: postName}};
         });
     }
 
-    getPostDataById(id: string): postData {
+    static getPostDataById(id: string): postData {
         const fullPath = path.join(this.POST_DIRECTORY, `${id}/index.md`);
         const fileContents = fs.readFileSync(fullPath, 'utf8');
         const matterResult = matter(fileContents);
