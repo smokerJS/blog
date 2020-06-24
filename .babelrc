@@ -8,6 +8,7 @@
           "root": ["./"],
           "alias": {
             "@": "./components",
+            "@lib": "./lib",
             "@layout": "./layout",
           }
         }]

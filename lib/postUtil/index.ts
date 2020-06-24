@@ -3,19 +3,12 @@ import path from 'path';
 import matter from 'gray-matter';
 import showdown from 'showdown';
 
-type postData = {
-    id: string,
-    title: string | '',
-    date: string | '',
-    contentHtml?: string
-}
-
 export default class PostUtil {
     static readonly POST_DIRECTORY: string = path.join(process.cwd(), 'posts');
 
-    static getSortedPostsData(): postData[] {
+    static getSortedPostsData(): PostData[] {
         const postNames: Array<string> = fs.readdirSync(this.POST_DIRECTORY);
-        const allPostsData: postData[] = postNames.map(postName => {
+        const allPostsData: PostData[] = postNames.map(postName => {
             const id = postName.replace(/\.md$/, '');
             const fullPath = path.join(this.POST_DIRECTORY, `${id}/index.md`);
             const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -36,7 +29,7 @@ export default class PostUtil {
         });
     }
 
-    static getPostDataById(id: string): postData {
+    static getPostDataById(id: string): PostData {
         const fullPath = path.join(this.POST_DIRECTORY, `${id}/index.md`);
         const fileContents = fs.readFileSync(fullPath, 'utf8');
         const matterResult = matter(fileContents);

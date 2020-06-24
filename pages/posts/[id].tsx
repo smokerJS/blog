@@ -1,13 +1,13 @@
-import Layout from '../../components/layout'
-// import { getAllPostIds, getPostData } from '../../lib/posts'
-import PostUtil from '../../lib/postUtil';
+import React from 'react';
+import PostUtil from '@lib/postUtil';
+import { IPostData } from '@lib/postUtil/type';
 import Head from 'next/head'
 import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 
-export default function Post({ postData }) {
+export default function Post({ postData }: {postData: IPostData}) {
   return (
-    <Layout>
+    <React.Fragment>
       <Head>
         <title>{postData.title}</title>
       </Head>
@@ -18,7 +18,7 @@ export default function Post({ postData }) {
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
-    </Layout>
+    </React.Fragment>
   )
 }
 
