@@ -13,7 +13,6 @@ const NextAppConfig = {
             ...(config.resolve.alias || {}),
             '@': path.join(__dirname, 'components'),
             '@lib': path.join(__dirname, 'lib'),
-            '@layout': path.join(__dirname, 'layout'),
         }
         config.module.rules = [
             ...config.module.rules,

@@ -5,11 +5,10 @@
     ],
     "plugins": [
         ["module-resolver", {
-          "root": ["./"],
+          "root": ["."],
           "alias": {
-            "@": "./components",
-            "@lib": "./lib",
-            "@layout": "./layout",
+            "@": "components",
+            "@lib": "lib",
           }
         }]
     ]
