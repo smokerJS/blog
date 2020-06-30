@@ -1,20 +1,20 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import {GetStaticProps} from 'next';
+import { GetStaticProps } from 'next';
 import utilStyles from '../styles/utils.module.css'
 import PostUtil from '@lib/postUtil';
 
 import Date from '@/base/date';
 
 type Props = {
-  allPostsData: PostData[];
+  allPostsData: PostData[] | null;
 }
 
 export default function Home({ allPostsData }: Props) {
   return (
     <>
       <Head>
-        <title>{siteTitle}</title>
+        <title>Blog</title>
       </Head>
       <section className={utilStyles.headingMd}>
         <p>[Your Self Introduction]</p>
@@ -26,7 +26,7 @@ export default function Home({ allPostsData }: Props) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
+          {allPostsData?.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
               <Link href="/post/[id]" as={`/post/${id}`}>
                 <a>{title}</a>
