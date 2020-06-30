@@ -31,24 +31,35 @@ export default class PostUtil {
         }
     }
 
-    static getAllPostIds(): {params: {id: string}}[] {
-        const postNames: Array<string> = fs.readdirSync(this.POST_DIRECTORY);
-        return postNames.map(postName => {
-          return {params: {id: postName}};
-        });
+    static getAllPostIds(): {params: {id: string}}[] | null {
+        try {
+            const postIds: Array<string> = fs.readdirSync(this.POST_DIRECTORY);
+            return postIds.map(postId => {
+              return {params: {id: postId}};
+            });
+        } catch (error) {
+            console.error(error);
+            return null;
+        }
     }
 
-    static getPostDataById(id: string): PostData {
-        const fullPath = path.join(this.POST_DIRECTORY, `${id}/index.md`);
-        const fileContents = fs.readFileSync(fullPath, 'utf8');
-        const matterResult = matter(fileContents);
-        const data = matterResult.data;
-        const converter = new showdown.Converter();
-        return {
-          id,
-          title: data.title,
-          date: data.date,
-          contentHtml: converter.makeHtml(matterResult.content)
+    static getPostDataById(id: string): PostData | null {
+        try {
+            const fullPath = path.join(this.POST_DIRECTORY, `${id}/index.md`);
+            const fileContents = fs.readFileSync(fullPath, 'utf8');
+            const matterResult = matter(fileContents);
+            const data = matterResult.data;
+            const converter = new showdown.Converter();
+            return {
+              id,
+              title: data.title,
+              date: data.date,
+              contentHtml: converter.makeHtml(matterResult.content)
+            }
+        } catch (error) {
+            console.error(error);
+            return null;
         }
+
     }
 }

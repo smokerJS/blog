@@ -31,12 +31,11 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps<PostData> = async ({params}) => {
-  const postData: PostData = params?.id !== undefined ? PostUtil.getPostDataById(params.id.toString())
-    : {
-        id: '',
-        title: '',
-        date: '',
-        contentHtml: ''
-    };
+  const postData: PostData = params?.id !== undefined && PostUtil.getPostDataById(params.id.toString()) || {
+    id: '',
+    title: '',
+    date: '',
+    contentHtml: ''
+  }
   return { props: postData }
 }
