@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import {GetStaticProps} from 'next';
-import Layout, { siteTitle } from '@/layout'
 import utilStyles from '../styles/utils.module.css'
 import PostUtil from '@lib/postUtil';
 
@@ -13,7 +12,7 @@ type Props = {
 
 export default function Home({ allPostsData }: Props) {
   return (
-    <Layout home>
+    <>
       <Head>
         <title>{siteTitle}</title>
       </Head>
@@ -40,7 +39,7 @@ export default function Home({ allPostsData }: Props) {
           ))}
         </ul>
       </section>
-    </Layout>
+    </>
   )
 }
 
