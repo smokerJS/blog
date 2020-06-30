@@ -17,10 +17,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["components/*"],
-      "@/lib/*": ["lib/*"],
-      "@/layout/*": ["layout/*"],
+      "@*": ["/components/*"],
+      "@lib/*": ["/lib/*"],
+      "@layout/*": ["/layout/*"],
     },
   },
   "exclude": [
