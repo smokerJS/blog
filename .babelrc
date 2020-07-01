@@ -9,6 +9,7 @@
           "alias": {
             "@": "components",
             "@lib": "lib",
+            "@style": "assets/styles"
           }
         }]
     ]
