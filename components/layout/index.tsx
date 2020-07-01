@@ -1,6 +1,6 @@
-import Header from './header';
-import Footer from './footer';
 import Head from 'next/head';
+import Header from '@/layout/header';
+import Footer from '@/layout/footer';
 
 export interface LayoutProps  { 
     children: JSX.Element

@@ -13,6 +13,7 @@ const NextAppConfig = {
             ...(config.resolve.alias || {}),
             '@': path.join(__dirname, 'components'),
             '@lib': path.join(__dirname, 'lib'),
+            '@style': path.join(__dirname, 'assets/styles'),
         }
         config.module.rules = [
             ...config.module.rules,
@@ -39,7 +40,7 @@ const NextAppConfig = {
                         {
                             loader: 'sass-resources-loader',
                             options: {
-                                resources: [path.join(__dirname, 'assets/styles/*.scss')]
+                                resources: [path.join(__dirname, 'assets/styles/variables.scss')]
                             }
                         }
                     ],

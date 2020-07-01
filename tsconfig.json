@@ -21,6 +21,7 @@
     "paths": {
       "@/*": ["components/*"],
       "@lib/*": ["lib/*"],
+      "@style/*": ["assets/styles/*"],
     },
   },
   "exclude": [

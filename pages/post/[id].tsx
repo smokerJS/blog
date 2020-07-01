@@ -3,7 +3,6 @@ import { GetStaticProps } from 'next';
 import PostUtil from '@lib/postUtil';
 import Head from 'next/head';
 import Date from '@/base/date';
-import utilStyles from '../../styles/utils.module.css';
 
 export default function Post({ title, date, contentHtml }: PostData) {
   return (
@@ -12,8 +11,8 @@ export default function Post({ title, date, contentHtml }: PostData) {
         <title>{title}</title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{title}</h1>
-        <div className={utilStyles.lightText}>
+        <h1>{title}</h1>
+        <div>
           <Date dateString={date} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: contentHtml || ''}} />
