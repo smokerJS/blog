@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "smokerJS blog",
   "author": "smokerJS <smokerjs.dev@gmail.com>",
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
+  },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
