@@ -1,0 +1,14 @@
+.hedaer {
+    height: 300px;
+    h1 {
+        font-size: 200px;
+    }
+}
+
+.test {
+    height: 600px;
+    background-color: #000;
+    & h1 {
+        font-size: 200px;
+    }
+}

@@ -1,20 +1,11 @@
-// import style from './style.scss';
+import style from './style.module.scss';
 
 export default function Header() {
     return (
-        <>
-        {/* <style jsx>{`@import './style.scss';`}</style> */}
-        <header>
-            
-            <style jsx>{`
-                h1 {
-                    size: 200px;
-                }
-            `}</style>
+        <header className={style.test}>
             <h1>
                 asfwqwq
             </h1>
         </header>
-        </>
     )
 }
