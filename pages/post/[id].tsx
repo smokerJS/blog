@@ -6,11 +6,12 @@ import Date from '@/base/date';
 import style from './style.module.scss';
 
 
-export default function Post({ title, date, contentHtml }: PostData) {
+export default function Post({ title, date, tags, contentHtml }: PostData) {
   return (
     <React.Fragment>
       <Head>
         <title>{title}</title>
+        {tags && <meta name="keywords" content={tags}/>}
       </Head>
       <article className={style.post_container}>
         <h1>{title}</h1>
@@ -36,6 +37,7 @@ export const getStaticProps: GetStaticProps<PostData> = async ({params}) => {
     id: '',
     title: '',
     date: '',
+    tags: '',
     contentHtml: ''
   }
   return { props: postData }

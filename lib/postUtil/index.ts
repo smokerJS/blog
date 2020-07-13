@@ -4,12 +4,12 @@ import matter from 'gray-matter';
 import showdown from 'showdown';
 
 export default class PostUtil {
-    static readonly POST_DIRECTORY: string = path.join(process.cwd(), 'posts');
+    static readonly POST_DIRECTORY: string = path.join(process.cwd(), 'public/posts');
 
     static getSortedPostsData(): PostData[] | null {
         try {
             const allPostsData: PostData[] = [];
-            const posts: Array<string> = fs.readdirSync(this.POST_DIRECTORY);
+            const posts: Array<string> = fs.readdirSync(this.POST_DIRECTORY).filter((x: string) => !isNaN(Number(x)));
             posts.forEach(post => {
                 try {
                     const fullPath = path.join(this.POST_DIRECTORY, `${post}/index.md`);
@@ -18,7 +18,8 @@ export default class PostUtil {
                     allPostsData.push({
                         id: String(post),
                         title: String(data.title || ''),
-                        date: String(data.date || '')
+                        date: String(data.date || ''),
+                        tags: String(data.tags)
                     })
                 } catch (error) {
                     console.error(error);
@@ -54,6 +55,7 @@ export default class PostUtil {
               id,
               title: data.title,
               date: data.date,
+              tags: data.tags,
               contentHtml: converter.makeHtml(matterResult.content)
             }
         } catch (error) {
