@@ -2483,6 +2483,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"clipboard@npm:^2.0.0":
+  version: 2.0.6
+  resolution: "clipboard@npm:2.0.6"
+  dependencies:
+    good-listener: ^1.2.2
+    select: ^1.1.2
+    tiny-emitter: ^2.0.0
+  checksum: 2/25e2e6b595f764ebb541dfda5c77051200567b5dd2de42ac6ab9681febe1256a977be450ab1d6f0d41554799106cc92e79e167797c8e8b8e88edcb0aec5b5dcb
+  languageName: node
+  linkType: hard
+
 "cliui@npm:^5.0.0":
   version: 5.0.0
   resolution: "cliui@npm:5.0.0"
@@ -3125,6 +3136,13 @@ __metadata:
   version: 1.0.0
   resolution: "delayed-stream@npm:1.0.0"
   checksum: 2/d9dfb0a7c79fd308fada9db2cf29d1ff22047ceb50dd78f7e3c173567909b438f418259cb76a6d9c9f513e88ef41d3a14154f618741ec8368c3efeff616d0c9f
+  languageName: node
+  linkType: hard
+
+"delegate@npm:^3.1.2":
+  version: 3.2.0
+  resolution: "delegate@npm:3.2.0"
+  checksum: 2/ccbbf29eb436719e4ffef06a1df2635a150f229f8ae549f4b6e118e940b17917e063c939541c6e23f38675d30acf424ecca9a8d1cca2a874d63fa0c257b0811f
   languageName: node
   linkType: hard
 
@@ -3883,6 +3901,15 @@ fsevents@~2.1.2:
   version: 11.12.0
   resolution: "globals@npm:11.12.0"
   checksum: 2/2563d3306a7e646fd9ec484b0ca29bf8847d9dc6ebbe86026f11e31bda04f420f6536c2decbd4cb96350379801d2cce352ab373c40be8b024324775b31f882f9
+  languageName: node
+  linkType: hard
+
+"good-listener@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "good-listener@npm:1.2.2"
+  dependencies:
+    delegate: ^3.1.2
+  checksum: 2/640a1627e528ceb3337595a8020f44d09455f284c18c765eaf9ce5dcdf1799810e7b11ca2b61582a5a4db20aad0b7e6b820235864822d84df541d74383bcd01c
   languageName: node
   linkType: hard
 
@@ -5144,6 +5171,7 @@ fsevents@~2.1.2:
     gray-matter: ^4.0.2
     next: ^9.4.4
     next-compose-plugins: ^2.2.0
+    prismjs: ^1.20.0
     react: ^16.13.1
     react-dom: ^16.13.1
     sass: ^1.26.10
@@ -6227,6 +6255,18 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"prismjs@npm:^1.20.0":
+  version: 1.20.0
+  resolution: "prismjs@npm:1.20.0"
+  dependencies:
+    clipboard: ^2.0.0
+  dependenciesMeta:
+    clipboard:
+      optional: true
+  checksum: 2/b4cb8bdd48a18421e8eabf936ad38a33254250a7d8576d05a2286fbae8d07ef2b2a92a3c22f5e61fa9ba72eeff3d246326274138470f4c98d7a06adcfee4dcae
+  languageName: node
+  linkType: hard
+
 "process-nextick-args@npm:~2.0.0":
   version: 2.0.1
   resolution: "process-nextick-args@npm:2.0.1"
@@ -6879,6 +6919,13 @@ fsevents@~2.1.2:
     extend-shallow: ^2.0.1
     kind-of: ^6.0.0
   checksum: 2/4c64ed0cf3fb58ab216a04185ee5b51790c8033bd121cf69bf74c9686d7100198606a63dbc05db336ebca28cd80a325d9b7ad564d7e0929ead8556eb3a38de65
+  languageName: node
+  linkType: hard
+
+"select@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "select@npm:1.1.2"
+  checksum: 2/66be63b7cf0973af48cebcca47909d0ba703bb7f01373f9ebf19880dc8fe9c97f41e2ebdefee144f60bbf416cafbf77dfb98cd1776e62d7afc336b843f1009b1
   languageName: node
   linkType: hard
 
@@ -7540,6 +7587,13 @@ fsevents@~2.1.2:
   version: 0.3.0
   resolution: "timsort@npm:0.3.0"
   checksum: 2/d8300c3ecf1a3751413de82b04ad283b461ab6fb1041820c825d13b4ae74526e2101ab5fb84c57a0c6e1f4d7f67173b5d8754ed8bb7447c6a9ce1db8562eb82c
+  languageName: node
+  linkType: hard
+
+"tiny-emitter@npm:^2.0.0":
+  version: 2.1.0
+  resolution: "tiny-emitter@npm:2.1.0"
+  checksum: 2/0055509c72e5fe35d6ab66fa6339342e0f29129e77ed2086e475fdf80be43a8651f2517be76513b46a042c8356396f4da5a35e2e23457252176808d5a892036a
   languageName: node
   linkType: hard
 

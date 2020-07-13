@@ -3,10 +3,14 @@ import { GetStaticProps } from 'next';
 import PostUtil from '@lib/postUtil';
 import Head from 'next/head';
 import Date from '@/base/date';
+import Prism from 'prismjs';
 import style from './style.module.scss';
 
 
 export default function Post({ title, date, tags, contentHtml }: PostData) {
+  React.useEffect(()=>{
+    Prism.highlightAll();
+  }, [])
   return (
     <React.Fragment>
       <Head>
@@ -18,7 +22,7 @@ export default function Post({ title, date, tags, contentHtml }: PostData) {
         <div>
           <Date dateString={date} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: contentHtml || ''}} />
+        <div className="markdown-body" dangerouslySetInnerHTML={{ __html: contentHtml || ''}} />
       </article>
     </React.Fragment>
   )
