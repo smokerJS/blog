@@ -1,0 +1,12 @@
+.index_container {
+    & ul {
+        width: 100%;
+        & li {
+            width: 130px;
+            height: 130px;
+            background-color: #fff;
+            float: left;
+            margin: 20px;
+        }
+    }
+}

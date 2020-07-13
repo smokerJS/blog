@@ -5,12 +5,6 @@ const path = require('path');
 const NextAppConfig = {
     // distDir: 'build',
     webpack: (config, options) => {
-        config.resolve.alias = {
-            ...(config.resolve.alias || {}),
-            '@': path.join(__dirname, 'components'),
-            '@lib': path.join(__dirname, 'lib'),
-            '@style': path.join(__dirname, 'assets/styles'),
-        }
         config.module.rules = [
             ...config.module.rules,
             ...[{

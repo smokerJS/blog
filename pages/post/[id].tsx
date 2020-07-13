@@ -3,6 +3,8 @@ import { GetStaticProps } from 'next';
 import PostUtil from '@lib/postUtil';
 import Head from 'next/head';
 import Date from '@/base/date';
+import style from './style.module.scss';
+
 
 export default function Post({ title, date, contentHtml }: PostData) {
   return (
@@ -10,7 +12,7 @@ export default function Post({ title, date, contentHtml }: PostData) {
       <Head>
         <title>{title}</title>
       </Head>
-      <article>
+      <article className={style.post_container}>
         <h1>{title}</h1>
         <div>
           <Date dateString={date} />
