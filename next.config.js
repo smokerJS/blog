@@ -1,8 +1,5 @@
 /* Import modules */
 const path = require('path');
-const withTypescript = require('@zeit/next-typescript');
-const withSass = require('@zeit/next-sass');
-const withPlugins = require('next-compose-plugins');
 
 /* Configuration */
 const NextAppConfig = {
@@ -17,14 +14,6 @@ const NextAppConfig = {
         config.module.rules = [
             ...config.module.rules,
             ...[{
-                    test: /\.js$/,
-                    loader: 'eslint-loader',
-                    exclude: ['/node_modules/', '/.next/', '/out/'],
-                    enforce: 'pre',
-                    options: {
-                        emitWarning: true,
-                    },
-                },{
                     test: /\.(png|woff|woff2|eot|ttf|gif|jpg|ico|svg)$/,
                     loader: 'file-loader',
                     options: {
@@ -36,13 +25,17 @@ const NextAppConfig = {
                 
             ]
         ]
+        options.sassOptions = {
+            includePaths: [path.join(__dirname, 'styles')],
+        }
         
+        options.typescript = {
+            transpileOnly: true // same as ts-node --transpile-only
+         }
+
         return config;
     },
 };
 
 
-/* Export declaration */
-module.exports = withPlugins([ 
-    [ withTypescript(withSass) ], 
-], NextAppConfig );
+module.exports = NextAppConfig;
