@@ -1,7 +1,6 @@
 /* Import modules */
 const path = require('path');
 const withTypescript = require('@zeit/next-typescript');
-const withCSS = require('@zeit/next-css');
 const withSass = require('@zeit/next-sass');
 const withPlugins = require('next-compose-plugins');
 
@@ -33,21 +32,11 @@ const NextAppConfig = {
                         publicPath: `/_next/static/files`,
                         outputPath: 'static/files'
                     }
-                },{
-                    test: /\.scss$/,
-                    use: [
-                        'sass-loader',
-                        {
-                            loader: 'sass-resources-loader',
-                            options: {
-                                resources: [path.join(__dirname, 'assets/styles/variables.scss')]
-                            }
-                        }
-                    ],
                 }
                 
             ]
         ]
+        
         return config;
     },
 };
@@ -55,6 +44,5 @@ const NextAppConfig = {
 
 /* Export declaration */
 module.exports = withPlugins([ 
-    [ withCSS ],
     [ withTypescript(withSass) ], 
 ], NextAppConfig );

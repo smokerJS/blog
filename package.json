@@ -11,15 +11,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "@types/showdown": "^1.9.3",
-    "@zeit/next-css": "^1.0.1",
-    "@zeit/next-sass": "^1.0.1",
-    "@zeit/next-typescript": "^1.1.1",
-    "babel-plugin-module-resolver": "^4.0.0",
     "date-fns": "^2.11.1",
     "gray-matter": "^4.0.2",
     "next": "9.3.5",
-    "next-compose-plugins": "^2.2.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "showdown": "^1.9.1"
@@ -28,7 +22,12 @@
     "@types/node": "^14.0.13",
     "@types/react": "^16.9.38",
     "@types/react-dom": "^16.9.8",
-    "sass": "^1.26.9",
+    "@types/showdown": "^1.9.3",
+    "@zeit/next-sass": "^1.0.1",
+    "@zeit/next-typescript": "^1.1.1",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "next-compose-plugins": "^2.2.0",
+    "sass": "^1.26.10",
     "typescript": "^3.9.5"
   }
 }
