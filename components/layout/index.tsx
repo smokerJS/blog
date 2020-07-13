@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Header from '@/layout/header';
 import Footer from '@/layout/footer';
+import Background from '@/layout/background';
 
 export interface LayoutProps  { 
     children: JSX.Element
@@ -26,6 +27,7 @@ export default function Layout({ children }: LayoutProps) {
             </Head>
             <Header/>
                 <main>{children}</main>
+                <Background/>
             <Footer/>
         </>
     )
