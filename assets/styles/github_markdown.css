@@ -1147,7 +1147,9 @@ pre[class*="language-"] {
 * Language Specific
 */
 pre[class*="language-javascript"],
-code[class*="language-javascript"] {
+code[class*="language-javascript"],
+pre[class*="language-js"],
+code[class*="language-js"] {
 	color: #4ec9b0;
 }
 
