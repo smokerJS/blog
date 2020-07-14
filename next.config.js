@@ -19,9 +19,6 @@ const NextAppConfig = {
                 
             ]
         ]
-        options.sassOptions = {
-            includePaths: [path.join(__dirname, 'styles')],
-        }
         
         options.typescript = {
             transpileOnly: true // same as ts-node --transpile-only

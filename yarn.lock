@@ -5181,7 +5181,9 @@ fsevents@~2.1.2:
     next: ^9.4.4
     next-compose-plugins: ^2.2.0
     prismjs: ^1.20.0
+    prop-types: ^15.7.2
     react: ^16.13.1
+    react-disqus-comments: ^1.4.0
     react-dom: ^16.13.1
     sass: ^1.26.10
     showdown: ^1.9.1
@@ -6308,7 +6310,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"prop-types@npm:15.7.2, prop-types@npm:^15.6.2":
+"prop-types@npm:15.7.2, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
   version: 15.7.2
   resolution: "prop-types@npm:15.7.2"
   dependencies:
@@ -6453,6 +6455,16 @@ fsevents@~2.1.2:
     randombytes: ^2.0.5
     safe-buffer: ^5.1.0
   checksum: 24658ce99e0a325f27d157fbff9b111f9fa2f56876031ac9a09bcd6c5ae53d3c3f1b124d7e1b813803ee1b09e50dd1561ac7f7a8ba2930319cbcda5e827602ab
+  languageName: node
+  linkType: hard
+
+"react-disqus-comments@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "react-disqus-comments@npm:1.4.0"
+  peerDependencies:
+    react: ">=15.0.1 < 17.0.0"
+    react-dom: ">=15.0.1 < 17.0.0"
+  checksum: fd0818f019d46e72b0d367f836f18a33f8c130deb0515702df5a02606da712fe9d98640ee951d782eed7c90a9c38f9a579de07a6131f5b8f0252bb74466b27b3
   languageName: node
   linkType: hard
 

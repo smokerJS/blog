@@ -4,13 +4,14 @@ import PostUtil from '@lib/postUtil';
 import Head from 'next/head';
 import Date from '@/base/date';
 import Prism from 'prismjs';
+import ReactDisqusComments from 'react-disqus-comments';
 import style from './style.module.scss';
 
 
-export default function Post({ title, date, tags, contentHtml }: PostData) {
+export default function Post({ id, title, date, tags, contentHtml }: PostData) {
   React.useEffect(()=>{
     Prism.highlightAll();
-  }, [])
+  }, []);
   return (
     <React.Fragment>
       <Head>
@@ -24,6 +25,9 @@ export default function Post({ title, date, tags, contentHtml }: PostData) {
         </div>
         <div className="markdown-body" dangerouslySetInnerHTML={{ __html: contentHtml || ''}} />
       </article>
+      <section className={style.commnet_container}>
+        <ReactDisqusComments shortname="smokerjs" identifier={`https://smokerjs.dev/post/${id}`} title={title}/>
+      </section>
     </React.Fragment>
   )
 }
