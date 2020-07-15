@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import Header from '@/layout/header';
-import Footer from '@/layout/footer';
+import Navigation from '@/layout/navigation';
 import Background from '@/layout/background';
+import Footer from '@/layout/footer';
 
 export interface LayoutProps  { 
     children: JSX.Element
@@ -26,8 +27,9 @@ export default function Layout({ children }: LayoutProps) {
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
             <Header/>
-                <main>{children}</main>
-                <Background/>
+            <Navigation/>
+            <main>{children}</main>
+            <Background/>
             <Footer/>
         </>
     );
