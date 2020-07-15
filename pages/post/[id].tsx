@@ -14,13 +14,14 @@ type Post = {
 }
 
 export default function Post({ postData, sortedPostData }: Post) {
+  const PAGE_LIST_SIZE = 2;
   const [postList, setPostList] = React.useState<Array<PostData[]>>([]);
   const [currPostListIndex, setCurrPostListIndex] = React.useState(0);
   React.useEffect(()=>{
     Prism.highlightAll();
     if(sortedPostData) {
-      setPostList(postDataDivision(sortedPostData, 2));
-      setCurrPostListIndex(Math.floor((sortedPostData.length - parseInt(postData.id)) / 2));
+      setPostList(postDataDivision(sortedPostData, PAGE_LIST_SIZE));
+      setCurrPostListIndex(Math.floor((sortedPostData.length - parseInt(postData.id)) / PAGE_LIST_SIZE));
     }
   }, []);
 
