@@ -54,7 +54,7 @@ export default function Post({ postData, sortedPostData }: Post) {
       <section className={style.commnet_container}>
         <ReactDisqusComments shortname="smokerjs" identifier={`https://smokerjs.dev/post/${postData.id}`} title={postData.title}/>
       </section>
-      <section>
+      <section className={style.pagination_container}>
         <ul>
           <li>
             <button onClick={x => changePostListIndexHandler(-1)} disabled={currPostListIndex === 0}>prev</button>
