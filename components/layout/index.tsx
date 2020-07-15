@@ -30,5 +30,5 @@ export default function Layout({ children }: LayoutProps) {
                 <Background/>
             <Footer/>
         </>
-    )
+    );
 }

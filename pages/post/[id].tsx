@@ -28,8 +28,11 @@ export default function Post({ id, title, date, tags, contentHtml }: PostData) {
       <section className={style.commnet_container}>
         <ReactDisqusComments shortname="smokerjs" identifier={`https://smokerjs.dev/post/${id}`} title={title}/>
       </section>
+      <section>
+        list
+      </section>
     </React.Fragment>
-  )
+  );
 }
 
 export async function getStaticPaths() {
