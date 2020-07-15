@@ -2,6 +2,7 @@ import React from 'react';
 import { GetStaticProps } from 'next';
 import PostUtil from '@lib/postUtil';
 import Head from 'next/head';
+import Link from 'next/link';
 import Date from '@/base/date';
 import Prism from 'prismjs';
 import ReactDisqusComments from 'react-disqus-comments';
@@ -34,11 +35,17 @@ export default function Post({ postData, sortedPostData }: Post) {
         <ReactDisqusComments shortname="smokerjs" identifier={`https://smokerjs.dev/post/${postData.id}`} title={postData.title}/>
       </section>
       <section>
+        <ul>
         {
           sortedPostData?.map((obj, key) => (
-            <h2 key={`post_list_${key}`}>{obj.title}</h2>
+            <li key={`post_list_${key}`}> 
+              <Link href="/post/[id]" as={`/post/${obj.id}`}>
+                <a>{obj.title}</a>
+              </Link>
+            </li>
           ))
         }
+        </ul>
       </section>
     </React.Fragment>
   );
