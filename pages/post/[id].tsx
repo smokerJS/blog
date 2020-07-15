@@ -13,11 +13,31 @@ type Post = {
   sortedPostData: PostData[] | null
 }
 
-
 export default function Post({ postData, sortedPostData }: Post) {
+  const [postList, setPostList] = React.useState<Array<PostData[]>>([]);
+  const [currPostListIndex, setCurrPostListIndex] = React.useState(0);
   React.useEffect(()=>{
     Prism.highlightAll();
+    if(sortedPostData) {
+      setPostList(postDataDivision(sortedPostData, 2));
+      setCurrPostListIndex(Math.floor((sortedPostData.length - parseInt(postData.id)) / 2));
+    }
   }, []);
+
+  const postDataDivision = (postData: PostData[], length: number): Array<PostData[]> => {
+    const data = postData.slice();
+    const result = [];
+    while(data.length) {
+      result.push(data.splice(0, length));
+    }
+    return result;
+  }
+
+  const changePostListIndexHandler = (requestNumber: number) => {
+    setCurrPostListIndex(currPostListIndex + requestNumber);
+  }
+
+
   return (
     <React.Fragment>
       <Head>
@@ -36,15 +56,21 @@ export default function Post({ postData, sortedPostData }: Post) {
       </section>
       <section>
         <ul>
-        {
-          sortedPostData?.map((obj, key) => (
-            <li key={`post_list_${key}`}> 
-              <Link href="/post/[id]" as={`/post/${obj.id}`}>
-                <a>{obj.title}</a>
-              </Link>
-            </li>
-          ))
-        }
+          <li>
+            <button onClick={x => changePostListIndexHandler(-1)} disabled={currPostListIndex === 0}>prev</button>
+          </li>
+          {
+            postList[currPostListIndex]?.map((obj, key) => (
+              <li key={`post_list_${key}`}> 
+                <Link href="/post/[id]" as={`/post/${obj.id}`}>
+                  <a>{obj.title}</a>
+                </Link>
+              </li>
+            ))
+          }
+          <li>
+            <button onClick={x => changePostListIndexHandler(1)} disabled={currPostListIndex === postList.length - 1}>next</button>
+          </li>
         </ul>
       </section>
     </React.Fragment>
