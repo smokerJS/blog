@@ -5187,6 +5187,7 @@ fsevents@~2.1.2:
     react-dom: ^16.13.1
     sass: ^1.26.10
     showdown: ^1.9.1
+    three: ^0.118.3
     typescript: ^3.9.5
   languageName: unknown
   linkType: soft
@@ -7582,6 +7583,13 @@ fsevents@~2.1.2:
   bin:
     terser: bin/terser
   checksum: dbb9ff02c2b11341e1525dcffec7a80a25737a64c17719b4ae00aee7585d2742f450692dfec8ee13f0f0ff58136a70fbe280d0a3cb50e14ad92204e9ac65e879
+  languageName: node
+  linkType: hard
+
+"three@npm:^0.118.3":
+  version: 0.118.3
+  resolution: "three@npm:0.118.3"
+  checksum: 13e7b3468c2eda1c5e42a960aca9e22dcedb188214ca9da9c3d3e5d29871a1bdb697ade729b561903424e49e3c8cc3056fe5e6f4333efc401fefa8ce9b54fdde
   languageName: node
   linkType: hard
 

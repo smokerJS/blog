@@ -17,7 +17,7 @@ export default function Post({ postData, sortedPostData }: Post) {
   const PAGE_LIST_SIZE = 2;
   const [postList, setPostList] = React.useState<Array<PostData[]>>([]);
   const [currPostListIndex, setCurrPostListIndex] = React.useState(0);
-  React.useEffect(()=>{
+  React.useEffect(() => {
     Prism.highlightAll();
     if(sortedPostData) {
       setPostList(postDataDivision(sortedPostData, PAGE_LIST_SIZE));
