@@ -18,15 +18,15 @@ const NextAppConfig = {
                 }
                 
             ]
-        ]
+        ];
         
         options.typescript = {
             transpileOnly: true // same as ts-node --transpile-only
-         }
+        };
 
+        // config.plugins.push(new ThreeWebpackPlugin());
         return config;
     },
 };
-
 
 module.exports = NextAppConfig;

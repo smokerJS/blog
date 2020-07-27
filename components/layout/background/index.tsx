@@ -1,19 +1,19 @@
 import React from 'react';
-import THREE from 'three';
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'; 
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'; 
-import { BloomPass } from 'three/examples/jsm/postprocessing/BloomPass'; 
-// import * as EffectComposer from 'three/examples/jsm/postprocessing/EffectComposer';
-// import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
-// import { BloomPass } from 'three/examples/jsm/postprocessing/BloomPass';
-
+import * as THREE from 'three';
 import style from './style.module.scss';
+let EffectComposer,
+    RenderPass,
+    BloomPass;
 
 
 export default function Background() {
     const backgroundContainer = React.useRef<HTMLElement>(null);
 
     React.useEffect(() => {
+        EffectComposer = require('three/examples/jsm/postprocessing/EffectComposer').EffectComposer;
+        RenderPass = require('three/examples/jsm/postprocessing/RenderPass').RenderPass;
+        BloomPass = require('three/examples/jsm/postprocessing/BloomPass').BloomPass;
+
         var scene = new THREE.Scene();
         var camera = new THREE.PerspectiveCamera( 100, window.innerWidth/window.innerHeight, 0.1, 1000 );
         var renderer = new THREE.WebGLRenderer();
