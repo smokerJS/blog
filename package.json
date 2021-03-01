@@ -19,7 +19,7 @@
     "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.13.1",
     "showdown": "^1.9.1",
-    "three": "^0.118.3"
+    "three": "^0.125.0"
   },
   "devDependencies": {
     "@types/node": "^14.0.26",
